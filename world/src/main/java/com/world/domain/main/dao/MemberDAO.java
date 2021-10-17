@@ -17,30 +17,30 @@ public class MemberDAO {
 	
 	public List<MemberVO> getMemberList(){
 		System.out.println("=== MemberDAO  getMemberList()  ");
-		return sqlSession.selectList("com.poseidon95.kr.mapper.memberMapper.getMemberList");
+		return sqlSession.selectList("MemberDAO.getMemberList");
 	}
 
 	public MemberVO getMember() {
 		System.out.println("===MemberDAO  getMember()  ");
-		return sqlSession.selectOne("com.poseidon95.kr.mapper.memberMapper.getMember");
+		return sqlSession.selectOne("MemberDAO.getMember");
 	}
 
 	public void insertMember(MemberVO vo) {
 		System.out.println("===MemberDAO  insertMember()  ");
-		sqlSession.update("com.poseidon95.kr.mapper.memberMapper.insertMember", vo); 
+		sqlSession.update("MemberDAO.insertMember", vo); 
 			}
 	public void deleteMember() {
 		System.out.println("===MemberDAO  deleteMember()  ");
-		sqlSession.update("com.poseidon95.kr.mapper.memberMapper.deleteMember");
+		sqlSession.update("MemberDAO.deleteMember");
 	}
 	public void updateMember() {
 		System.out.println("===MemberDAO  updateMember()  ");
-		sqlSession.update("com.poseidon95.kr.mapper.memberMapper.updateMember");
+		sqlSession.update("MemberDAO.updateMember");
 	}
 	
 	public MemberVO confirmID(String email) {
 		System.out.println("===MemberDAO confirmID() email :" + email);
-		return sqlSession.selectOne("com.poseidon95.kr.mapper.memberMapper.confirmID", email);
+		return sqlSession.selectOne("MemberDAO.confirmID", email);
 	}
 	
 }

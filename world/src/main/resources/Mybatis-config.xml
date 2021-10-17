@@ -4,15 +4,14 @@
 
 <configuration>
 	 <!-- 옵션 태그 -->
-<!-- 
-	<typeAliases>
-		select를 리턴 받기 위한 타입
-		test-mapping.xml의 test에 매핑함
-		<typeAlias alias="test" type="com.saiworld.sample.test.TestVO" />
-	</typeAliases>
+	 <!-- select를 리턴 받기 위한 타입
+		test-mapping.xml의 test에 매핑함 -->
+<!-- 	<typeAliases>
+		<typeAlias alias="test" type="com.world.domain.main.vo.TestVO" />
+	</typeAliases> -->
 
    <typeAliases>
-  		 <typeAlias alias="member" type="com.poseidon95.kr.vo.MemberVO"/>
+  		 <typeAlias alias="member" type="com.world.domain.main.vo.MemberVO"/>
    </typeAliases> 
-    -->  
+
 </configuration>

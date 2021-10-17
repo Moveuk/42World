@@ -43,7 +43,7 @@ public class LoginOutIndexController {
 		
 //		HttpSession session = request.getSession();
 		String email = vo.getEmail();
-		String pwd = vo.getPwd();
+		String pwd = vo.getPassword();
 		System.out.println("====== MemberVO vo"+vo.toString());
 
 		if("".equals(email) && "".equals(pwd)) {
@@ -54,9 +54,9 @@ public class LoginOutIndexController {
 			
 			MemberVO member = memberService.confirmID(email);
 			
-			System.out.println("====== else : " + member.getPwd());
+			System.out.println("====== else : " + member.getPassword());
 			
-			if(member.getPwd().equals(pwd)) {
+			if(member.getPassword().equals(pwd)) {
 				System.out.println();
 			//	session.removeAttribute("id");
 			//	session.setAttribute("loginUser",member);

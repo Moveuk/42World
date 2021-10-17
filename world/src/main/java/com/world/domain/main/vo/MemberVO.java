@@ -1,34 +1,31 @@
 package com.world.domain.main.vo;
 
-import java.sql.Timestamp;
+import java.sql.Date;
 
 import org.springframework.web.multipart.MultipartFile;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+@Getter
+@Setter
 public class MemberVO {
 	
-	private int seq;
-	private String id;
-	private String pwd;
-	private String name;
+	private String userid;
+	private String password;
 	private String email;
-	private String zipNum;
-	private String address;
-//	private String addr1;
-//	private String addr2;
-	private String phone;
-	private String useyn;
-	private Timestamp indate;
+	private String name;
+	private Date birth;
+	private String gender;
+	private String title;
+	private String subtitle;
+	private String propic;
+	private int photo;
+	private int board;
+	private int video;
 	
 	private String searchCondition;
 	private String searchKeyword;
 	private MultipartFile uploadFile;
 	
-	// toString 필요없음 : @Data에 다 포함. 오른쪽 outline 탭에 어떤 함수가 사용가능한지 볼 수 있음.
 }
