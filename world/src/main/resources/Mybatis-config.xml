@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	 <!-- 옵션 태그 -->
+<!-- 
+	<typeAliases>
+		select를 리턴 받기 위한 타입
+		test-mapping.xml의 test에 매핑함
+		<typeAlias alias="test" type="com.saiworld.sample.test.TestVO" />
+	</typeAliases>
+
+   <typeAliases>
+  		 <typeAlias alias="member" type="com.poseidon95.kr.vo.MemberVO"/>
+   </typeAliases> 
+    -->  
+</configuration>
