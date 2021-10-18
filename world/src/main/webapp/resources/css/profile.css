@@ -1,0 +1,31 @@
+
+#tab2 .rightHome{
+    border:rgb(179, 179, 179) solid 1px;
+    border-radius:3%;
+    width:100%;
+    overflow: auto;
+    height: 520px;
+}
+
+
+#tab2 .left .profileTitle{
+    border-bottom:rgb(179, 179, 179) 2px solid;
+    width:90%;
+    margin-left: 5%;
+    line-height:200%;
+    color:rgb(124, 124, 124);
+    font-weight: bolder;
+}
+
+
+#tab2 .left .profileFolders li{
+    list-style: none;
+    margin-left: -10%;
+    width:100%;
+}
+
+#tab2 .left .profileFolders li a{
+    margin-left: 5px;
+    color: rgb(88,88,88);
+    text-decoration: none;
+}

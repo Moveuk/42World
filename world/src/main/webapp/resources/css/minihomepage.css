@@ -1,0 +1,109 @@
+
+html{ width:100%; height:100%; overflow:hidden }
+
+body{
+    background-color: dimgray;
+    width:100%;
+    height:100%;
+    
+}
+.back{
+    width:100%; height:100%;
+    position: relative;
+}
+
+.blueBox{
+    margin-left: 70px;
+    margin-top: 80px;
+    width:980px;
+    height: 620px; 
+    background-color: rgb(179, 211, 223);
+    float: left;
+    border-radius: 20px;
+}
+.rightHomeTab{
+    width:120px;
+    height: 170px;
+    position:absolute;
+    top:150px;
+    left:985px;
+}
+.rightHomeTab .tabs{
+    width: 80px;
+    height: 160px;
+}
+.rightHomeTab .tabs li{
+    border:rgb(54, 54, 54) 1px solid;
+    list-style: none;
+    margin-top: 2px;
+    height: 38px;
+    background-color: rgb(35, 141, 182);
+    border-radius: 0 5px 5px 0;
+    text-align: center;
+    line-height: 2.2;
+}
+.rightHomeTab a{
+    text-decoration-line: none;
+    font-size: 14px;
+    color:white;
+}
+.rightHomeTab ul.tabs li.active, ul.tabs li.active a:hover  {
+   background: white;
+   border-left: 1px solid white; 
+}
+
+.dot{
+    width:950px;
+    height:600px;
+    border:whitesmoke 2px dotted;
+    margin-left: 10px;
+    margin-top:10px;
+    border-radius:5%;
+    position: relative;
+}
+
+.whiteBox{
+    width: 930px;
+    height: 580px;
+    margin-left: 10px;
+    margin-top:10px;
+    background-color: white;
+    border-radius:5%;
+    display: flex;
+    position: absolute;
+    z-index: 4;
+}  
+.whiteBox .left{
+    width:200px; height:590px;
+    float: left;
+    margin-left: 10px;
+}
+
+
+.whiteBox .right{
+    width:700px; height:590px;
+    clear: both;
+}
+
+.mainTitle{
+    height: 50px;
+}
+
+.mainTitle #mainTitle_content{
+    border:none;
+    background-color:transparent;
+    font-size:20px;
+    margin-left:10px;
+    margin-top:20px;
+}
+.mainTitle input[name=mainTitle_content]:focus{
+    outline:none;
+}
+
+.music{
+    margin-right: 20px;
+     width: 230px;
+    height: 20px; 
+    background-color: floralwhite;
+    
+}

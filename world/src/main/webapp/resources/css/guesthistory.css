@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+
+
+*{
+    padding:0;
+    margin:0;
+}
+.guesthistory_main{
+    width: 500px;
+    height: 600px;
+    background-color: white
+}
+.guesthistory_title{
+    padding: 20px;
+    font-weight: 700;
+    font-size: 20px;
+    color: rgb(121, 121, 121);
+}
+.guesthistory_subtitle{
+    padding-left: 20px;
+    font-size: 14px;
+    color: rgb(167, 167, 167);
+
+}
+.guesthistory_table{
+    border-collapse: collapse;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 90%;
+}
+.guesthistory_table th{
+    padding :10px;
+    font-size: 14px;
+    color: rgb(121, 121, 121);
+    border-bottom: 1px rgb(190, 190, 190) solid;
+}
+.guesthistory_table td{
+    padding-top: 6px ;
+    padding-bottom: 6px;
+    border-bottom: 1px rgb(221, 221, 221) solid;
+
+}
+.guesthistory_table_td_date{
+    font-size: 14px;
+    color: rgb(134, 198, 211);
+    font-weight: 600;
+}
+.guesthistory_table_td_guest{
+    font-size: 13px;
+
+}
+.guesthistory_table_td_guest_a{
+    color: rgb(121, 121, 121);
+    text-decoration: none;
+}
+.guesthistory_table_td_guest_a:hover{
+    color:red;
+}

@@ -1,0 +1,114 @@
+
+#tab3 .rightHome{
+    border:rgb(179, 179, 179) solid 1px;
+    border-radius:3%;
+    width:100%;
+    overflow: auto;
+    height: 520px;
+}
+#tab3 .left .photoTitle{
+    border-bottom:rgb(179, 179, 179) 2px solid;
+    width:180px;
+    margin-left: 5px;
+    line-height:35px;
+    color:rgb(124, 124, 124);
+    font-weight: bolder;
+}
+#tab3 .left .photoFolders{
+    display: flex;
+}
+#tab3 .left .photoFolders img{
+    width:18px;
+}
+#tab3 .left .photoFolders li{
+    list-style: none;
+    margin-left: -15%;
+}
+#tab3 .left .photoFolders a{
+    text-decoration: none;
+    color:slategray;
+    margin-left: 5px;
+}
+
+#tab3 .right .photoForm{
+    width: 660px;
+    height: 100%;
+    border:1px solid dimgrey;
+    margin:10px;
+    border-radius: 5%;
+}
+
+ #tab3 .right .photoForm #photoTitleInput{
+    width:630px;
+    height: 30px;
+    font-size: 15px;
+    text-align: center;
+    border-top:none;
+    border-left:none;
+    border-right:none;
+    border-bottom:dimgray 1px solid;
+    margin-left: 11px;
+    margin-top: 5px;
+    
+} 
+#tab3 .right .photoForm input:focus{
+    outline: none;
+}
+#tab3 .right .photoForm .img{
+    margin:10px 0 10px 0;
+    text-align: center;
+}
+#tab3 .right .photoForm .photoFooter{
+    text-align: right;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+#tab3 .right .photoForm .photoFooter button{
+    background-color: white;
+    border-radius: 4px;
+    border:1px solid rgb(189, 186, 186);
+    color:rgb(117, 116, 116);
+    font-size: 15px;
+    
+}
+#tab3 .right .photoForm .commentForm{
+    border-style:solid;
+    border-width: 1px 1px 1px 5px; 
+    padding: 12px; 
+    word-break: break-all;
+    margin-left: 10px;
+    color:rgb(51, 51, 51);
+    width: 600px;
+}
+#tab3 .rightHome .comment .commentForm #commentInput{
+    border: none;
+    width:60%;
+    height: 100%;
+    font-size:15px;
+    padding-left: 5px;
+    outline:none;
+    box-sizing: border-box;
+    color:black;
+}
+#tab3 .rightHome .comment .commentForm #commentSubmit{
+      border:none;
+      background-color: white;
+      font-size:1em;
+      color:dimgrey;
+      outline:none;
+      box-sizing: border-box;
+    width:10%;
+    height: 100%;
+}
+#tab3 .rightHome .comment .commentList li{
+    width:90%;
+    height: 40px;
+    margin-top: 3%;
+}
+#tab3 .rightHome .comment .commentList li::marker{
+    color:dimgrey;
+}
+#tab3 .rightHome .comment .commentList a{
+    color:dimgrey;
+    text-decoration-line:none;
+}

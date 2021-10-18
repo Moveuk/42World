@@ -1,0 +1,207 @@
+
+
+.main1_main{
+    padding: 2%;
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 1200px;
+    height: 550px;
+}
+
+.main1_main_rank{
+    float: left;
+    width: 69%;
+    height: 550px;
+    background-color: white;
+    border: 1px rgb(202, 202, 202) solid;
+    border-radius: 10px;
+    box-shadow: 0px 0px 2px 2px rgb(224, 224, 224);
+
+}
+
+.main1_main_profile{
+    float: right;
+    width: 28%;
+    height: 550px;
+    border: 1px rgb(202, 202, 202) solid;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 2px 2px rgb(224, 224, 224);
+
+}
+.main1_main_rank_div{
+    margin: auto;
+    margin-top: 3%;    
+    background-color: white;
+    width: 94%;
+    height: 90%;
+    padding: 5px;
+}
+
+.main1_main_profile_div{
+    margin: auto;
+    margin-top: 33%;    
+    background-color: white;
+    width: 88%;
+    height: 55%;
+    border-radius: 20px;
+    border: 1px solid rgb(189, 189, 189);
+    box-shadow: 0px 0px 2px 2px rgb(224, 224, 224);
+    
+  
+}
+.main1_main_profile_div_top{
+    width: 100%;
+    height: 25%;
+    border-bottom: 2px rgb(224, 184, 95) solid;
+    line-height: 80px;
+    text-align: center;
+
+}
+.main1_main_profile_div_top_name{
+    margin-left: 30px;
+    color: black;
+    font-weight: 700;
+}   
+.main1_main_profile_div_top_name_1{
+    color: rgb(165, 165, 165);
+    font-size: 14px;
+}
+.main1_main_profile_div_top_button{
+    margin-left: 20px;
+    background: linear-gradient( to bottom, rgb(250, 156, 79), rgb(248, 147, 64) );
+    border: none;
+    padding: 5px;
+    color: white;
+    border-radius: 3px;
+    width: 70px
+}
+.main1_main_profile_div_left{
+ float: left;
+
+ width: 50%;
+ height: 60%;
+ text-align: center;
+
+}
+.main1_main_profile_div_left img{
+    width: 80%;
+    height: 50%;
+    margin-top: 20%;
+    border-radius: 4px;
+
+}
+.main1_main_profile_div_right{
+    float: left;
+    width: 50%;
+    height: 60%;
+
+}
+.main1_main_profile_div_right table{
+    margin-top: 30px;
+    margin-left: 15px;
+
+}
+.main1_main_profile_div_right table td{
+    padding-left: 6px;
+    padding-right:6px;
+    padding-bottom: 3px;
+}
+.main1_main_profile_div_right_guest,.main1_main_profile_div_right_board,.main1_main_profile_div_right_friend,.main1_main_profile_div_right_present,.main1_main_profile_div_right_dotori{
+    color: rgb(255, 143, 51);
+    font-size: 18px;
+}
+.main1_main_profile_div_right_td1{
+    color: rgb(119, 119, 119);
+}
+
+.main1_main_profile_div_footer{
+    text-align: center;
+
+}
+.main1_main_profile_div_footer input{
+    background: linear-gradient( to bottom, rgb(250, 156, 79), rgb(248, 147, 64) );
+    border: none;
+    padding: 5px;
+    color: white;
+    border-radius: 3px;
+    font-size: 16px;
+    width: 150px;
+    box-shadow: 0px 0px 2px 2px rgb(224, 224, 224);
+
+}
+
+
+.main1_main_rank_div_content table{
+    width: 99%;
+    border: 2px solid rgb(189, 189, 189);
+    margin: 2px;
+    border-radius: 5px;
+    text-align: center;
+    
+}
+
+.main1_main_rank_div_content_number_td{
+
+    width:90px;   
+}
+.main1_main_rank_div_content_number{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background: linear-gradient( to bottom, rgb(250, 156, 79), rgb(248, 147, 64) );
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    box-shadow: 0px 0px 2px 2px rgb(224, 224, 224);
+
+
+}
+
+.main1_main_rank_div_content_number_1{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background: linear-gradient( to bottom, rgb(139, 139, 139), rgb(156, 156, 156) );
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    box-shadow: 0px 0px 2px 2px rgb(224, 224, 224);
+
+
+}
+.main1_main_rank_div_content_number_a{
+    font-size: 30px;
+    line-height: 70px;
+    color :white;
+    font-weight: 800;
+}
+.main1_main_rank_div_content_img_td{
+    width: 150px;
+
+}
+.main1_main_rank_div_content_img{
+    width: 80px;
+    height: 82px;
+    border-radius: 7px;
+    box-shadow: 0px 0px 2px 2px rgb(224, 224, 224);
+
+    
+}    
+.main1_main_rank_div_content_name{
+    color: rgb(255, 143, 51);
+    font-size: 20px;
+    font-weight: 700;
+
+}
+.main1_main_rank_div_content_guest_td{
+    color: rgb(138, 138, 138);
+}
+.main1_main_rank_div_content_guest_td .a1{
+    margin-right: 2px;
+    color: rgb(71, 71, 71);
+    font-size: 20px;
+    font-weight: 600;
+}
+

@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap');
+
+
+*{padding:0; margin:0;}
+
+.request_friend_main{
+    width:500px;
+    height:600px;
+    background-color: rgba(145, 167, 111, 0.733);
+    background: linear-gradient(to bottom, rgba(189, 201, 81, 0.733), rgba(211, 224, 90, 0.733));
+
+   
+}
+
+.request_friend_main_top{
+    height:8%;
+
+    margin-left: 20px;
+    font-size: 20px;
+    font-weight: bold;
+   
+}
+
+.request_friend_main_top img{
+    margin-top: 10px;
+    border-radius: 20px;
+    width:27px;
+    height:27px;
+    float:left;
+}
+
+.request_friend_main_top span{
+    margin-top:10px;
+    margin-left: 5px;
+    color:rgba(79, 87, 13, 0.733);
+    letter-spacing: -2px;
+    float:left;
+}
+
+.request_friend_main_contentWrap{
+    width:92%;
+    height: 520px;
+    margin:0 auto;
+    padding-top: 5px;
+    background-color: white;
+
+    
+}
+
+.request_friend_main_content{
+    height:95.5%;
+    margin:10px;
+    
+    border:1px solid #cecece;
+    
+
+}
+
+.request_friend_main_content hr{
+    border-top:1px dashed #bbb;
+    margin:0 20px;
+}
+
+
+.request_friend_main_content a{
+    text-decoration: none;
+    font-family: 'Gamja Flower', cursive;
+}
+
+
+.request_friend_main_content_1{
+    height:7%;
+    font-size: 20px;
+    margin-top:5px;
+    margin-left: 20px;
+}
+
+.request_friend_main_content_2{
+    height:25%;
+    margin-left: 20px;
+}
+
+.request_friend_main_content_2 img{
+    width:120px;
+    height:120px;
+    margin-left: 20px;
+    float:left;
+}
+
+.request_friend_main_content_2_2{
+    float:left;
+    font-family: 'Gamja Flower', cursive;
+    margin-top: 50px; 
+    margin-left: 20px;
+    font-size: 20px;          
+}
+
+.request_friend_main_content_3{
+    height:15%;
+    margin-top: 10px;
+    line-height: 30px;
+    margin-left: 20px;
+    font-size: 20px;
+    font-family: 'Gamja Flower', cursive;
+}
+
+.request_friend_main_content_3 input{
+    width:70px;
+}
+
+.request_friend_main_content_4{
+    height:15%;
+    margin-top: 5px;
+    font-size: 17px;
+    font-family: sans-serif;
+   
+}
+.request_friend_main_content_4 span{
+    color:#969696;
+}
+
+
+.request_friend_main_content_5{
+    text-align: center;
+    line-height: 30px;
+    height:35%;
+    font-size: 17px;
+  
+}
+
+.request_friend_main_content_5 .btn1{
+    width:80px;
+    height:30px;
+    margin-right: 10px;
+    margin-top: 5px;
+    background-color: white;
+   border:1px solid #8a8a8a;
+   border-radius: 5px;
+   font-size: 16px;
+   padding: 5px;
+}
+
+.request_friend_main_content_5 .btn2{
+    width:70px;
+    height:30px;
+    margin-right: 10px;
+    margin-top: 5px;
+    background-color: white;
+   border:1px solid #8a8a8a;
+   border-radius: 5px;
+   font-size: 16px;
+   padding: 5px;
+}
+
+.request_friend_main_content_5 button span{
+    
+    font-weight: bold;
+    float:right;
+}
+
+.request_friend_main_content_5 button img{
+   width:20px;
+   height:20px;
+   
+}

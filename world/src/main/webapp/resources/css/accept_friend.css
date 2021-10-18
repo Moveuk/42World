@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+
+
+*{padding:0; margin:0;}
+
+.accept_friend_main hr{
+    
+    border-top:1px dashed #bbb;
+    margin:10px 20px;
+}
+
+.accept_friend_main{
+    width:500px;
+    height:600px;
+    background-color: rgb(172, 223, 243);
+    background: linear-gradient(to bottom, rgb(208, 232, 247), rgb(210, 228, 235));
+    border:1px solid white
+}
+
+.accept_friend_main_content{
+    margin:25px;
+    height:90%;
+    background-color: white;
+    border-radius: 10px;
+    
+}
+
+.accept_friend_main_content_1{
+    height:13%;
+    
+}
+
+.accept_friend_main_content_1_1{
+    float:left;
+    margin-top: 15px;
+    margin-left: 25px;
+    font-size: 40px;
+    font-family: 'Nanum Pen Script', cursive;
+}
+
+.accept_friend_main_content_1_1 span{
+    color:rgb(240, 205, 50);
+}
+
+.accept_friend_main_content_1_2{
+    float:right;
+}
+
+.accept_friend_main_content_1_2 img{
+    width:150px;
+    height:75px;
+    border-radius: 10px;
+}
+
+
+.accept_friend_main_content_2{
+    height:5%;
+    margin-left: 20px;
+    
+}
+.accept_friend_main_content_2 a{
+    text-decoration: none;
+    color: blue;
+}
+
+
+.accept_friend_main_content_3{
+    height:20%;
+    
+}
+
+
+.accept_friend_main_content_3_1{
+    width:30%;
+}
+
+.accept_friend_main_content_3_1 img{
+    width:100px;
+    height:100px;
+    margin-left: 50px;
+    float:left;
+    
+}
+
+.accept_friend_main_content_3_2 {
+    width:60%;
+    margin-top: 25px;
+    margin-left: 20px;
+    float:left;
+    line-height: 30px;
+    
+    
+}
+
+.accept_friend_main_content_3_2 a{
+    text-decoration: none;
+    color: blue;
+}
+
+
+
+.accept_friend_main_content_4{
+    height:19%;
+    text-align: center;
+    
+}
+
+.accept_friend_main_content_4 textarea{
+    padding:5px;
+    resize: none;
+    border-radius: 8px;
+    
+}
+
+.accept_friend_main_content_5{
+    height:25%;
+    
+}
+
+.accept_friend_main_content_5 p{
+    margin-top: 10px;
+    margin-left: 20px;
+    line-height: 25px;
+    
+}
+
+.accept_friend_main_content_5 p span{
+    color:#868686;
+}
+
+.accept_friend_main_content_5 a{
+    text-decoration: none;
+    color: blue;
+}
+
+.accept_friend_main_content_6{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.accept_friend_main_content_6 input{
+    width:55px;
+    height:25px;
+    background-color: white;
+    border:1px solid #868686;
+    border-radius: 5px;
+    color: rgb(116, 116, 116);
+}
+
+.accept_friend_main_content_6 input:hover{
+    background-color: rgb(206, 227, 235);
+}

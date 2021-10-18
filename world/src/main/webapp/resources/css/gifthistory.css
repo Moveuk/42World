@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+
+
+*{
+    padding:0;
+    margin:0;
+}
+.gifthistory_main{
+    width: 500;
+    height: 600px;
+    background-color: white
+}
+.gifthistory_title{
+    padding: 20px;
+    font-weight: 700;
+    font-size: 20px;
+    color: rgb(121, 121, 121);
+}
+.gifthistory_subtitle{
+    padding-left: 20px;
+    font-size: 14px;
+    color: rgb(167, 167, 167);
+
+}
+.gifthistory_table{
+    border-collapse: collapse;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 95%;
+}
+.gifthistory_table th{
+    padding :10px;
+    font-size: 14px;
+    color: rgb(121, 121, 121);
+    border-bottom: 1px rgb(190, 190, 190) solid;
+}
+.gifthistory_table td{
+    padding-top: 6px ;
+    padding-bottom: 6px;
+    border-bottom: 1px rgb(221, 221, 221) solid;
+
+}
+.gifthistory_table_td_date{
+    font-size: 14px;
+    color: rgb(134, 198, 211);
+    font-weight: 600;
+}
+
+.gifthistory_table_td_frined a{
+    font-size: 13px;
+    color: rgb(121, 121, 121);
+    text-decoration: none;
+}
+.gifthistory_table_td_frined a:hover{
+
+    color: red;
+
+}
+.gifthistory_table_td_category {
+    font-size: 13px;
+    color: rgb(121, 121, 121);
+}
+
+.gifthistory_table_td_product img{
+    width: 80px;
+    height: 60px;
+}
+.gifthistory_table_td_product a{
+    
+    text-align: center;
+    font-size: 13px;
+    color: rgb(121, 121, 121);
+}
+.gifthistory_table_td_price{
+    padding-left: 3px;
+    padding-right: 3px;
+    text-align: center;
+    font-size: 15px;
+    color: rgb(151, 86, 53);
+    font-weight: 700;
+}
+.gifthistory_table_td_button input{
+    width: 70px;
+    height: 23px;
+    border:none;
+    border-radius: 3px;
+    background: linear-gradient( to bottom, rgb(250, 156, 79), rgb(248, 147, 64) );
+    color: white;
+    box-shadow: 0px 0px 1px 1px rgb(224, 224, 224);
+
+
+}
