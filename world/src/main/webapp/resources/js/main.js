@@ -1,25 +1,35 @@
+/* 메인 페이지 오른쪽 탭 기능 */
 $(function () {
     $(".tab_content").hide();
     $(".tabs li:first").addClass("active").show();
     $(".tabs li:first a").css({ "color": "black" });
     $(".tab_content:first").show();
 
-
-
-    $(".tabs li").click(function () {
-
+    $(".tabs li").click(function (e) {
+		
+		/* 오른쪽 탭 클릭시 active class 제거 및 탭 색 반전 하이라이트 */
+		e.preventDefault( );
         $(".tabs li").removeClass("active");
         $(".tabs li").find("a").css({ "color": "white" });
         $(this).addClass("active");
         $(this).find("a").css({ "color": "black" });
-        $(".tab_content").hide();
+        /*$(".tab_content").hide();*/
 
+		/* 탭 href에서 jsp파일 이름 불러옴 */
+        var activeFilePath = $(this).find("a").attr("href");
 
-        var activeTab = $(this).find("a").attr("href");
+		// 콘솔에 tab 주소값 불러옴.
+		console.log(activeFilePath);
+		console.log("<%@ include file='./left/left"+activeFilePath+".jsp'%>");
 
-
-        $(activeTab).fadeIn();
-
+		// html 정적이라 실패함
+		//$(".tab_content .left").html("<%@ include file='./left/left"+activeFilePath+".jsp'%>");
+		//$(".tab_content .right").html("<%@ include file='./right/right"+activeFilePath+".jsp'%>");
+		
+		// jquery load로 각 페이지 부위별로 불러옴
+		$(".tab_content .leftContent").load("./left/left"+activeFilePath+".jsp");
+		$(".tab_content .rightContent").load("./right/right"+activeFilePath+".jsp");
+		
         return false;
     });
 })

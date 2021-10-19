@@ -3,12 +3,8 @@ html{ width:100%; height:100%; overflow:hidden }
 
 body{
     background-color: dimgray;
-    width:100%;
-    height:100%;
-    
 }
 .back{
-    width:100%; height:100%;
     position: relative;
 }
 
@@ -18,9 +14,10 @@ body{
     width:980px;
     height: 620px; 
     background-color: rgb(179, 211, 223);
-    float: left;
-    border-radius: 20px;
+    border-radius:3%;
 }
+
+/* 오른쪽 탭 */
 .rightHomeTab{
     width:120px;
     height: 170px;
@@ -52,49 +49,85 @@ body{
    border-left: 1px solid white; 
 }
 
+/* 외곽 점선 */
 .dot{
     width:950px;
     height:600px;
     border:whitesmoke 2px dotted;
-    margin-left: 10px;
+    margin-left: 13px;
     margin-top:10px;
-    border-radius:5%;
-    position: relative;
+    border-radius:3%;
+    position: absolute;
 }
 
+/* 내부 내용물 whiteBox */
 .whiteBox{
     width: 930px;
     height: 580px;
-    margin-left: 10px;
-    margin-top:10px;
+    margin: 10px;
     background-color: white;
-    border-radius:5%;
-    display: flex;
+    border-radius:3%;
     position: absolute;
     z-index: 4;
+    display: grid;
+    grid-template-rows: 40px 510px;
 }  
-.whiteBox .left{
-    width:200px; height:590px;
-    float: left;
+
+/* 상단 - 조회수 및 홈페이지 제목 */
+.whiteBox .top{
+    display: grid;
+    grid-template-columns: 2.5fr 7.5fr;
+    height: 40px;
+}
+
+.whiteBox .top > div{
+	padding-top: 10px;
+}
+
+/* 하단 - 탭에 따라 변화 */
+.whiteBox .bottom{
+    display: grid;
+    grid-template-columns: 2.5fr 7.5fr;
+}
+.whiteBox .bottom .left{
     margin-left: 10px;
+    border:rgb(179, 179, 179) solid 1px;
+    border-radius:3%;
+    box-sizing: border-box;
 }
 
-
-.whiteBox .right{
-    width:700px; height:590px;
-    clear: both;
+.whiteBox .bottom .left .leftContent{
+	margin: 8px;
+    overflow: auto;
+    height: 510px;
 }
 
-.mainTitle{
-    height: 50px;
+.whiteBox .bottom .right {
+    margin-left: 5px;
+    margin-right: 10px;
+    border:rgb(179, 179, 179) solid 1px;
+    border-radius:3%;
+    box-sizing: border-box;
+}
+
+.whiteBox .bottom .right .rightContent{
+	margin: 8px;
+    overflow: auto;
+    height: 510px;
+}
+
+.count #count_today{
+    text-align: center;
+    border:none;
+    background-color:transparent;
+    font-size:15px;
 }
 
 .mainTitle #mainTitle_content{
     border:none;
     background-color:transparent;
     font-size:20px;
-    margin-left:10px;
-    margin-top:20px;
+    margin-left:30px;
 }
 .mainTitle input[name=mainTitle_content]:focus{
     outline:none;

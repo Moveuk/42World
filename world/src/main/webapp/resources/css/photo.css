@@ -1,12 +1,4 @@
-
-#tab3 .rightHome{
-    border:rgb(179, 179, 179) solid 1px;
-    border-radius:3%;
-    width:100%;
-    overflow: auto;
-    height: 520px;
-}
-#tab3 .left .photoTitle{
+.left .photoTitle{
     border-bottom:rgb(179, 179, 179) 2px solid;
     width:180px;
     margin-left: 5px;
@@ -14,23 +6,23 @@
     color:rgb(124, 124, 124);
     font-weight: bolder;
 }
-#tab3 .left .photoFolders{
+.left .photoFolders{
     display: flex;
 }
-#tab3 .left .photoFolders img{
+.left .photoFolders img{
     width:18px;
 }
-#tab3 .left .photoFolders li{
+.left .photoFolders li{
     list-style: none;
     margin-left: -15%;
 }
-#tab3 .left .photoFolders a{
+.left .photoFolders a{
     text-decoration: none;
     color:slategray;
     margin-left: 5px;
 }
 
-#tab3 .right .photoForm{
+.right .photoForm{
     width: 660px;
     height: 100%;
     border:1px solid dimgrey;
@@ -38,7 +30,7 @@
     border-radius: 5%;
 }
 
- #tab3 .right .photoForm #photoTitleInput{
+.right .photoForm #photoTitleInput{
     width:630px;
     height: 30px;
     font-size: 15px;
@@ -51,19 +43,19 @@
     margin-top: 5px;
     
 } 
-#tab3 .right .photoForm input:focus{
+.right .photoForm input:focus{
     outline: none;
 }
-#tab3 .right .photoForm .img{
+.right .photoForm .img{
     margin:10px 0 10px 0;
     text-align: center;
 }
-#tab3 .right .photoForm .photoFooter{
+.right .photoForm .photoFooter{
     text-align: right;
     margin-right: 10px;
     margin-bottom: 10px;
 }
-#tab3 .right .photoForm .photoFooter button{
+.right .photoForm .photoFooter button{
     background-color: white;
     border-radius: 4px;
     border:1px solid rgb(189, 186, 186);
@@ -71,7 +63,7 @@
     font-size: 15px;
     
 }
-#tab3 .right .photoForm .commentForm{
+.right .photoForm .commentForm{
     border-style:solid;
     border-width: 1px 1px 1px 5px; 
     padding: 12px; 
@@ -80,7 +72,7 @@
     color:rgb(51, 51, 51);
     width: 600px;
 }
-#tab3 .rightHome .comment .commentForm #commentInput{
+.right .comment .commentForm #commentInput{
     border: none;
     width:60%;
     height: 100%;
@@ -90,7 +82,7 @@
     box-sizing: border-box;
     color:black;
 }
-#tab3 .rightHome .comment .commentForm #commentSubmit{
+.right .comment .commentForm #commentSubmit{
       border:none;
       background-color: white;
       font-size:1em;
@@ -100,15 +92,15 @@
     width:10%;
     height: 100%;
 }
-#tab3 .rightHome .comment .commentList li{
+.right .comment .commentList li{
     width:90%;
     height: 40px;
     margin-top: 3%;
 }
-#tab3 .rightHome .comment .commentList li::marker{
+.right .comment .commentList li::marker{
     color:dimgrey;
 }
-#tab3 .rightHome .comment .commentList a{
+.right .comment .commentList a{
     color:dimgrey;
     text-decoration-line:none;
 }
