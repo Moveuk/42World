@@ -19,6 +19,12 @@ public class VisitorLogServiceImpl implements VisitorLogService {
 		return visitorLogDAO.getVisitorLogList();
 	}
 
+	/*
+	 * @Override public VisitorLogVO getVisitorLog() { return
+	 * visitorLogDAO.getVisitorLog(); }
+	 */
+
+
 	@Override
 	public void insertVisitorLog(VisitorLogVO vo) {
 		visitorLogDAO.insertVisitorLog(vo);
@@ -33,6 +39,5 @@ public class VisitorLogServiceImpl implements VisitorLogService {
 	public void deleteVisitorLog(VisitorLogVO vo) {
 		visitorLogDAO.deleteVisitorLog(vo);
 	}
-
 	
 }

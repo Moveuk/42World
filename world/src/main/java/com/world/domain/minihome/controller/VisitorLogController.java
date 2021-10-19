@@ -7,61 +7,55 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.world.domain.main.impl.MemberService;
-import com.world.domain.main.vo.MemberVO;
+import com.world.domain.minihome.impl.VisitorLogService;
+import com.world.domain.minihome.vo.VisitorLogVO;
 
 @Controller
 public class VisitorLogController {
 	
 	@Autowired
-	MemberService memberService;
+	VisitorLogService visitorLogService;
 	
-	@RequestMapping("/member/getMemberList")
-	public String getMemberList(MemberVO vo, Model model) {
+	@RequestMapping("/getVisitorLog")
+	public String getVisitorLogList(VisitorLogVO vo, Model model) {
 		
-		model.addAttribute("memberList", memberService.getMemberList());
-		return "/admin/memberList";
+		model.addAttribute("visitorLogList", visitorLogService.getVisitorLogList());
+		return "/minihome/VisitorLogList";
 	}
 	
-	@RequestMapping("/member/getMember")
-	public String getMember(MemberVO vo, Model model) {
-		
-		model.addAttribute("member", memberService.getMember());
-		return "/admin/memberList";
-	}
+	/*
+	 * @RequestMapping("/getVisitorLog") public String getVisitorLog(VisitorLogVO
+	 * vo, Model model) {
+	 * 
+	 * model.addAttribute("VisitorLog", visitorLogService.getVisitorLog()); return
+	 * "/minihome/VisitorLogList"; }
+	 */
 	
-	@RequestMapping("/member/insertMember")
-	public String insertMember(HttpServletRequest req, MemberVO vo, Model model) throws IllegalStateException{
+	@RequestMapping("/insertVisitorLog")
+	public String insertVisitorLog(HttpServletRequest req, VisitorLogVO vo, Model model) throws IllegalStateException{
 		
-		System.out.println("MemberController insertMember start : " );
+		System.out.println("VisitorLogController insertVisitorLog start : " );
 		
 		String pwd = req.getParameter("pwd");
 		System.out.println("pwd : "+pwd );
 		
-		System.out.println("MemberController insertMember : "+vo.toString() );
+		System.out.println("VisitorLogController insertVisitorLog : "+vo.toString() );
 		
-		/*
-		MultipartFile uploadFile = vo.getUploadFile();
-		System.out.println("uploadFile : " + uploadFile);
-		if(!uploadFile.isEmpty()) {
-		//	uploadFile.transferTo(new File("E:/" + fileName));
-		}
-		*/
-		memberService.insertMember(vo);
-		model.addAttribute("memberList", memberService.getMemberList());
-		return "/admin/memberList";
+		visitorLogService.insertVisitorLog(vo);
+		model.addAttribute("VisitorLogList", visitorLogService.getVisitorLogList());
+		return "/minihome/VisitorLogList";
 	}
 
-	@RequestMapping("/member/updateMember")
-	public String updateMember(MemberVO vo) {
-		memberService.updateMember();
-		return "getMemberList.do";
+	@RequestMapping("/updateVisitorLog")
+	public String updateVisitorLog(VisitorLogVO vo) {
+		visitorLogService.updateVisitorLog(vo);
+		return "getVisitorLogList.do";
 	}
 	
-	@RequestMapping("/member/deleteMember")
-	public String deleteMember(MemberVO vo) {
-		memberService.deleteMember();
-		return "getMemberList.do";
+	@RequestMapping("/deleteVisitorLog")
+	public String deleteVisitorLog(VisitorLogVO vo) {
+		visitorLogService.deleteVisitorLog(vo);
+		return "getVisitorLogList.do";
 	}
 	
 

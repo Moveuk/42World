@@ -8,6 +8,9 @@ public interface VisitorLogService {
 
 	List<VisitorLogVO> getVisitorLogList();
 	
+	 /* VisitorLogVO getVisitorLog();
+	 */
+	
 	void insertVisitorLog(VisitorLogVO vo);
 	
 	void deleteVisitorLog(VisitorLogVO vo);

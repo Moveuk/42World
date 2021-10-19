@@ -20,6 +20,12 @@ public class VisitorLogDAO {
 		return sqlSession.selectList("VisitorLogDAO.getVisitorLogList");
 	}
 
+	/*
+	 * public VisitorLogVO getVisitorLog() {
+	 * System.out.println("=== VisitorLogDAO  getVisitorLog()  "); return
+	 * sqlSession.selectOne("VisitorLogDAO.getVisitorLogList"); }
+	 */
+
 	public void insertVisitorLog(VisitorLogVO vo) {
 		System.out.println("===VisitorLogDAO  insertVisitorLog()  ");
 		sqlSession.update("VisitorLogDAO.insertVisitorLog", vo);
