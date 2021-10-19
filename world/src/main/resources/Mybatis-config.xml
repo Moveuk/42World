@@ -3,15 +3,31 @@
 "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
-	 <!-- 옵션 태그 -->
-	 <!-- select를 리턴 받기 위한 타입
-		test-mapping.xml의 test에 매핑함 -->
-<!-- 	<typeAliases>
-		<typeAlias alias="test" type="com.world.domain.main.vo.TestVO" />
-	</typeAliases> -->
+	<!-- Mybatis 사용시 옵션 설정 문서 -->
+	
+	<!-- 사용시 다음과 같은 순서로 tag를 작성해야 합니다.
+	 properties,
+	settings,
+	typeAliases,
+	typeHandlers,
+	objectFactory,
+	objectWrapperFactory,
+	plugins,
+	environments,
+	databaseIdProvider,
+	mappers
+	-->
 
-   <typeAliases>
-  		 <typeAlias alias="member" type="com.world.domain.main.vo.MemberVO"/>
-   </typeAliases> 
+	<settings>
+		<setting name="cacheEnabled" value="false" />
+		<setting name="jdbcTypeForNull" value="NULL" />
+	</settings>
+
+	<!-- 옵션 태그 -->
+	<!-- select를 리턴 받기 위한 타입 -->
+	<typeAliases>
+		<typeAlias alias="member" type="com.world.domain.main.vo.MemberVO" />
+		<typeAlias alias="visitorLog" type="com.world.domain.minihome.vo.VisitorLogVO" />
+	</typeAliases>
 
 </configuration>
