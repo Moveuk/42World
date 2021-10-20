@@ -33,7 +33,7 @@
 						</div>
 					</div>
 					<div class="bottom tab_content">
-						<%@ include file="./tab/home.jsp"%>
+						<%-- 자바 스크립트로 처리 --%>
 					</div>
 				</div>
 			</div>

@@ -35,9 +35,4 @@ public class MinihomeController {
 	public String loadBoard() {
 		return "/minihome/tab/board";
 	}
-	
-	@RequestMapping("/visitors")
-	public String loadVisitors() {
-		return "/minihome/tab/visitors";
-	}
 }

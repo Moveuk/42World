@@ -16,11 +16,11 @@ public class VisitorLogController {
 	@Autowired
 	VisitorLogService visitorLogService;
 	
-	@RequestMapping("/getVisitorLog")
+	@RequestMapping("/visitors")
 	public String getVisitorLogList(VisitorLogVO vo, Model model) {
 		
 		model.addAttribute("visitorLogList", visitorLogService.getVisitorLogList());
-		return "/minihome/VisitorLogList";
+		return "/minihome/tab/visitors";
 	}
 	
 	/*
@@ -43,19 +43,19 @@ public class VisitorLogController {
 		
 		visitorLogService.insertVisitorLog(vo);
 		model.addAttribute("VisitorLogList", visitorLogService.getVisitorLogList());
-		return "/minihome/VisitorLogList";
+		return "/minihome/tab/visitors";
 	}
 
 	@RequestMapping("/updateVisitorLog")
 	public String updateVisitorLog(VisitorLogVO vo) {
 		visitorLogService.updateVisitorLog(vo);
-		return "getVisitorLogList.do";
+		return "/getVisitorLog";
 	}
 	
 	@RequestMapping("/deleteVisitorLog")
 	public String deleteVisitorLog(VisitorLogVO vo) {
 		visitorLogService.deleteVisitorLog(vo);
-		return "getVisitorLogList.do";
+		return "/getVisitorLog";
 	}
 	
 
