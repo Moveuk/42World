@@ -18,6 +18,7 @@
 <script src="${pageContext.request.contextPath}/resources/js/jquery-ui.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/jquery.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/minihome/photo.js"></script>
 </head>
 <body>
 	<div class="back">
@@ -33,7 +34,7 @@
 						</div>
 					</div>
 					<div class="bottom tab_content">
-						<%@ include file="./tab/home.jsp"%>
+						<%-- <%@ include file="../minihome/tab/home.jsp"%> --%>
 					</div>
 				</div>
 			</div>

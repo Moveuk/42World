@@ -21,3 +21,10 @@ $(function () {
         return false;
     });
 })
+$(function () {
+    $(".photoFolders li a").click(function () {
+        var folder = $(this).children('span').html();
+        $(".photo_content input[name=kind]").attr('value', folder);
+
+    })
+})

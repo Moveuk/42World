@@ -66,11 +66,9 @@
 													<input type="text" value="" name="title" id="title">
 												</div>
 												<div class="AtagButton">
-													<a href="#">수정</a>
-													|
-													<a href="#">이동</a>
-													|
-													<a href="#">삭제</a>
+													<button class="boardButton" onclick="">수정</button>
+													<button class="boardButton" onclick="">이동</button>
+													<button class="boardButton" onclick="">삭제</button>
 												</div>
 											</div>
 											<div class="content">
@@ -127,11 +125,9 @@
 													<input type="text" value="" name="title" id="title" readonly>
 												</div>
 												<div class="AtagButton">
-													<a href="#">수정</a>
-													|
-													<a href="#">이동</a>
-													|
-													<a href="#">삭제</a>
+													<button class="boardButton" onclick="">수정</button>
+													<button class="boardButton" onclick="">이동</button>
+													<button class="boardButton" onclick="">삭제</button>
 												</div>
 											</div>
 											<div class="content">
@@ -188,11 +184,9 @@
 													<input type="text" value="" name="title" id="title">
 												</div>
 												<div class="AtagButton">
-													<a href="#">수정</a>
-													|
-													<a href="#">이동</a>
-													|
-													<a href="#">삭제</a>
+													<button class="boardButton" onclick="">수정</button>
+													<button class="boardButton" onclick="">이동</button>
+													<button class="boardButton" onclick="">삭제</button>
 												</div>
 											</div>
 											<div class="content">
