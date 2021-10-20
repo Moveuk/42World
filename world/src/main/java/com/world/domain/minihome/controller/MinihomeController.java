@@ -21,10 +21,6 @@ public class MinihomeController {
 		return "/minihome/tab/profile";
 	}
 	
-	@RequestMapping("/photo")
-	public String loadPhoto() {
-		return "/minihome/tab/photo";
-	}
 	
 	@RequestMapping("/video")
 	public String loadVideo() {

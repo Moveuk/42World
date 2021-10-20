@@ -17,12 +17,12 @@ public class PhotoController {
 	@Autowired
 	PhotoService photoService;
 	
-	@RequestMapping("/photo/getPhotoList")
+	@RequestMapping("/photo")
 	public String getPhotoList(PhotoVO vo, Model model) {
 		System.out.println("run PhotoController getPhotoList()");
 		
 		model.addAttribute("photoList", photoService.getPhotoList());
-		return "/minihome/photoList";
+		return "/minihome/tab/photo";
 	}
 	
 	

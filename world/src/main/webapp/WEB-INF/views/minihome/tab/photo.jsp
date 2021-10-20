@@ -26,15 +26,14 @@
 	<div class="rightContent">
 		
 			<div id="photoFolder1" class="photo_content">
+			<c:forEach items="${photoList}" var="photoVO">
 				<input type="text" value="기본 사진첩" name="kind" id="kind" readonly>
 				<input type="button" value="사진추가" name="addBoard"
 					onclick="writingBoard()">
 				<div class="photoForm">
 					<div class="photoTitle">
-						<input type="text" name="photoTitleInput" id="photoTitleInput" value="${photoList.title}" readonly>
-						<c:forEach items="${photoList}" var="photoVO">
-							<a href="#"${photoVO.title}></a>
-						</c:forEach>
+						<input type="text" name="photoTitleInput" id="photoTitleInput" value="${photoVO.title}" readonly>
+						
 					</div>
 					<div class="img">
 						<img src="/resources/img/dotoriimg1.png">
@@ -88,6 +87,7 @@
 					</div>
 				</div>
 
+						</c:forEach>
 			</div>
 
 		<div id="photoFolder2" class="photo_content">
