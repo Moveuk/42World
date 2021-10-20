@@ -3,22 +3,22 @@
 	<div class="rightHomeTab">
 		<ul class="tabs">
 			<li>
-				<a href="Home">HOME</a>
+				<a href="home">HOME</a>
 			</li>
 			<li>
-				<a href="Profile">PROFILE</a>
+				<a href="profile">PROFILE</a>
 			</li>
 			<li>
-				<a href="Photo">PHOTO</a>
+				<a href="photo">PHOTO</a>
 			</li>
 			<li>
-				<a href="Video">VIDEO</a>
+				<a href="video">VIDEO</a>
 			</li>
 			<li>
-				<a href="Board">BOARD</a>
+				<a href="board">BOARD</a>
 			</li>
 			<li>
-				<a href="Visitors">VISITORS</a>
+				<a href="visitors">VISITORS</a>
 			</li>
 		</ul>
 	</div>

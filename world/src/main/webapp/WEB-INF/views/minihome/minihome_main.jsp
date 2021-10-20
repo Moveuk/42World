@@ -6,18 +6,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" type="text/css" href="/resources/css/minihomepage.css">
-<link rel="stylesheet" type="text/css" href="/resources/css/home.css">
-<link rel="stylesheet" type="text/css" href="/resources/css/profile.css">
-<link rel="stylesheet" type="text/css" href="/resources/css/photo.css">
-<link rel="stylesheet" type="text/css" href="/resources/css/video.css">
-<link rel="stylesheet" type="text/css" href="/resources/css/visitors.css">
-<link rel="stylesheet" type="text/css" href="/resources/css/board.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/minihomepage.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/home.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/profile.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/photo.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/video.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/visitors.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/board.css">
 <title>Document</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="/resources/js/jquery-ui.min.js"></script>
-<script src="/resources/js/jquery.js"></script>
-<script src="/resources/js/main.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/jquery-ui.min.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/jquery.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
 </head>
 <body>
 	<div class="back">
@@ -33,18 +33,7 @@
 						</div>
 					</div>
 					<div class="bottom tab_content">
-						<%-- 홈 왼쪽탭 --%>
-						<div class="left">
-							<div class="leftContent">
-								<%@ include file="/minihome/left/leftHome.jsp"%>
-							</div>
-						</div>
-						<%-- 홈 오른쪽탭 --%>
-						<div class="right">
-							<div class="rightContent">
-								<%@ include file="/minihome/right/rightHome.jsp"%>
-							</div>
-						</div>
+						<%@ include file="./tab/home.jsp"%>
 					</div>
 				</div>
 			</div>
