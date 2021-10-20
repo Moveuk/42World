@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<script src="${pageContext.request.contextPath}/resources/js/minihome/photo.js"></script>
 						<div class="left">
 							<div class="leftContent">
 								<p class="photoTitle">Photo</p>
@@ -33,11 +34,9 @@
 											<img src="/resources/img/dotoriimg1.png">
 										</div>
 										<div class="photoFooter">
-											<a href="#">수정</a>
-											|
-											<a href="#">이동</a>
-											|
-											<a href="#">삭제</a>
+											<button class="photoButton" onclick="">수정</button>
+											<button class="photoButton" onclick="">이동</button>
+											<button class="photoButton" onclick="">삭제</button>
 										</div>
 										<div class="comment">
 											<div class="commentForm">
@@ -67,11 +66,9 @@
 											<img src="/resources/img/dotoriimg2.png">
 										</div>
 										<div class="photoFooter">
-											<a href="#">수정</a>
-											|
-											<a href="#">이동</a>
-											|
-											<a href="#">삭제</a>
+											<button class="photoButton" onclick="">수정</button>
+											<button class="photoButton" onclick="">이동</button>
+											<button class="photoButton" onclick="">삭제</button>
 										</div>
 										<div class="comment">
 											<div class="commentForm">
@@ -103,11 +100,9 @@
 											<img src="/resources/img/dotoriimg2.png">
 										</div>
 										<div class="photoFooter">
-											<a href="#">수정</a>
-											|
-											<a href="#">이동</a>
-											|
-											<a href="#">삭제</a>
+											<button class="photoButton" onclick="">수정</button>
+											<button class="photoButton" onclick="">이동</button>
+											<button class="photoButton" onclick="">삭제</button>
 										</div>
 										<div class="comment">
 											<div class="commentForm">

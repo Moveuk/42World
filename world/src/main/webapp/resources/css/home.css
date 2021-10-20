@@ -1,3 +1,4 @@
+
 .left #mainImg{
     width:190px;
     height: 190px;
@@ -88,21 +89,134 @@
     padding: 5px 7px;
 } 
 
-.right #updateNews{
+.rightHome .tabHomeNew{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+
+.rightHome #updateNews{
     color:dimgray;
     margin-left: 7%;
 }
-.right .tabHomeNew{
+
+.rightHome .tabHomeNew{
     border-bottom:rgb(150, 150, 150) 2px solid;
-    border-width: 30%;
+}
+.rightHome .tabHomeNew .leftul li{
+    list-style: none;
+}
+.rightHome .tabHomeNew .leftul li a{
+    text-decoration-line: none;
+    color:black;
 }
 
-.right .tabHomeStoryRoom p{
-    color:dimgray;
-    margin-left: 8%;
-    margin-bottom: 1%;
-    margin-top: 1%;
+.rightHome .recentArticle ul{
+	display: grid;
+	grid-template-columns: 1fr 3fr;
 }
+.rightHome .tabHomeNew #newlyButtonPhoto{
+    border: mediumseagreen 1px solid;
+    background-color: mediumseagreen;
+    color: white;
+    border-radius: 5px;
+}
+.rightHome .tabHomeNew #newlyButtonVideo{
+    border: rgb(60, 78, 179) 1px solid;
+    background-color: rgb(60, 78, 179);
+    color: white;
+    border-radius: 5px;
+}
+.rightHome .tabHomeNew #newlyButtonboard{
+    border: rgb(189, 69, 69) 1px solid;
+    background-color: rgb(189, 69, 69) ;
+    color: white;
+    border-radius: 5px;
+}
+.rightHome .updateCategory ul{
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+}
+.rightHome .updateCategory li{
+    list-style: none;
+}
+
+.rightHome .updateCategory #rightNewlyButton{
+    border: rgb(214, 148, 24) 1px solid;
+    background-color: rgb(214, 148, 24);
+    color: white;
+    border-radius: 5px;
+    margin:0;
+}
+.rightHome .tabHomeStoryRoom p{
+    text-align:center;
+    color:dimgray;
+}
+
+.rightHome .tabHomeStoryRoom{
+    margin-left:30px;
+    width: 600px;
+    height: 400px;
+    border-bottom: dimgray 1px solid;
+}
+
+
+.rightHome .tabHomeStoryRoom .miniroom{
+    display: block;
+    top:0px;
+    left: 0px;
+    position:relative;
+}
+.rightHome .tabHomeStoryRoom .minimi{
+    display: block;
+    top:150px;
+    left: 0px;
+    position:relative;
+}
+.rightHome .tabHomeStoryRoom #minimiImg{
+    top:20px;
+    left: 250px;
+    width:90px;
+    position:absolute;
+    z-index: 2;
+}
+.rightHome .tabHomeStoryRoom #miniroomBackImg{
+    position:absolute;
+  
+    z-index:2;
+}  
+.rightHome .comment{
+     width: 600px;
+     height: 100%;
+ } 
+.rightHome .comment .commentHeader{
+	display:grid;
+	grid-template-rows: 1fr 1fr;
+	margin-left:25px;
+} 
+.rightHome .comment .commentTitle p{
+      color:rgb(89, 157, 226);
+      font-weight: bolder;
+      font-size:20px;
+	margin-bottom:15px;
+  }
+  .rightHome .comment .commentList ul li{
+	margin:1px 0;
+  }
+  
+.rightHome .comment .commentForm {
+    border-style:solid;
+    border-width: 2px 2px 2px 8px; 
+    padding: 12px; 
+    word-break: break-all;
+    border-color:rgb(89, 157, 226) ;
+    width:550px;
+}
+/*
+.rightHome .comment .commentForm{
+	display:grid;
+	grid-template-columns: 1fr 3fr 1fr;
+
 .right .tabHomeNew .left{
     width:40%;
     border-top:rgb(150, 150, 150) 2px solid;
@@ -113,29 +227,6 @@
 .right .tabHomeNew .left .leftul{
     
     -webkit-padding-start: 0;
-}
-.right .tabHomeNew .left li{
-    text-decoration-line: none;
-    list-style: none;
-    height: 30px;
-}
-.right .tabHomeNew .left #newlyButtonPhoto{
-    border: mediumseagreen 1px solid;
-    background-color: mediumseagreen;
-    color: white;
-    border-radius: 5px;
-}
-.right .tabHomeNew .left #newlyButtonVideo{
-    border: rgb(60, 78, 179) 1px solid;
-    background-color: rgb(60, 78, 179);
-    color: white;
-    border-radius: 5px;
-}
-.right .tabHomeNew .left #newlyButtonboard{
-    border: rgb(189, 69, 69) 1px solid;
-    background-color: rgb(189, 69, 69) ;
-    color: white;
-    border-radius: 5px;
 }
 .right .tabHomeNew .left a{
     text-decoration-line: none;
@@ -163,57 +254,6 @@
 
 } 
  
-.right .tabHomeNew .right #rightNewlyButton{
-    border: rgb(214, 148, 24) 1px solid;
-    background-color: rgb(214, 148, 24);
-    color: white;
-    border-radius: 5px;
-    margin:0;
-}
-.right .tabHomeStoryRoom{
-    text-align: center;
-    width: 100%;
-    height: 80%;
-    border-bottom: dimgray 1px solid;
-}
-
-
-
-.right .tabHomeStoryRoom .miniroom{
-    display: block;
-    top:0px;
-    left: 0px;
-    position:relative;
-}
-.right .tabHomeStoryRoom .minimi{
-    display: block;
-    top:150px;
-    left: 0px;
-    position:relative;
-}
-.right .tabHomeStoryRoom #minimiImg{
-    top:40%;
-    left: 40%;
-    width:15%;
-    position:absolute;
-    z-index: 2;
-}
-.right .tabHomeStoryRoom #miniroomBackImg{
-    position:absolute;
-    top:40%;
-    left:5%;
-    z-index:2;
-} 
-
-.right .comment{
-     width: 100%;
-     height: 100%;
- }
-.right .comment .commentTitle p{
-      color:rgb(89, 157, 226);
-      font-weight: bolder;
-      margin-left: 3%;
-  }
 .right .comment .commentForm {
     border-style:solid;
     border-width: 2px 2px 2px 8px; 
@@ -264,4 +304,4 @@
 .right .comment .commentList a{
     color:dodgerblue;
     text-decoration-line:none;
-}
+}*/
