@@ -14,7 +14,7 @@
   	</insert>
   
   <select id="getPhotoList" resultType="photo">
-  		select * from photo 
+  		select * from photo order by photoNo ASC
   	</select>
  	
 </mapper>

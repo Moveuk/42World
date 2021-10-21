@@ -29,6 +29,7 @@
 		<typeAlias alias="member" type="com.world.domain.main.vo.MemberVO" />
 		<typeAlias alias="visitorLog" type="com.world.domain.minihome.vo.VisitorLogVO" />
 		<typeAlias alias="photo" type="com.world.domain.minihome.vo.PhotoVO" />
+		<typeAlias alias="reply" type="com.world.domain.minihome.vo.ReplyVO" />
 	</typeAliases>
 
 </configuration>

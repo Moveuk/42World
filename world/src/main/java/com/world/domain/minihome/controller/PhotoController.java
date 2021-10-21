@@ -26,6 +26,7 @@ public class PhotoController {
 	}
 	
 	
+	
 	@RequestMapping("/photo/insertPhoto")
 	public String insertPhoto(HttpServletRequest req, PhotoVO vo, Model model) throws IllegalStateException{
 		

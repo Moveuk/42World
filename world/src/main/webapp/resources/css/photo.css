@@ -48,6 +48,13 @@
     margin:10px 0 10px 0;
     text-align: center;
 }
+.right .photoForm .content{
+	text-align:center;
+}
+
+.right .photoForm .content p{
+	font-size:10px;
+}
 .right .photoForm .photoFooter{
     text-align: right;
     margin-right: 10px;
