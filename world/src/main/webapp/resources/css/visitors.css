@@ -120,6 +120,8 @@
 /* 내가 방명록 작성할 때 - 끝 */
 
 /* 다른 사람이 쓴 방명록 - 시작*/
+
+
 .visitor_content2 textarea {
 	font-size: 20px;
 }
@@ -128,9 +130,15 @@
 	height: 50px;
 	padding-bottom: 5px;
 	background-color: rgb(243, 241, 241);
+	display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
-.visitor_top2_table {
+.visitor_top2 a:hover {
+	color: orange;
+}
+
+/* .visitor_top2_table {
 	width: 100%;
 }
 
@@ -168,14 +176,11 @@
 	color: rgb(117, 116, 116);
 }
 
-.visitor_top2 a:hover {
-	color: orange;
-}
 
 .visitor_top2_ul li {
 	list-style-type: none;
 	display: inline;
-}
+} */
 
 .visitor_content2 {
 	height: 30%;

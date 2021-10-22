@@ -40,17 +40,11 @@ public class VisitorLogController {
 		model.addAttribute("VisitorLogList", visitorLogService.getVisitorLogList());
 		return "/minihome/tab/visitors";
 	}
-
-	@RequestMapping("/updateVisitorLog")
-	public String updateVisitorLog(VisitorLogVO vo) {
-		visitorLogService.updateVisitorLog(vo);
-		return "/getVisitorLog";
-	}
 	
-	@RequestMapping("/deleteVisitorLog")
+	@RequestMapping("/visitors/deleteVisitorLog")
 	public String deleteVisitorLog(VisitorLogVO vo) {
 		visitorLogService.deleteVisitorLog(vo);
-		return "/getVisitorLog";
+		return "/visitors";
 	}
 	
 

@@ -11,7 +11,6 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/profile.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/photo.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/video.css">
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/visitors.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/board.css">
 <title>Document</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -34,11 +33,8 @@
 						</div>
 					</div>
 					<div class="bottom tab_content">
-<<<<<<< HEAD
 						<%-- 자바 스크립트로 처리 --%>
-=======
 						<%-- <%@ include file="../minihome/tab/home.jsp"%> --%>
->>>>>>> 6245ede7bf3d44a4e4aeabaedaffca5e092fbef7
 					</div>
 				</div>
 			</div>
