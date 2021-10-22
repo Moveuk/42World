@@ -32,7 +32,14 @@
 	<servlet-mapping>
 		<servlet-name>appServlet</servlet-name>
 		<!-- /로 시작하면 서블릿 작동 -> 들어오는 모든 url 호출에 반응하겠다는 의미. -->
-		<url-pattern>/</url-pattern>
+		<url-pattern>/home/*</url-pattern>
+		<url-pattern>/profile/*</url-pattern>
+		<url-pattern>/photo/*</url-pattern>
+		<url-pattern>/video/*</url-pattern>
+		<url-pattern>/board/*</url-pattern>
+		<url-pattern>/visitors/*</url-pattern>
+		<url-pattern>/admin/*</url-pattern>
+		<url-pattern>/openMinihome/*</url-pattern>
 	</servlet-mapping>
 
 	<!-- 한글 처리 코드 -->

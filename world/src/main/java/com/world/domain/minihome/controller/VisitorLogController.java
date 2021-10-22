@@ -31,15 +31,10 @@ public class VisitorLogController {
 	 * "/minihome/VisitorLogList"; }
 	 */
 	
-	@RequestMapping("/insertVisitorLog")
+	@RequestMapping("/visitors/insertVisitorsLog")
 	public String insertVisitorLog(HttpServletRequest req, VisitorLogVO vo, Model model) throws IllegalStateException{
 		
 		System.out.println("VisitorLogController insertVisitorLog start : " );
-		
-		String pwd = req.getParameter("pwd");
-		System.out.println("pwd : "+pwd );
-		
-		System.out.println("VisitorLogController insertVisitorLog : "+vo.toString() );
 		
 		visitorLogService.insertVisitorLog(vo);
 		model.addAttribute("VisitorLogList", visitorLogService.getVisitorLogList());

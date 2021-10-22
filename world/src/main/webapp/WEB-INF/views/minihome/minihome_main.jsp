@@ -18,6 +18,7 @@
 <script src="${pageContext.request.contextPath}/resources/js/jquery-ui.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/jquery.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/minihome/photo.js"></script>
 </head>
 <body>
 	<div class="back">
@@ -33,7 +34,11 @@
 						</div>
 					</div>
 					<div class="bottom tab_content">
+<<<<<<< HEAD
 						<%-- 자바 스크립트로 처리 --%>
+=======
+						<%-- <%@ include file="../minihome/tab/home.jsp"%> --%>
+>>>>>>> 6245ede7bf3d44a4e4aeabaedaffca5e092fbef7
 					</div>
 				</div>
 			</div>

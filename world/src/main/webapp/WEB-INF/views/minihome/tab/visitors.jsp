@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<script src="${pageContext.request.contextPath}/resources/js/minihome/visitors.js"></script>
 <div class="left">
 	<div class="leftContent">
 		<img src="/resources/img/logo.jpg" name="mainImg" id="mainImg" alt="mainImg">
@@ -38,33 +39,37 @@
 					</table>
 				</div>
 				<div class="visitor_content">
-					<div class="visitor_content_minimi">
-						<img src="/resources/img/minimi2.png" alt="미니미">
-					</div>
-					<div class="visitor_content_text">
-						<textarea>내용 작성하는 공간</textarea>
-					</div>
-					<div class="visitor_content_bottom">
-						<table>
-							<tr>
-								<td class="visitor_content_bottom_td_left">
-									미니미
-									<a href="#">[설정]</a>
-								</td>
-								<td class="visitor_content_bottom_td_right">
-									<input type="checkbox">
-									텍스티콘?&nbsp;&nbsp;
-									<button>확인</button>
-								</td>
-							</tr>
-						</table>
-					</div>
+					<form id="insertVisitorsLogForm" action="visitors/insertVisitorsLog" method="post">
+						<input type="hidden" name="ownerId" value="${session.userId }">
+						<input type="hidden" name="writerId" value="${session.userId }">
+						<div class="visitor_content_minimi">
+							<img src="/resources/img/minimi2.png" alt="미니미">
+						</div>
+						<div class="visitor_content_text">
+							<textarea name="content">내용 작성하는 공간</textarea>
+						</div>
+						<div class="visitor_content_bottom">
+							<table>
+								<tr>
+									<td class="visitor_content_bottom_td_left">
+										미니미
+										<a href="#">[설정]</a>
+									</td>
+									<td class="visitor_content_bottom_td_right">
+										<input type="checkbox">
+										텍스티콘?&nbsp;&nbsp;
+										<button onclick="">확인</button>
+										<input class="submit" type="submit" value="확인">
+									</td>
+								</tr>
+							</table>
+						</div>
+					</form>
 				</div>
-				<!-- 내가 방명록 작성할 때 - 끝-->
+				<%-- visitors List --%>
 				<c:forEach items="${visitorLogList }" var="visitorLog" varStatus="status">
 					<br>
 					<br>
-					<!-- 다른 사람이 쓴 방명록 -->
 					<div class="visitor_top2">
 						<table class="visitor_top2_table">
 							<tr>
@@ -79,7 +84,7 @@
 									<p>${visitorLog.writeDate }</p>
 								</td>
 								<td class="visitor_top2_table_right">
-								<!-- 홈페이지 주인장일때 보임-->
+									<!-- 홈페이지 주인장일때 보임-->
 									<ul class="visitor_top2_ul">
 										<li>
 											<a href="#">비밀로 하기</a>

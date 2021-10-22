@@ -39,7 +39,7 @@
 	text-align: right;
 }
 
-.visitor_top_table_right button {
+.visitor_top_table_right .button {
 	background-color: white;
 	border-radius: 4px;
 	border: 1px solid rgb(189, 186, 186);

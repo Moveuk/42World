@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+  
+<mapper namespace="PhotoDAO">
+
+  	
+  	<insert id="insertPhoto"  parameterType="photo">
+  		insert into photo
+  		values(seq_photo.nextval,#{userId},#{uploadDate},#{folder},#{title},#{location},#{content},0)
+  	</insert>
+  
+  <select id="getPhotoList" resultType="photo">
+  		select * from photo order by photoNo ASC
+  	</select>
+ 	
+</mapper>

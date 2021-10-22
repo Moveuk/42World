@@ -8,12 +8,12 @@
 <mapper namespace="VisitorLogDAO">
  
   	<select id="getVisitorLogList" resultType="visitorLog">
-  		select * from visitorlog 
+  		select * from visitorlog order by visitorLogNo desc 
   	</select>
   	
   	<insert id="insertVisitorLog"  parameterType="visitorLog">
-  		insert into VisitorLog (seq_visitorLog,ownerId,writerId,type,content)
-  		values(seq_visitorLog.NEXTVAL,#{ownerId},#{writerId},#{type},#{content})
+  		insert into VisitorLog (visitorLogNo,ownerId,writerId,type,content)
+  		values(SEQ_VISITORLOG.NEXTVAL,#{ownerId},#{writerId},#{type},#{content})
   	</insert>
   	
   	<update id="updateVisitorLog" parameterType="visitorLog">
