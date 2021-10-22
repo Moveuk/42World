@@ -24,7 +24,6 @@ public class PhotoDAO {
 		System.out.println("run PhotoDAO getPhotoList()");
 		return sqlSession.selectList("PhotoDAO.getPhotoList");
 	}
-	
 	public void makeFolder(PhotoVO vo) {
 		String folderPath="E:\\lib\\42World\\42World\\world\\src\\main\\webapp\\WEB-INF\\views\\minihome\\tab";
 		File Folder = new File(folderPath);
