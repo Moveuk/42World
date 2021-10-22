@@ -72,10 +72,10 @@ function folder(){
 								<input type="text" name="photoTitleInput" id="photoTitleInput" value="${photoVO.title}" readonly>
 							</div>
 							<div class="img">
-								<img src="/resources/photo/${photoVO.location}">
+								<img src="../resources/photo/${photoVO.location}">
 							</div>
 							<div class="content">
-								<p>${photoVO.content }</p>
+								<p>내용</p>
 							</div>
 							<div class="photoFooter">
 								<button class="photoButton" onclick="">수정</button>
@@ -89,13 +89,8 @@ function folder(){
 								</div>
 								<div class="commentList">
 									<ul>
-										<c:forEach items="${replyList}" var="reply">
-										
-										<li>${reply.content}s <a href="#">&nbsp;&nbsp;${reply.writerId}s</a>
+										<li>dd<a href="#">&nbsp;&nbsp;</a>
 										</li>
-										<li>퍼가요~♡ <a href="#">&nbsp;&nbsp;뽀로로</a>
-										</li>
-										</c:forEach>
 									</ul>
 								</div>
 							</div>

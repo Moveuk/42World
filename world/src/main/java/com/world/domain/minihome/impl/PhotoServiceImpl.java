@@ -23,4 +23,5 @@ public class PhotoServiceImpl implements PhotoService {
 	public List<PhotoVO> getPhotoList() {
 		return photoDAO.getPhotoList();
 	}
+
 }

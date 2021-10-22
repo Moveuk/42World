@@ -22,6 +22,8 @@ public class PhotoController {
 		System.out.println("run PhotoController getPhotoList()");
 		
 		model.addAttribute("photoList", photoService.getPhotoList());
+		
+		
 		return "/minihome/tab/photo";
 	}
 	
