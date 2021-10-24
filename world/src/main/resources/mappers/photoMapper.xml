@@ -7,12 +7,20 @@
   
 <mapper namespace="PhotoDAO">
 
-  	
+  <!-- 	<resultMap id="resultGetFile" type="PhotoVO">
+  		<result property="photoNo" column="photono"/>
+  		<result property="userId" column="userid"/>
+  		<result property="uploadDate" column="uploaddate"/>
+  		<result property="title" column="title"/>
+  		<result property="location" column="location"/>
+  		<result property="photoContent" column="photocontent"/>
+  		<result property="cnt" column="cnt"/>
+  		<result property="folder" column="folder"/>
+  	</resultMap>  -->
   <select id="getPhotoList" resultType="photo">
-  		select r.replyNo,r.ownerId,r.replyContent,p.photoNo,p.userId,p.uploadDate,p.folder,p.title,p.location,p.photoContent 
-  		from reply r,photo p 
-  		where r.photoNo=p.photoNo
+  		select * from photo where folder='1'
   	</select>
+  	
   	<select id="getReplyList" resultType="photo" parameterType="photo">
   		select replyContent,p.photono
   		from reply r,photo p

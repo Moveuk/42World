@@ -16,6 +16,7 @@ public class PhotoVO {
 	private String location;
 	private String photoContent;
 	private int cnt;
+	private String folder;
 	
 	
 	

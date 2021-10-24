@@ -2,7 +2,8 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<script>
+<script type="text/javascript">
+
 $(function () {
     $(".photo_content").hide();
     $(".photoFolders li:first").addClass("active").show();
@@ -10,50 +11,39 @@ $(function () {
     $(".photo_content:first").show();
 
     $(".photoFolders li").click(function () {
-
-        $(".photoFolders li").removeClass("active");
-        $(".photoFolders img").attr('src', '../resources/img/close.png');
-        $(this).addClass("active");
-        $(this).children("img").attr('src', '../resources/img/open.png');
-        $(".photo_content").hide();
+    	 $(this).addClass("active");
+	        $(".photoFolders li").removeClass("active");
+	        $(".photoFolders img").attr('src', '../resources/img/close.png');
+	        $(this).children("img").attr('src', '../resources/img/open.png');
+	        $(".photo_content").hide();
+    	
 
 
         var activeTab = $(this).find("a").attr("href");
-
+       
 
         $(activeTab).fadeIn();
 
         return false;
     });
 })
-$(function () {
-    $(".photoFolders li a").click(function () {
-        var folder = $(this).children('span').html();
-        $(".photo_content input[name=kind]").attr('value', folder);
-
-    })
-})
-
-function folder(){
-	var po = JSON.parse(${photoList});
-	alert(po[2].content );
-	
-	
-	
+function form_submit(){
+	open.window('../minihome/addPhoto.html','ap','width=600,height=800');
 }
-		
+
 </script>
 <div class="left">
 	<div class="leftContent">
 		<p class="photoTitle">Photo</p>
+		
 		<ul class="photoFolders">
-			<li><img src="/resources/img/open.png"> <a href="#photoFolder1"><span>기본 사진첩</span></a></li>
+			<li><img src="/resources/img/open.png"> <a href="#photoFolder1"><span>1</span></a></li>
 		</ul>
 		<ul class="photoFolders">
-			<li><img src="/resources/img/close.png"> <a href="#photoFolder2"><span>자유 사진첩</span></a></li>
+			<li><img src="/resources/img/close.png"> <a href="#photoFolder2"><span>2</span></a></li>
 		</ul>
 		<ul class="photoFolders">
-			<li><img src="/resources/img/close.png"> <a href="#photoFolder3"><span>풍경 사진첩</span></a></li>
+			<li><img src="/resources/img/close.png"> <a href="#photoFolder3"><span>3</span></a></li>
 		</ul>
 		
 	</div>
@@ -64,7 +54,15 @@ function folder(){
 	<div class="rightContent">
 			<div id="photoFolder1" class="photo_content">
 				<input type="text" value="기본 사진첩" name="kind" id="kind" readonly>
-				<input type="button" value="사진추가" name="addBoard" onclick="writingBoard()">
+				<input type="button" value="사진추가" name="addBoard" onclick="window.open('../minihome/addPhoto.html','ap','width=600,height=800')">
+				 <input type="button" onclick="window.open('uploadPhoto','ap','width=600,height=800')" value="사진추가하기">
+				<%-- <input type="button" onclick="window.open('../minihome/addPhoto.html','ap','width=600,height=800')" value="사진추가하기">
+				 <form action="upload" method="post" enctype="multipart/form-data">
+					<input type="file" name="uploadfile" placeholder="파일선택"/>
+					<input type="submit" value="업로드">
+					${msg}					
+				</form> 
+				--%>
 				<c:forEach items="${photoList}" var="photoVO">
 						
 						<div class="photoForm">
@@ -99,14 +97,16 @@ function folder(){
 				</c:forEach>
 			</div>
 
-		<!-- <div id="photoFolder2" class="photo_content">
+		 <div id="photoFolder2" class="photo_content">
 			<input type="text" value="" name="kind" id="kind">
+				<input type="button" value="사진추가d" name="addBoard" onclick="writingBoard()">
+					
 			<div class="photoForm">
 				<div class="photoTitle">
-					<input type="text" name="photoTitleInput" id="photoTitleInput" value="사진타이틀입니다" readonly>
+					<input type="text" name="photoTitleInput" id="photoTitleInput" value="dd" readonly>
 				</div>
 				<div class="img">
-					<img src="/resources/img/dotoriimg2.png">
+					<img src="../resources/photo/1.jpg">
 				</div>
 				<div class="photoFooter">
 					<button class="photoButton" onclick="">수정</button>
@@ -129,7 +129,7 @@ function folder(){
 				</div>
 			</div>
 		</div>
-		<div id="photoFolder3" class="photo_content">
+		<!--<div id="photoFolder3" class="photo_content">
 			<input type="text" value="" name="kind" id="kind">
 			<div class="photoForm">
 				<img src="/resources/img/friend.png">
