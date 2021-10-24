@@ -36,7 +36,7 @@ public class UploadController {
 			model.addAttribute("msg","File uploaded successfully");
 			mv.addObject("fileName",fileName);
 			
-			mv.setViewName("/minihome/tab/photo");
+			mv.setViewName("/minihome/minihome_main");
 		}else {
 			model.addAttribute("msg","can't use this file");
 		}

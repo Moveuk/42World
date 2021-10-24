@@ -6,13 +6,21 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<script>
+function
+send2() {
+	document.formm.action = "upload";
+	document.formm.submit(); 
+	$("#mainPhoto").get(0).click();
+}
+</script>
 <body>
 				
-
-
- 	<form action="upload" method="post" enctype="multipart/form-data">
+ 	<form name="formm" action="upload" method="post" enctype="multipart/form-data">
 		<input type="file" name="uploadfile" placeholder="파일선택"/>
-		<input type="submit" value="업로드">
+		<input type="button" onclick="send2()">
 	</form>
+	
+	
 </body>
 </html>

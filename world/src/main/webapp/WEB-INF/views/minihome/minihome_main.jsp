@@ -19,12 +19,20 @@
 <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/minihome/photo.js"></script>
 </head>
+
+<script>
+function
+send2() {
+	$("#mainPhoto").get(0).click();
+}
+</script>
 <body>
 	<div class="back">
 		<div class="blueBox">
 			<div class="dot">
 				<div class="whiteBox">
 					<div class="top">
+						<input type="button" onclick="send2()" value="test">
 						<div class="count">
 							<input type="text" name="count_today" id="count_today" value="today | total" readonly>
 						</div>
@@ -35,6 +43,8 @@
 					<div class="bottom tab_content">
 						<%-- 자바 스크립트로 처리 --%>
 						<%-- <%@ include file="../minihome/tab/home.jsp"%> --%>
+						
+					
 					</div>
 				</div>
 			</div>
