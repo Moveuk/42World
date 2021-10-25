@@ -9,9 +9,19 @@
 <script>
 function
 send2() {
-	document.formm.action = "upload";
+	
+	
+	
+	 document.formm.action = "upload";
 	document.formm.submit(); 
-	$("#mainPhoto").get(0).click();
+	window.open("about:blank", "_self").close();
+	/* opener.document.$(".tab_content").load("photo");
+	document.formm.close();
+	opener.focus(); */
+	
+	// 부모창 주소값 리다이렉트
+	// 자식창 종료 exit. close ....  
+	//$("#mainPhoto").get(0).click();
 }
 </script>
 <body>

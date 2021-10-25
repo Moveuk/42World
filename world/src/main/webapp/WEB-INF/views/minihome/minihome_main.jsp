@@ -21,11 +21,47 @@
 </head>
 
 <script>
-function
+function/*
 send2() {
-	$("#mainPhoto").get(0).click();
+	 document.formm.action = "photo";
+	document.formm.submit(); 
+	$(document.formm).setTimeout(function(){
+		 $("#mainPhoto").get(0).click();
+		  console.log('Works!');
+		 
+		}, 3000);
+
+ $.ajax({
+		type:"POST",
+		url:"photo",
+		data:"mainPhoto",
+		success function(data){
+			
+		} 
+	}) */
+	/* var form=$('#formm');
+ 	var formData = new FormData(form);
+ 	formData.append("fileObj",$("#uploadfile").files);
+ 	$.ajax({
+ 		url:photo,
+ 		processData:false,
+ 		contentType:false,
+ 		data:formData,
+ 		type:'POST',
+ 		success:function(result){
+ 			alert("업로드성공")
+ 		}
+ 	})
+ 	
+ 	event.preventDefault();
+ 	
+ 	var form=$('#formm');
+ 	var data = new FormData(form);
+ 	
+ 	
 }
-</script>
+*/
+</script> 
 <body>
 	<div class="back">
 		<div class="blueBox">
@@ -33,6 +69,13 @@ send2() {
 				<div class="whiteBox">
 					<div class="top">
 						<input type="button" onclick="send2()" value="test">
+						<!-- <form name="formm" action="photo" method="post" enctype="multipart/form-data">
+										<a href="photo" id="mainPhoto">PHOTO</a>
+		<input type="button" onclick="send2()">
+						
+		<input type="file" name="uploadfile" placeholder="파일선택"/>
+	</form>
+		<input type="button" onclick="send3()"> -->
 						<div class="count">
 							<input type="text" name="count_today" id="count_today" value="today | total" readonly>
 						</div>
@@ -41,6 +84,8 @@ send2() {
 						</div>
 					</div>
 					<div class="bottom tab_content">
+					
+					 	
 						<%-- 자바 스크립트로 처리 --%>
 						<%-- <%@ include file="../minihome/tab/home.jsp"%> --%>
 						

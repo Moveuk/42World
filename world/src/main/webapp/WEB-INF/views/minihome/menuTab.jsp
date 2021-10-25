@@ -9,7 +9,7 @@
 				<a href="profile">PROFILE</a>
 			</li>
 			<li>
-				<a href="photo" id="mainPhoto">PHOTO</a>
+				<a href="photo">PHOTO</a>
 			</li>
 			<li>
 				<a href="video">VIDEO</a>

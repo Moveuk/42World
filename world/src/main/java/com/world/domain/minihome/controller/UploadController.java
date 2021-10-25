@@ -18,17 +18,16 @@ import com.world.domain.minihome.impl.PhotoService;
 @Controller
 public class UploadController {
 	
-	PhotoService photoService;
 	@ResponseBody
 	@RequestMapping(value="/upload")
-	public ModelAndView upload(MultipartFile file, Model model,ModelAndView mv,MultipartHttpServletRequest request) throws IllegalStateException,IOException{
+	public void upload(MultipartFile file, Model model,ModelAndView mv,MultipartHttpServletRequest request) throws IllegalStateException,IOException{
 	
 		file = request.getFile("uploadfile");
 		
 		
 		String fileName=file.getOriginalFilename();
 		if(!file.getOriginalFilename().isEmpty()) {
-			file.transferTo(new File("E:\\lib\\42World\\42World\\world\\src\\main\\webapp\\resources\\photo",fileName));
+			file.transferTo(new File("D:\\lib\\42World\\world\\src\\main\\webapp\\resources\\photo",fileName));
 //			model.addAttribute("msg","File uploaded successfully");
 //			model.addAttribute("fileName",fileName);
 //			mv.setViewName("/photo");
@@ -40,7 +39,6 @@ public class UploadController {
 		}else {
 			model.addAttribute("msg","can't use this file");
 		}
-		return mv;
 		
 	}
 	
