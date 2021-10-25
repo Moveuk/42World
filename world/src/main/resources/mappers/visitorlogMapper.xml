@@ -12,8 +12,8 @@
   	</select>
   	
   	<insert id="insertVisitorLog"  parameterType="visitorLog">
-  		insert into VisitorLog (visitorLogNo,ownerId,writerId,type,content)
-  		values(SEQ_VISITORLOG.NEXTVAL,#{ownerId},#{writerId},#{type},#{content})
+  		insert into VisitorLog (ownerId,writerId,type,content)
+  		values(#{ownerId},#{writerId},#{type},#{content})
   	</insert>
   	
   	<update id="updateVisitorLog" parameterType="visitorLog">
@@ -25,6 +25,4 @@
   		delete visitorlog where 'visitorLogNo'=#{visitorLogNo}
   	</delete>
   	
-  
- 	
 </mapper>

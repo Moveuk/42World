@@ -16,10 +16,10 @@ $(function() {
 	});
 
 	// 방명록을 삭제할떄
-	$(".visitor_top2_ul a.visitor_delete").click(function(e) {
+	$(".visitor_top2 a.visitor_delete").click(function(e) {
+		console.log("삭제 실행");
 
 		e.preventDefault();
-			console.log("삭제 실행");
 		$.ajax({
 			type: "POST",
 			url: "visitors/deleteVisitorLog",

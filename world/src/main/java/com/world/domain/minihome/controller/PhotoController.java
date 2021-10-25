@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.world.domain.minihome.impl.PhotoService;
 import com.world.domain.minihome.vo.PhotoVO;
-import com.world.domain.minihome.vo.VisitorLogVO;
 
 @Controller
 public class PhotoController {
@@ -18,11 +17,12 @@ public class PhotoController {
 	PhotoService photoService;
 	
 	@RequestMapping("/photo")
-	public String getPhotoList(PhotoVO vo, Model model) {
+	public String getPhotoList(String folder,PhotoVO vo, Model model) {
 		System.out.println("run PhotoController getPhotoList()");
 		
-		model.addAttribute("photoList", photoService.getPhotoList());
-		
+		vo.setFolder(folder);
+
+		model.addAttribute("photoList", photoService.getPhotoList(vo));
 		
 		return "/minihome/tab/photo";
 	}
@@ -38,7 +38,6 @@ public class PhotoController {
 //		System.out.println("VisitorLogController insertVisitorLog : "+vo.toString() );
 		
 		photoService.insertPhoto(vo);
-		model.addAttribute("photoList", photoService.getPhotoList());
 		return "/minihome/photoList";
 	}
 

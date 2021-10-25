@@ -2,58 +2,19 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<script>
-$(function () {
-    $(".photo_content").hide();
-    $(".photoFolders li:first").addClass("active").show();
-    $(".photoFolders:first img").attr('src', '../resources/img/open.png');
-    $(".photo_content:first").show();
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/photo.css">
 
-    $(".photoFolders li").click(function () {
-
-        $(".photoFolders li").removeClass("active");
-        $(".photoFolders img").attr('src', '../resources/img/close.png');
-        $(this).addClass("active");
-        $(this).children("img").attr('src', '../resources/img/open.png');
-        $(".photo_content").hide();
-
-
-        var activeTab = $(this).find("a").attr("href");
-
-
-        $(activeTab).fadeIn();
-
-        return false;
-    });
-})
-$(function () {
-    $(".photoFolders li a").click(function () {
-        var folder = $(this).children('span').html();
-        $(".photo_content input[name=kind]").attr('value', folder);
-
-    })
-})
-
-function folder(){
-	var po = JSON.parse(${photoList});
-	alert(po[2].content );
-	
-	
-	
-}
-		
-</script>
 <div class="left">
 	<div class="leftContent">
 		<p class="photoTitle">Photo</p>
 		<ul class="photoFolders">
-			<li><img src="/resources/img/open.png"> <a href="#photoFolder1"><span>기본 사진첩</span></a></li>
+			<li><img src="/resources/img/open.png"> <a href="photo?folder='1">1</a></li>
 		</ul>
 		<ul class="photoFolders">
-			<li><img src="/resources/img/close.png"> <a href="#photoFolder2"><span>자유 사진첩</span></a></li>
+			<li><img src="/resources/img/close.png"> <a href="photo?folder='2'">2</a></li>
 		</ul>
 		<ul class="photoFolders">
-			<li><img src="/resources/img/close.png"> <a href="#photoFolder3"><span>풍경 사진첩</span></a></li>
+			<li><img src="/resources/img/close.png"> <a href="photo?folder='3'">3</a></li>
 		</ul>
 		
 	</div>

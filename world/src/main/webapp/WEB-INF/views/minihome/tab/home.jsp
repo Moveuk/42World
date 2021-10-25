@@ -103,7 +103,7 @@
 													name="miniroomBackImg">
 											</div>
 											<div class="minimi">
-												<img src="/resources/img/minimi.png" alt="minimiImg"
+												<img src="/resources/img/minimi/minimi.png" alt="minimiImg"
 													name="minimiImg" id="minimiImg">
 											</div>
 										</div>
