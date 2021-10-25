@@ -36,7 +36,7 @@ $(function () {
 
 function folder(){
 	var po = JSON.parse(${photoList});
-	alert(po[2].content );
+	
 	
 	
 	
