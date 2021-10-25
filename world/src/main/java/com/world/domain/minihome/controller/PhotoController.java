@@ -29,14 +29,14 @@ public class PhotoController {
 	public String getPhotoList(PhotoVO vo, Model model) {
 		System.out.println("run PhotoController getPhotoList()");
 		
+	
+
+		model.addAttribute("photoFolderList", photoService.getPhotoFolderList());
 		model.addAttribute("photoList", photoService.getPhotoList());
-		
-		
 		
 		return "/minihome/tab/photo";
 	}
-	
-	
+
 	
 //	@ResponseBody
 //	@RequestMapping(value="/photo",method=RequestMethod.GET)

@@ -35,17 +35,11 @@ function form_submit(){
 <div class="left">
 	<div class="leftContent">
 		<p class="photoTitle">Photo</p>
-		
-		<ul class="photoFolders">
-			<li><img src="/resources/img/open.png"> <a href="#photoFolder1"><span>1</span></a></li>
-		</ul>
-		<ul class="photoFolders">
-			<li><img src="/resources/img/close.png"> <a href="#photoFolder2"><span>2</span></a></li>
-		</ul>
-		<ul class="photoFolders">
-			<li><img src="/resources/img/close.png"> <a href="#photoFolder3"><span>3</span></a></li>
-		</ul>
-		
+		<c:forEach items="${photoFolderList}" var="photoFolderList" varStatus="status">
+			<ul class="photoFolders">
+				<li><img src="/resources/img/open.png"> <a href="#photoFolder${status.index+1}" ><span>${photoFolderList.folder}</span></a></li>
+			</ul>
+		</c:forEach>
 	</div>
 	<input type="button" value="폴더추가" name="addFolder" onclick="folder()">
 </div>

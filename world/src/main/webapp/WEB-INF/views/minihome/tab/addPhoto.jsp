@@ -7,30 +7,33 @@
 <title>Insert title here</title>
 </head>
 <script>
-function
-send2() {
-	
-	
-	
-	 document.formm.action = "upload";
-	document.formm.submit(); 
-	window.open("about:blank", "_self").close();
-	/* opener.document.$(".tab_content").load("photo");
-	document.formm.close();
-	opener.focus(); */
-	
-	// 부모창 주소값 리다이렉트
-	// 자식창 종료 exit. close ....  
-	//$("#mainPhoto").get(0).click();
-}
+	function setImage(event){
+		var reader = new FileReader();
+		reader.onload=function(event){
+			var img = document.createElement("img"); 
+			img.setAttribute("src", event.target.result);
+			document.querySelector("div#image_container").appendChild(img); 
+			}; 
+		reader.readAsDataURL(event.target.files[0]); }
+
 </script>
+ 
 <body>
 				
- 	<form name="formm" action="upload" method="post" enctype="multipart/form-data">
-		<input type="file" name="uploadfile" placeholder="파일선택"/>
-		<input type="button" onclick="send2()">
+ 	<form name="formm" id="formm" action="upload" method="post" enctype="multipart/form-data">
+ 	
+		<input type="file" name="uploadfile" placeholder="파일선택" onchange="setImage(event);"/>
+		
+	<div id="image_container"></div>
+		
+		제목 : <input type="text" name="uploadname" id="uploadname">
+		
+		폴더:<input type="text" value="${photoList.folder }">
+		
+		<input type="submit" id="btnUpload" onclick="send2()">
+		
+    
 	</form>
-	
 	
 </body>
 </html>

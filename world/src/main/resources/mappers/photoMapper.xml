@@ -17,6 +17,9 @@
   		<result property="cnt" column="cnt"/>
   		<result property="folder" column="folder"/>
   	</resultMap>  -->
+  	
+  	
+
   <select id="getPhotoList" resultType="photo">
   		select * from photo where folder='1'
   	</select>
@@ -25,6 +28,10 @@
   		select replyContent,p.photono
   		from reply r,photo p
   		where r.photoNo=p.photoNo and p.photoNo=#{photoNo}
+  	</select>
+  	
+  	  <select id="getPhotoFolderList" resultType="photo">
+		select distinct (folder)"folder" from photo order by folder asc
   	</select>
  	
 </mapper>

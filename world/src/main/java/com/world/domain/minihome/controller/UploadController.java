@@ -3,29 +3,36 @@ package com.world.domain.minihome.controller;
 import java.io.File;
 import java.io.IOException;
 
-import org.apache.ibatis.reflection.SystemMetaObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.world.domain.minihome.impl.PhotoService;
+import com.world.domain.minihome.impl.UploadService;
+import com.world.domain.minihome.vo.PhotoVO;
 
 @Controller
 public class UploadController {
-	
+	@Autowired
+	UploadService uploadService;
+	@Autowired
+	PhotoService photoService;
+		
 	@ResponseBody
 	@RequestMapping(value="/upload")
-	public void upload(MultipartFile file, Model model,ModelAndView mv,MultipartHttpServletRequest request) throws IllegalStateException,IOException{
+	public void upload(PhotoVO vo,MultipartFile file, Model model,ModelAndView mv,MultipartHttpServletRequest request) throws IllegalStateException,IOException{
 	
 		file = request.getFile("uploadfile");
 		
 		
 		String fileName=file.getOriginalFilename();
+		System.out.println(fileName);
+		
 		if(!file.getOriginalFilename().isEmpty()) {
 			file.transferTo(new File("D:\\lib\\42World\\world\\src\\main\\webapp\\resources\\photo",fileName));
 //			model.addAttribute("msg","File uploaded successfully");
@@ -35,10 +42,16 @@ public class UploadController {
 			model.addAttribute("msg","File uploaded successfully");
 			mv.addObject("fileName",fileName);
 			
+			System.out.println("run uploadController insertPhoto");
+			uploadService.insertPhoto(vo);
+			model.addAttribute("PhotoList",vo);
+			
 			mv.setViewName("/minihome/minihome_main");
 		}else {
 			model.addAttribute("msg","can't use this file");
 		}
+		
+		
 		
 	}
 	

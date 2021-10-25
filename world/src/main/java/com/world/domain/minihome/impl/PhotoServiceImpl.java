@@ -24,6 +24,11 @@ public class PhotoServiceImpl implements PhotoService {
 		return photoDAO.getPhotoList();
 	}
 
+	@Override
+	public List<PhotoVO> getPhotoFolderList() {
+		return photoDAO.getPhotoFolderList();
+	}
+
 
 	
 
