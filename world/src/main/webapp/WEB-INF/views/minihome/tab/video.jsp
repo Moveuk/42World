@@ -52,6 +52,9 @@
 							<a href="#">삭제</a>
 						</div>
 					</form>
+					<form action="" name="replyForm">
+						<input type="hidden" name="${video.videoNo }">
+					</form>
 					<div class="comment">
 						<div class="commentForm">
 							<span>댓글</span>
