@@ -29,6 +29,8 @@ function aj(){
 		url:
 	})
 } */
+
+/* 
 $(function () {
     $(".photo_content").hide();
     $(".photoFolders li:first").addClass("active").show();
@@ -61,7 +63,6 @@ $(function () {
 
     })
 })
-/* 
 function folder(){
 	var po = JSON.parse(${photoList});
 	alert(po[2].content );

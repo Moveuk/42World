@@ -90,9 +90,10 @@ body{
     grid-template-columns: 2.5fr 7.5fr;
 }
 .whiteBox .bottom .left{
-    border:rgb(179, 179, 179) solid 1px;
     border-radius:3%;
     box-sizing: border-box;
+      border:rgb(179, 179, 179) solid 1px;
+    
 }
 
 .whiteBox .bottom .left .leftContent{
@@ -103,9 +104,9 @@ body{
 .whiteBox .bottom .right {
     margin-left: 5px;
     margin-right: 10px;
-    border:rgb(179, 179, 179) solid 1px;
     border-radius:3%;
     box-sizing: border-box;
+      border:rgb(179, 179, 179) solid 1px;
 }
 
 .whiteBox .bottom .right .rightContent{

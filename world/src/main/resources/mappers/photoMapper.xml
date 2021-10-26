@@ -17,18 +17,25 @@
   		<result property="folder" column="folder"/>
   	</resultMap>  -->
   	
-  <select id="getPhotoList" resultType="photo">
-  		select * from photo where folder='1'
+  <select id="photo" resultType="photo">
+		select distinct (folder)"folder" from photo order by folder asc
+  	</select>
+  	 <select id="firstPhotoList" resultType="photo">
+		select * from photo where folder='2'
   	</select>
   	
-  	<select id="getReplyList" resultType="photo" parameterType="photo">
+  	<!-- <select id="getReplyList" resultType="photo" parameterType="photo">
   		select replyContent,p.photono
   		from reply r,photo p
   		where r.photoNo=p.photoNo and p.photoNo=#{photoNo}
+  	</select> -->
+  	
+  	  <select id="photoList" resultType="photo" parameterType="photo">
+  		select * from photo where folder=#{folder}
   	</select>
   	
-  	  <select id="getPhotoFolderList" resultType="photo">
-		select distinct (folder)"folder" from photo order by folder asc
+  	<select id="photoList1" resultType="photo" parameterType="photo">
+  		select * from photo where folder=#{value}
   	</select>
  	
 </mapper>

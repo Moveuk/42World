@@ -78,8 +78,8 @@ send2() {
 			<div class="dot">
 				<div class="whiteBox">
 					<div class="top">
-						<input type="button" onclick="send2()" value="test">
-						<!-- <form name="formm" action="photo" method="post" enctype="multipart/form-data">
+						<!-- <input type="button" onclick="send2()" value="test">
+						<form name="formm" action="photo" method="post" enctype="multipart/form-data">
 										<a href="photo" id="mainPhoto">PHOTO</a>
 		<input type="button" onclick="send2()">
 						
