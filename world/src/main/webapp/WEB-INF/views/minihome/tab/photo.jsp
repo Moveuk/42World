@@ -112,44 +112,5 @@
 				</c:forEach>
 			</div>
 		</c:forEach>
-
-		<!--  <div id="photoFolder2" class="photo_content">
-			<input type="text" value="" name="kind" id="kind">
-				<input type="button" value="사진추가d" name="addBoard" onclick="writingBoard()">
-					
-			<div class="photoForm">
-				<div class="photoTitle">
-					<input type="text" name="photoTitleInput" id="photoTitleInput" value="dd" readonly>
-				</div>
-				<div class="img">
-					<img src="../resources/photo/1.jpg">
-				</div>
-				<div class="photoFooter">
-					<button class="photoButton" onclick="">수정</button>
-					<button class="photoButton" onclick="">이동</button>
-					<button class="photoButton" onclick="">삭제</button>
-				</div>
-				<div class="comment">
-					<div class="commentForm">
-						<span>댓글</span> <input type="text" name="commentInput" placeholder="댓글을 작성해주세요" id="commentInput" name="commentInput">
-						<input type="button" onclick="comentSubmit()" name="commentSubmit" id="commentSubmit" value="확인">
-					</div>
-					<div class="commentList">
-						<ul>
-							<li>도도리 귀여워요~ <a href="#">&nbsp;&nbsp;홍길동</a>
-							</li>
-							<li>퍼가요~♡ <a href="#">&nbsp;&nbsp;뽀로로</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div> -->
-		<!--<div id="photoFolder3" class="photo_content">
-			<input type="text" value="" name="kind" id="kind">
-			<div class="photoForm">
-				<img src="/resources/img/friend.png">
-			</div>
-		</div> -->
 	</div>
 </div>

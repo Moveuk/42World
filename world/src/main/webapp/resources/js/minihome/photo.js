@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 /* $(function () {
     $(".photo_content").hide();
@@ -29,6 +30,8 @@ function aj(){
 		url:
 	})
 } */
+=======
+>>>>>>> feature_visitors
 $(function () {
     $(".photo_content").hide();
     $(".photoFolders li:first").addClass("active").show();
@@ -36,6 +39,7 @@ $(function () {
     $(".photo_content:first").show();
 
     $(".photoFolders li").click(function () {
+<<<<<<< HEAD
         $(".photoFolders img").attr('src', '../resources/img/close.png');
         $(this).children("img").attr('src', '../resources/img/open.png');
         $(".photo_content").hide();
@@ -49,10 +53,18 @@ $(function () {
 
 
         $(activeTab).fadeIn();
+=======
+
+		
+		/* 탭 href에서 jsp파일 이름 불러옴 */
+        var folderName = $(this).find("a").text();
+
+>>>>>>> feature_visitors
 
         return false;
     });
 })
+<<<<<<< HEAD
 
 $(function () {
     $(".photoFolders li a").click(function () {
@@ -63,10 +75,23 @@ $(function () {
 })
 /* 
 function folder(){
+=======
+$(function () {
+    $(".photoFolders li a").click(function () {
+		$(".tab_content").load($(this).attr("href"));
+    })
+})
+
+/*function folder(){
+>>>>>>> feature_visitors
 	var po = JSON.parse(${photoList});
 	alert(po[2].content );
 	
 	
 	
+<<<<<<< HEAD
 } */
+=======
+}*/
+>>>>>>> feature_visitors
 		

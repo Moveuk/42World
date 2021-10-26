@@ -17,7 +17,9 @@ public class VisitorLogDAO {
 
 	public List<VisitorLogVO> getVisitorLogList() {
 		System.out.println("=== VisitorLogDAO  getVisitorLogList()  ");
-		return sqlSession.selectList("VisitorLogDAO.getVisitorLogList");
+		List<VisitorLogVO> visitorLog = sqlSession.selectList("VisitorLogDAO.getVisitorLogList");
+		System.out.println(visitorLog.size());
+		return visitorLog;
 	}
 
 	/*

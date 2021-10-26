@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+  
+<mapper namespace="VideoDAO">
+ 
+  	<select id="getVideoListByFolder" resultType="video" parameterType="video">
+  		select * from video order by videoNo desc
+  	</select>
+  	
+  	<insert id="insertVideo"  parameterType="video">
+  		insert into world.video (userId,folderNo,title,location,content)
+  		values(#{userId},#{folderNo},#{title},#{location},#{content});
+  	</insert>
+  	
+  	<update id="updateVideo" parameterType="video">
+  		update * video set ownerId=#{ownerId},writerId=#{writerId},type=#{type},content=#{content} 
+  		where 'videoNo'=#{VideoNo}
+  	</update>
+  	
+  	<delete id="deleteVideo" parameterType="video">
+  		delete video where 'videoNo'=#{videoNo}
+  	</delete>
+  	
+  
+ 	
+</mapper>

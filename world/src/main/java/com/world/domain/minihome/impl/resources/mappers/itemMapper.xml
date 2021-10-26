@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+  
+<mapper namespace="ItemDAO">
+ 
+
+	<select id="selectItem" resultType="item">
+		select * from item 
+	</select>
+
+	<select id="getitemCount" resultType="item" parameterType="item">
+  		select count(*)"itemno" from item where userid =#{value} and giftstate='1'
+  	</select>
+
+  
+ 	
+</mapper>

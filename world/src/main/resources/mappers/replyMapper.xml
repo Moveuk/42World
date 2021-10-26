@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+  
+<mapper namespace="ReplyDAO">
+ 
+  	<select id="getReplyList" resultType="reply">
+  		select * from reply order by replyNo desc 
+  	</select>
+  	
+  	<insert id="insertReply"  parameterType="Reply">
+  		insert into Reply (ownerId,writerId,type,content)
+  		values(#{ownerId},#{writerId},#{type},#{content})
+  	</insert>
+  	
+  	<update id="updateReply" parameterType="Reply">
+  		update * Reply set ownerId=#{ownerId},writerId=#{writerId},type=#{type},content=#{content} 
+  		where 'ReplyNo'=#{ReplyNo}
+  	</update>
+  	
+  	<delete id="deleteReply" parameterType="Reply">
+  		delete Reply where 'ReplyNo'=#{ReplyNo}
+  	</delete>
+  	
+</mapper>
