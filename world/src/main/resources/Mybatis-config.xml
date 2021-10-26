@@ -24,13 +24,21 @@
 	</settings>
 
 	<!-- 옵션 태그 -->
-	<!-- select를 리턴 받기 위한 타입 -->
+	<!-- select를 리턴 받기 위한 타입 별칭 설정 -->
 	<typeAliases>
+  		<!-- main alias -->
 		<typeAlias alias="member" type="com.world.domain.main.vo.MemberVO" />
+        <typeAlias alias="product" type="com.world.domain.main.vo.ProductVO"/>
+  		<typeAlias alias="item" type="com.world.domain.main.vo.ItemVO"/>
+  		<typeAlias alias="dotory" type="com.world.domain.main.vo.DotoryVO"/>
+  		<typeAlias alias="friend" type="com.world.domain.main.vo.FriendVO"/>
+  		<typeAlias alias="guest" type="com.world.domain.main.vo.GuestVO"/>
+  		<!-- miniHome alias -->
 		<typeAlias alias="visitorLog" type="com.world.domain.minihome.vo.VisitorLogVO" />
 		<typeAlias alias="photo" type="com.world.domain.minihome.vo.PhotoVO" />
 		<typeAlias alias="video" type="com.world.domain.minihome.vo.VideoVO" />
 		<typeAlias alias="reply" type="com.world.domain.minihome.vo.ReplyVO" />
+		<typeAlias alias="folder" type="com.world.domain.minihome.vo.FolderVO" />
 		
 	</typeAliases>
 

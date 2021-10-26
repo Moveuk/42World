@@ -120,8 +120,6 @@
 /* 내가 방명록 작성할 때 - 끝 */
 
 /* 다른 사람이 쓴 방명록 - 시작*/
-
-
 .visitor_content2 textarea {
 	font-size: 20px;
 }
@@ -130,57 +128,26 @@
 	height: 50px;
 	padding-bottom: 5px;
 	background-color: rgb(243, 241, 241);
-	display:grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+	display: grid;
+	grid-template-columns: 3fr 2fr 3fr;
+	place-content: center center;
+}
+
+.visitor_top2 div.visitor_left_info {
+	display: grid;
+	grid-template-columns: fit-content(50px) fit-content(100px) fit-content(100px);
+	place-content: center stretch;
+}
+
+.visitor_top2 div.visitor_right_info {
+	display: grid;
+	grid-template-columns: minmax(20px, 2fr) minmax(20px, 1fr) minmax(20px, 1fr);
+	place-content: center center;
 }
 
 .visitor_top2 a:hover {
 	color: orange;
 }
-
-/* .visitor_top2_table {
-	width: 100%;
-}
-
-.visitor_top2_table a {
-	text-decoration: none;
-}
-
-.visitor_top2_table_left {
-	text-align: left;
-	padding-left: 10px;
-}
-
-.visitor_top2_table_left a {
-	font-size: 20px;
-}
-
-.visitor_top2_table_left span {
-	font-size: 10px;
-}
-
-.visitor_top2_table_left p {
-	color: rgb(110, 110, 110);
-	display: inline;
-}
-
-.visitor_top2_table_left img {
-	height: 20px;
-}
-
-.visitor_top2_table_right {
-	text-align: right;
-}
-
-.visitor_top2_table_right a {
-	color: rgb(117, 116, 116);
-}
-
-
-.visitor_top2_ul li {
-	list-style-type: none;
-	display: inline;
-} */
 
 .visitor_content2 {
 	height: 30%;

@@ -64,5 +64,11 @@ public class MemberController {
 		return "getMemberList.do";
 	}
 	
+	@RequestMapping("/member/confirmID")
+	public String confirmID(String email, String password) {
+		memberService.confirmID(email,password);
+		System.out.println("MemberController : " + email+"/"+password);
+		return "product/getProductList";
+	}
 
 }

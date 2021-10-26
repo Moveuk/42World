@@ -2,7 +2,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <script src="${pageContext.request.contextPath}/resources/js/minihome/visitors.js"></script>
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/visitors.css">
 <div class="left">
 	<div class="leftContent">
 		<img src="/resources/img/logo.jpg" name="mainImg" id="mainImg" alt="mainImg">
@@ -73,27 +72,32 @@
 					<br>
 					<br>
 					<div class="visitor_top2">
-						<div class="visitor_visitorLogNo">NO.&nbsp;&nbsp;${fn:length(visitorLogList) - status.index }</div>
-						<div class="visitor_writerId">
-							${visitorLog.writerId }
-							<img src="/resources/img/house.png">
+						<div class="visitor_left_info">
+							<span class="visitor_visitorLogNo">NO.&nbsp;&nbsp;${fn:length(visitorLogList) - status.index }</span>
+							<span class="visitor_writerId">
+								&nbsp; ${visitorLog.writerId }&nbsp;
+								<img src="/resources/img/house.png">
+								&nbsp;
+							</span>
+							<span class="visitor_writeDate">${visitorLog.writeDate }</span>
 						</div>
-						<div class="visitor_writeDate">${visitorLog.writeDate }</div>
-						<div class="visitor_makeSecretState">
-							<a href="#">비밀로 하기</a>
-							&nbsp;&nbsp;|
+						<div class="visitor_blank"></div>
+						<div class="visitor_right_info">
+							<span class="visitor_makeSecretState">
+								<a href="#">비밀로 하기</a>
+								&nbsp;|&nbsp;
+							</span>
+							<span class="visitor_deleteVisitorLog">
+								<form action="visitors/deleteVisitorLog" method="post">
+									<input type="hidden" name="visitorLogNo" value="${visitorLog.visitorLogNo }">
+									<a class="visitor_delete">삭제</a>
+									|&nbsp;
+								</form>
+							</span>
+							<span class="visitor_reportVisitorLog">
+								<a href="#">신고</a>
+							</span>
 						</div>
-						<div class="visitor_deleteVisitorLog">
-							<form action="visitors/deleteVisitorLog" method="post">
-								<input type="hidden" name="visitorLogNo" value="${visitorLog.visitorLogNo }">
-								<a class="visitor_delete">삭제</a>
-								&nbsp;&nbsp;|
-							</form>
-						</div>
-						<div class="visitor_reportVisitorLog">
-							<a href="#">신고</a>
-						</div>
-
 					</div>
 					<div class="visitor_content2">
 						<div class="visitor_content2_minimi">

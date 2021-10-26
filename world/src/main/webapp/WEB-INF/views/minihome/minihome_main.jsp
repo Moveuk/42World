@@ -19,6 +19,8 @@
 	href="${pageContext.request.contextPath}/resources/css/video.css">
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/css/board.css">
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/resources/css/visitors.css">
 <title>Document</title>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -78,8 +80,8 @@ send2() {
 			<div class="dot">
 				<div class="whiteBox">
 					<div class="top">
-						<input type="button" onclick="send2()" value="test">
-						<!-- <form name="formm" action="photo" method="post" enctype="multipart/form-data">
+						<!-- <input type="button" onclick="send2()" value="test">
+						<form name="formm" action="photo" method="post" enctype="multipart/form-data">
 										<a href="photo" id="mainPhoto">PHOTO</a>
 		<input type="button" onclick="send2()">
 						

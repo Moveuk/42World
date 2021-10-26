@@ -4,13 +4,8 @@ import java.sql.Date;
 
 import org.springframework.web.multipart.MultipartFile;
 
-import lombok.Getter;
-import lombok.Setter;
-
-@Getter
-@Setter
 public class MemberVO {
-	
+
 	private String userid;
 	private String password;
 	private String email;
@@ -23,9 +18,129 @@ public class MemberVO {
 	private int photo;
 	private int board;
 	private int video;
-	
+
 	private String searchCondition;
 	private String searchKeyword;
 	private MultipartFile uploadFile;
-	
+
+	public String getUserid() {
+		return userid;
+	}
+
+	public void setUserid(String userid) {
+		this.userid = userid;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Date getBirth() {
+		return birth;
+	}
+
+	public void setBirth(Date birth) {
+		this.birth = birth;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public String getSubtitle() {
+		return subtitle;
+	}
+
+	public void setSubtitle(String subtitle) {
+		this.subtitle = subtitle;
+	}
+
+	public String getPropic() {
+		return propic;
+	}
+
+	public void setPropic(String propic) {
+		this.propic = propic;
+	}
+
+	public int getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(int photo) {
+		this.photo = photo;
+	}
+
+	public int getBoard() {
+		return board;
+	}
+
+	public void setBoard(int board) {
+		this.board = board;
+	}
+
+	public int getVideo() {
+		return video;
+	}
+
+	public void setVideo(int video) {
+		this.video = video;
+	}
+
+	public String getSearchCondition() {
+		return searchCondition;
+	}
+
+	public void setSearchCondition(String searchCondition) {
+		this.searchCondition = searchCondition;
+	}
+
+	public String getSearchKeyword() {
+		return searchKeyword;
+	}
+
+	public void setSearchKeyword(String searchKeyword) {
+		this.searchKeyword = searchKeyword;
+	}
+
+	public MultipartFile getUploadFile() {
+		return uploadFile;
+	}
+
+	public void setUploadFile(MultipartFile uploadFile) {
+		this.uploadFile = uploadFile;
+	}
+
 }

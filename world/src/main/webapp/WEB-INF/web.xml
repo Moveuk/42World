@@ -9,7 +9,7 @@
 		<!-- 경로변경(기존 경로 : /WEB-INF/spring/root-context.xml) -->
 		<param-value>classpath:/spring/root-context.xml</param-value>
 	</context-param>
-	
+
 	<!-- Creates the Spring Container shared by all Servlets and Filters -->
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
@@ -21,24 +21,30 @@
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
-		<!-- 경로변경(기존 경로 : /WEB-INF/spring/appServlet/servlet-context.xml) -->
+			<!-- 경로변경(기존 경로 : /WEB-INF/spring/appServlet/servlet-context.xml) -->
 			<param-value>classpath:/spring/appServlet/servlet-context.xml</param-value>
 		</init-param>
 		<!-- 1 의미 : 웹서버 시작시 제일 먼저 호출 -->
 		<load-on-startup>1</load-on-startup>
 	</servlet>
-		
-	<!-- 서블링 URL Mapping 설정 -->	
+
+	<!-- 서블링 URL Mapping 설정 -->
 	<servlet-mapping>
 		<servlet-name>appServlet</servlet-name>
-		<!-- /로 시작하면 서블릿 작동 -> 들어오는 모든 url 호출에 반응하겠다는 의미. -->
+		<!-- main 서블릿 필터 -->
+		<url-pattern>/main/*</url-pattern>
+		<url-pattern>/friend/*</url-pattern>
+		<url-pattern>/cart/*</url-pattern>
+		<url-pattern>/guest/*</url-pattern>
+		<url-pattern>/item/*</url-pattern>
+		<url-pattern>/product/*</url-pattern>
+		<!-- minihome 서블릿 필터 -->
 		<url-pattern>/home/*</url-pattern>
 		<url-pattern>/profile/*</url-pattern>
 		<url-pattern>/photo/*</url-pattern>
 		<url-pattern>/video/*</url-pattern>
 		<url-pattern>/board/*</url-pattern>
 		<url-pattern>/visitors/*</url-pattern>
-		<url-pattern>/admin/*</url-pattern>
 		<url-pattern>/openMinihome/*</url-pattern>
 		<url-pattern>/upload/*</url-pattern>
 		<url-pattern>/uploadPhoto/*</url-pattern>
@@ -60,7 +66,7 @@
 			<param-value>true</param-value>
 		</init-param>
 	</filter>
-	
+
 	<!-- 위 한글 처리 코드를 모든(/*) url 패턴에 적용 -->
 	<filter-mapping>
 		<filter-name>characterEncoding</filter-name>

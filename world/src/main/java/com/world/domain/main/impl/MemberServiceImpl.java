@@ -13,30 +13,43 @@ public class MemberServiceImpl implements MemberService {
 
 	@Autowired
 	private MemberDAO memberDAO;
-	
+
 	@Override
 	public List<MemberVO> getMemberList() {
 		return memberDAO.getMemberList();
 	}
-	
+
 	@Override
-	public MemberVO confirmID(String email) {
-		System.out.println("MemberServiceImpl confirmID() :" + email);
-		return memberDAO.confirmID(email);
-		}
-	
+	public MemberVO confirmID(String email, String password) {
+		System.out.println("MemberServiceImpl confirmID() :" + email + "/" + password);
+		return memberDAO.confirmID(email, password);
+	}
+
 	@Override
 	public MemberVO getMember() {
 		System.out.println("MemberServiceImpl getMember() :" + "member");
 		return memberDAO.getMember();
-		}
+	}
 
 	@Override
-	public void insertMember(MemberVO vo) {memberDAO.insertMember(vo);}
-	
+	public void insertMember(MemberVO vo) {
+		memberDAO.insertMember(vo);
+	}
+
 	@Override
-	public void updateMember() {memberDAO.updateMember();}
+	public void updateMember() {
+		memberDAO.updateMember();
+	}
+
 	@Override
-	public void deleteMember() {memberDAO.deleteMember();}
+	public void deleteMember() {
+		memberDAO.deleteMember();
+	}
+
+	@Override
+	public MemberVO getPassword(MemberVO vo) {
+		System.out.println("MemberServiceImpl getPassword() :" + "member");
+		return memberDAO.getPassword(vo);
+	}
 
 }
