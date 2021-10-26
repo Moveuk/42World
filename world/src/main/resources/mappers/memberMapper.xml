@@ -15,8 +15,12 @@
   		select * from member where seq=#{seq}
   	</select>
   	
-  	<select id="confirmID" resultType="member" parameterType="member">
+  	<select id="getPassword" resultType="member" parameterType="member">
   		select * from member where email=#{email}
+  	</select>
+  	
+  	<select id="confirmID" resultType="member" parameterType="member">
+  		select * from member where email=#{email} and password=#{password}
   	</select>
   	
   	<insert id="insertMember"  parameterType="member">
@@ -34,6 +38,11 @@
   		delete member where 'seq'=#{seq}
   	</delete>
   	
+  	 <insert id="insertFriend"  parameterType="member">
+  		insert into member (seq, id,pwd,name,email,zipNum,address,phone)
+  		values((select nvl(max(seq),0)+1 from member),
+  	 	#{id},#{pwd},#{name},#{email},#{zipNum},#{address, jdbcType=VARCHAR},#{phone})
+  	</insert>
   
  	
 </mapper>

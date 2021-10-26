@@ -33,6 +33,7 @@
   		<typeAlias alias="dotory" type="com.world.domain.main.vo.DotoryVO"/>
   		<typeAlias alias="friend" type="com.world.domain.main.vo.FriendVO"/>
   		<typeAlias alias="guest" type="com.world.domain.main.vo.GuestVO"/>
+ 		<typeAlias alias="cart" type="com.world.domain.main.vo.CartVO"/>
   		<!-- miniHome alias -->
 		<typeAlias alias="visitorLog" type="com.world.domain.minihome.vo.VisitorLogVO" />
 		<typeAlias alias="photo" type="com.world.domain.minihome.vo.PhotoVO" />

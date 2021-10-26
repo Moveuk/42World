@@ -10,30 +10,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.world.domain.main.impl.ItemService;
 import com.world.domain.main.vo.ItemVO;
 
-
 @Controller
 public class ItemController {
-	
+
 	@Autowired
 	ItemService itemService;
-	
+
 	@RequestMapping("/item/getItemList")
 	public String getMemberList(ItemVO vo, Model model) {
 		System.out.println("1번 controller getItemList~");
 		model.addAttribute("itemList", itemService.getItemList());
-		
+
 		Date dt = vo.getBuydate();
 		String di = vo.getUserid();
-		
-		System.out.println("저장되어있는 db : " +dt +"/" +di);
-		
+
+		System.out.println("저장되어있는 db : " + dt + "/" + di);
+
 		return "/main/myItem";
 	}
-	
-
-	
-
-	
-
 
 }

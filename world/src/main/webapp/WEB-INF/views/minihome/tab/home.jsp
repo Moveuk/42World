@@ -101,7 +101,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="comment">
+			<div class="home_comment">
 				<div class="commentHeader">
 					<div class="commentTitle">
 						<p>일촌평</p>

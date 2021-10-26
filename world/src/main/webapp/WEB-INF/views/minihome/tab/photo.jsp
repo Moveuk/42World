@@ -6,7 +6,7 @@
 	$(function() {
 		$(".photo_content").hide();
 		$(".photoFolders li:first").addClass("active").show();
-		$(".photoFolders:first img").attr('src', '../resources/img/open.png');
+		$(".photoFolders:first img").attr('src', ${pageContext.request.contextPath}'/resources/img/open.png');
 		$(".photo_content:first").show();
 
 		$(".photoFolders li").click(function() {
@@ -18,23 +18,13 @@
 			$(href).css('display', 'block');
 
 			//   $(".photoFolders li").removeClass("active");
-			$(".photoFolders img").attr('src', '../resources/img/close.png');
-			$(this).children("img").attr('src', '../resources/img/open.png');
+			$(".photoFolders img").attr('src', ${pageContext.request.contextPath}'/resources/img/close.png');
+			$(this).children("img").attr('src', ${pageContext.request.contextPath}'/resources/img/open.png');
 			// 
 
 			var string = href
 			var no = string.replace(/[^0-9]/g, '');
 			$(".photo_content").eq(no - 1).css('display', 'block');
-
-			$.ajax({
-				url:"photo",
-				type:"post",
-				success:function(data){
-					$(".photo_content").eq(no - 1).
-				}
-				
-				
-			})
 			
 			return false;
 		});
@@ -54,7 +44,7 @@
 		<c:forEach items="${photoFolderList}" var="photoFolderList"
 			varStatus="status">
 			<ul class="photoFolders">
-				<li><img src="/resources/img/open.png"> <a
+				<li><img src="${pageContext.request.contextPath}/resources/img/close.png"> <a
 					href="#photoFolder${status.index+1}"><span>${photoFolderList.folder}</span></a></li>
 			</ul>
 		</c:forEach>
@@ -83,7 +73,7 @@
 								value="${photoVO.title}" readonly>
 						</div>
 						<div class="img">
-							<img src="../resources/photo/${photoVO.location}">
+							<img src="${pageContext.request.contextPath}/resources/photo/${photoVO.location}">
 						</div>
 						<div class="content">
 							<p>내용</p>

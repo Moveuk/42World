@@ -9,8 +9,20 @@
  
 
 	<insert id="insertCart"> 
-        INSERT INTO cart (cartno,category, name,price,location,resdate ) VALUES (seq_cart.nextval, #{category},#{name},#{price},#{location},sysdate) 
+        INSERT INTO cart (cartno,category, name,price,location,resdate,userid ) VALUES (seq_cart.nextval, #{category},#{name},#{price},#{location},sysdate,#{userid}) 
     </insert>
+    
+    <select id="getcartCount" resultType="cart" parameterType="cart">
+  		select count(*)"cartno" from cart where userid =#{value}
+  	</select>
+  	
+  	<select id="getCartList" resultType="cart">
+    	select * from cart where userId=#{userid}
+    </select>
+    
+    <select id="getCartListCount" resultType="int">
+    	select count(*) from cart where userId=#{userid}
+    </select>
   
  	
 </mapper>

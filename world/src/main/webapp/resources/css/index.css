@@ -1,6 +1,6 @@
 body{
 
-    background-image: url(/img/mainimgs.png);
+    background-image: url(/resources/img/mainimgs.png);
     background-size: cover;
     background-repeat: no-repeat;
     /*  */
@@ -176,7 +176,7 @@ body{
     position: relative;
     left: 300px;
     top: -300px;
-    background-image: url(/img/p1.jpeg);
+    background-image: url(/resources/img/p1.jpeg);
     background-size: cover;
 }
 .ball2{
@@ -184,7 +184,7 @@ body{
     position: relative;
     left: -600px;
     top: -550px;
-    background-image: url(/img/p2.jpeg);
+    background-image: url(/resources/img/p2.jpeg);
     background-size: cover;
 }
 .ball3{
@@ -192,7 +192,7 @@ body{
     position: relative;
     left: -400px;
     top: -110px;
-    background-image: url(/img/logo1.jpeg);
+    background-image: url(/resources/img/logo1.jpeg);
     background-size: cover;
 }
 .ball4{
@@ -200,7 +200,7 @@ body{
     position: relative;
     left: 400px;
     top: -750px;
-    background-image: url(/img/p3.png);
+    background-image: url(/resources/img/p3.png);
     background-size: cover;
 }
 .ball5{
@@ -208,7 +208,7 @@ body{
     position: relative;
     left: -400px;
     top: -550px;
-    background-image: url(/img/p4.jpeg);
+    background-image: url(/resources/img/p4.jpeg);
     background-size: cover;
 }
 .ball6{
@@ -216,7 +216,7 @@ body{
     position: relative;
     left: -100px;
     top: -250px;
-    background-image: url(/img/p5.jpeg);
+    background-image: url(/resources/img/p5.jpeg);
     background-size: cover;
 }
 .ball7{
@@ -224,7 +224,7 @@ body{
     position: relative;
     left: 500px;
     top: -850px;
-    background-image: url(/img/p6.png);
+    background-image: url(/resources/img/p6.png);
     background-size: cover;
 }
 .ball8{
@@ -232,7 +232,7 @@ body{
     position: relative;
     left: -100px;
     top: -1070px;
-    background-image: url(/img/p7.png);
+    background-image: url(/resources/img/p7.png);
     background-size: cover;
 }
 .ball9{
@@ -240,7 +240,7 @@ body{
     position: relative;
     left: 400px;
     top: -620px;
-    background-image: url(/img/p8.png);
+    background-image: url(/resources/img/p8.png);
     background-size: cover;
 }
 .ball10{
@@ -248,6 +248,6 @@ body{
     position: relative;
     left: 200px;
     top: -620px;
-    background-image: url(/img/p9.jpeg);
+    background-image: url(/resources/img/p9.jpeg);
     background-size: cover;
 }

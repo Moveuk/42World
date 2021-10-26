@@ -15,9 +15,9 @@ public class ProductServiceImpl implements ProductService {
 	private ProductDAO productDAO;
 
 	@Override
-	public List<ProductVO> getProductList() {
+	public List<ProductVO> getProductList(String category) {
 		System.out.println("2번 ProductServiceImpl getProductList() :" + "product");
-		return productDAO.getproductList();
+		return productDAO.getproductList(category);
 	}
 
 	@Override

@@ -6,10 +6,10 @@ import com.world.domain.main.vo.ProductVO;
 
 public interface ProductService {
 
-	List<ProductVO> getProductList();
-
 	public ProductVO getProduct(String marketID);
 
 	void insertCart(ProductVO vo);
+
+	List<ProductVO> getProductList(String category);
 
 }

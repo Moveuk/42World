@@ -31,6 +31,7 @@
 	<!-- 서블링 URL Mapping 설정 -->
 	<servlet-mapping>
 		<servlet-name>appServlet</servlet-name>
+		<url-pattern>/start</url-pattern>
 		<!-- main 서블릿 필터 -->
 		<url-pattern>/main/*</url-pattern>
 		<url-pattern>/friend/*</url-pattern>
@@ -38,6 +39,9 @@
 		<url-pattern>/guest/*</url-pattern>
 		<url-pattern>/item/*</url-pattern>
 		<url-pattern>/product/*</url-pattern>
+		<url-pattern>/member/*</url-pattern>
+		<url-pattern>/login</url-pattern>
+		<url-pattern>/logout</url-pattern>
 		<!-- minihome 서블릿 필터 -->
 		<url-pattern>/home/*</url-pattern>
 		<url-pattern>/profile/*</url-pattern>

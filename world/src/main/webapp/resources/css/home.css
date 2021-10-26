@@ -201,16 +201,16 @@ position:absolute;
 .right .tabHomeStoryRoom{
   height:400px;
 }  
-.right .comment{
+.right .home_comment{
      width: 600px;
      height: 100%;
  } 
-.right .comment .commentHeader{
+.right .home_comment .commentHeader{
 	display:grid;
 	grid-template-rows: 1fr 1fr;
 	margin-left:25px;
 } 
-.right .comment .commentTitle p{
+.right .home_comment .commentTitle p{
       color:rgb(89, 157, 226);
       font-weight: bolder;
       font-size:20px;
@@ -220,7 +220,7 @@ position:absolute;
   }
  
   
-.right .comment .commentForm {
+.right .home_comment .commentForm {
     border-style:solid;
     border-width: 2px 2px 2px 5px; 
     
@@ -231,32 +231,32 @@ position:absolute;
 	width:600px;
 	
 }
-.right .comment .commentForm p{
+.right .home_comment .commentForm p{
     text-align:center;
 	vertical-align:middle;
 	
 }
-.right .comment .commentForm input[name=commentInput]{
+.right .home_comment .commentForm input[name=commentInput]{
     
     border: none;
 	
 }
-.right .comment .commentForm input[name=commentSubmit]{
+.right .home_comment .commentForm input[name=commentSubmit]{
     
     border: none;
 } 
   
-.right .comment .commentList li{
+.right .home_comment .commentList li{
     width:90%;
     height: 40px;
     margin-top: 3%;
     list-style:none;
 }
-.right .comment .commentList li::marker{
+.right .home_comment .commentList li::marker{
     color:#000a13;
     font-weight:border;
 }
-.right .comment .commentList a{
+.right .home_comment .commentList a{
     color:dodgerblue;
     text-decoration-line:none;
 }

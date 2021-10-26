@@ -8,7 +8,7 @@
 <mapper namespace="ProductDAO">
  
   	<select id="getproductList" resultType="product">
-  		select * from market 
+  		select * from market where category = #{category}
   	</select>
   
   	<select id="getproduct" resultType="product" parameterType="product">
