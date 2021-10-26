@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <script src="${pageContext.request.contextPath}/resources/js/minihome/visitors.js"></script>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/visitors.css">
 <div class="left">
 	<div class="leftContent">
 		<img src="/resources/img/logo.jpg" name="mainImg" id="mainImg" alt="mainImg">
@@ -43,7 +45,7 @@
 						<input type="hidden" name="ownerId" value="${session.userId }">
 						<input type="hidden" name="writerId" value="${session.userId }">
 						<div class="visitor_content_minimi">
-							<img src="/resources/img/minimi2.png" alt="미니미">
+							<img src="/resources/img/minimi/minimi2.png" alt="미니미">
 						</div>
 						<div class="visitor_content_text">
 							<textarea name="content">내용 작성하는 공간</textarea>
@@ -71,40 +73,31 @@
 					<br>
 					<br>
 					<div class="visitor_top2">
-						<table class="visitor_top2_table">
-							<tr>
-								<td class="visitor_top2_table_left">
-									<span>NO.&nbsp;&nbsp;${status.count }</span>
-									&nbsp;&nbsp;
-									<a href="#">
-										${visitorLog.writerId }
-										<img src="/resources/img/house.png">
-									</a>
-									&nbsp;&nbsp;
-									<p>${visitorLog.writeDate }</p>
-								</td>
-								<td class="visitor_top2_table_right">
-									<!-- 홈페이지 주인장일때 보임-->
-									<ul class="visitor_top2_ul">
-										<li>
-											<a href="#">비밀로 하기</a>
-										</li>
-										<li>|</li>
-										<li>
-											<a href="#">삭제</a>
-										</li>
-										<li>|</li>
-										<li>
-											<a href="#">신고</a>
-										</li>
-									</ul>
-								</td>
-							</tr>
-						</table>
+						<div class="visitor_visitorLogNo">NO.&nbsp;&nbsp;${fn:length(visitorLogList) - status.index }</div>
+						<div class="visitor_writerId">
+							${visitorLog.writerId }
+							<img src="/resources/img/house.png">
+						</div>
+						<div class="visitor_writeDate">${visitorLog.writeDate }</div>
+						<div class="visitor_makeSecretState">
+							<a href="#">비밀로 하기</a>
+							&nbsp;&nbsp;|
+						</div>
+						<div class="visitor_deleteVisitorLog">
+							<form action="visitors/deleteVisitorLog" method="post">
+								<input type="hidden" name="visitorLogNo" value="${visitorLog.visitorLogNo }">
+								<a class="visitor_delete">삭제</a>
+								&nbsp;&nbsp;|
+							</form>
+						</div>
+						<div class="visitor_reportVisitorLog">
+							<a href="#">신고</a>
+						</div>
+
 					</div>
 					<div class="visitor_content2">
 						<div class="visitor_content2_minimi">
-							<img src="/resources/img/minimi2.png" alt="미니미">
+							<img src="/resources/img/minimi/minimi2.png" alt="미니미">
 						</div>
 						<div class="visitor_content2_text">
 							<div>

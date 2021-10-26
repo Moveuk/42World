@@ -20,7 +20,22 @@ public class PhotoServiceImpl implements PhotoService {
 	}
 
 	@Override
-	public List<PhotoVO> getPhotoList() {
-		return photoDAO.getPhotoList();
+	public List<PhotoVO> photo() {
+		System.out.println("run PhotoServiceImpl photo()");
+		return photoDAO.photo();
 	}
+	@Override
+	public List<PhotoVO> photoList(PhotoVO vo) {
+		System.out.println("run PhotoServiceImpl photoList()");
+		return photoDAO.photoList(vo);
+	}@Override
+	public List<PhotoVO> firstPhotoList() {
+		System.out.println("run PhotoServiceImpl firstPhotoList()");
+		return photoDAO.firstPhotoList();
+	}
+
+
+
+	
+
 }

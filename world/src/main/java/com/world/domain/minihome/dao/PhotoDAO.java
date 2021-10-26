@@ -20,9 +20,17 @@ public class PhotoDAO {
 		sqlSession.update("PhotoDAO.insertPhoto",vo);
 		sqlSession.commit();
 	}
-	public List<PhotoVO> getPhotoList(){
-		System.out.println("run PhotoDAO getPhotoList()");
-		return sqlSession.selectList("PhotoDAO.getPhotoList");
+	public List<PhotoVO> photo(){
+		System.out.println("run PhotoDAO photo()");
+		return sqlSession.selectList("PhotoDAO.photo");
+	}
+	public List<PhotoVO> photoList(PhotoVO vo){
+		System.out.println("run PhotoDAO photoList()");
+		return sqlSession.selectList("PhotoDAO.photoList",vo);
+	}
+	public List<PhotoVO> firstPhotoList(){
+		System.out.println("run PhotoDAO firstPhotoList()");
+		return sqlSession.selectList("PhotoDAO.firstPhotoList");
 	}
 	
 	public void makeFolder(PhotoVO vo) {

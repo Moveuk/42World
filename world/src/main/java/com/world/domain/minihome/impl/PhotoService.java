@@ -6,5 +6,7 @@ import com.world.domain.minihome.vo.PhotoVO;
 
 public interface PhotoService {
 	void insertPhoto(PhotoVO vo);
-	List<PhotoVO> getPhotoList();
+	List<PhotoVO> photoList(PhotoVO vo);
+	List<PhotoVO> photo();
+	List<PhotoVO> firstPhotoList();
 }

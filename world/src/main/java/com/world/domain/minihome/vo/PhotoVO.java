@@ -14,7 +14,11 @@ public class PhotoVO {
 	private Date uploadDate;
 	private String title;
 	private String location;
-	private String content;
+	private String photoContent;
 	private int cnt;
+	private String folder;
+	
+	
+	
 	
 }
