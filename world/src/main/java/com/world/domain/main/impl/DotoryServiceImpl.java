@@ -17,10 +17,12 @@ public class DotoryServiceImpl implements DotoryService {
 		// TODO Auto-generated method stub
 
 	}
+	
+	@Override
+	public int getMyDotory(String userId) {
+		return dotoryDAO.getMyDotory(userId);
+	}
 
-//	@Override
-//	public void insertProduct(ProductVO vo) {
-//		productDAO.insertProduct(vo);
-//	}
+
 
 }

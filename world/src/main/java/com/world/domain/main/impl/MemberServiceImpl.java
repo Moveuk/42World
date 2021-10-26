@@ -51,5 +51,10 @@ public class MemberServiceImpl implements MemberService {
 		System.out.println("MemberServiceImpl getPassword() :" + "member");
 		return memberDAO.getPassword(vo);
 	}
+	
+	@Override
+	public String getNameByUserId(String userId) {
+		return memberDAO.getNameByUserId(userId);
+	}
 
 }

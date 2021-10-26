@@ -19,5 +19,6 @@ public interface MemberService {
 	void deleteMember();
 
 	MemberVO getPassword(MemberVO vo);
-
+	
+	public String getNameByUserId(String userId);
 }

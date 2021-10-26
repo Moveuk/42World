@@ -18,6 +18,10 @@
   	<select id="getdotorySum" resultType="dotory" parameterType="dotory">
   		select NVL(sum(price), 0)"dotoryno" from dotory where userid=#{value} and giftstate='2'
   	</select>
+  	
+  	<select id="getMyDotory" resultType="int" >
+		select sum(price) from dotory where userId=#{userId} and (division=1 or division=2 or division=4 or division=5)
+	</select>
 
 
   

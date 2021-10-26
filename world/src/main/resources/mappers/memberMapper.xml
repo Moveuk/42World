@@ -44,5 +44,8 @@
   	 	#{id},#{pwd},#{name},#{email},#{zipNum},#{address, jdbcType=VARCHAR},#{phone})
   	</insert>
   
+ 	 <select id="getNameByUserId" resultType="String" parameterType="String">
+  		select name from member where userId=#{userId}
+  	 </select>
  	
 </mapper>

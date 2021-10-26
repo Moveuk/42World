@@ -5,21 +5,17 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 import com.world.domain.main.dao.FriendDAO;
 import com.world.domain.main.vo.FriendVO;
+import com.world.domain.main.vo.MemberVO;
 
 @Service
 public class FriendServiceImpl implements FriendService {
 
 	@Autowired
 	private FriendDAO friendDAO;
-
-	@Override
-	public FriendVO getFriendCount(String userid) {
-		System.out.println("ProductServiceImpl getProduct() :" + userid);
-		return friendDAO.getfriendCount(userid);
-	}
-
+	
 	@Override
 	public void requestFriend(FriendVO vo) {
 		friendDAO.requestFriend(vo);
@@ -44,7 +40,7 @@ public class FriendServiceImpl implements FriendService {
 	public void insertFriend(FriendVO vo) {
 		friendDAO.insertFriend(vo);
 	}
-
+	
 	@Override
 	public void rejectFriend(FriendVO vo) {
 		friendDAO.rejectFriend(vo);
@@ -59,12 +55,12 @@ public class FriendServiceImpl implements FriendService {
 	public void updateFriend(FriendVO vo) {
 		friendDAO.updateFriend(vo);
 	}
-
+	
 	@Override
 	public void updateFriendDB(FriendVO vo) {
 		friendDAO.updateFriendDB(vo);
 	}
-
+	
 	@Override
 	public void updateFriendDB2(FriendVO vo) {
 		friendDAO.updateFriendDB2(vo);
@@ -74,5 +70,42 @@ public class FriendServiceImpl implements FriendService {
 	public void deleteFriend(FriendVO vo) {
 		friendDAO.deleteFriend(vo);
 	}
+
+	@Override
+	public String getFriendId(String friendFrom) {
+		return friendDAO.getFriendId(friendFrom);
+	}
+	
+	@Override
+	public List<FriendVO> getRequestNameById(String friendTo) {
+		return friendDAO.getRequestNameById(friendTo);
+	}
+
+	@Override
+	public List<FriendVO> getFriendNameById(String friendTo) {
+		return friendDAO.getFriendNameById(friendTo);
+	}
+
+	@Override
+	public FriendVO getOneFriendNameById(FriendVO vo) {
+		return friendDAO.getOneFriendNameById(vo);
+	}
+
+
+
+	
+
+	
+
+
+
+
+
+
+
+
+
+
+
 
 }

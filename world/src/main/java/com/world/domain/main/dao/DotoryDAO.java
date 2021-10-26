@@ -29,5 +29,9 @@ public class DotoryDAO {
 		System.out.println("===DotoeyDAO  insertdotory()  ");
 		sqlSession.update("DotoryDAO.insertdotory", vo);
 	}
+	
+	public int getMyDotory(String userId) {
+		return sqlSession.selectOne("DotoryDAO.getMyDotory", userId);
+	}
 
 }

@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/cart.css "  >
-
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 </head>
 <body>
 
@@ -24,7 +24,47 @@
         </ul>
         
         <div class="cart_main_content">
-            <a>장바구니</a>
+            <th><input type="checkbox" name="allCheck" id="allCheck"/></th>
+                                <!-- 상품 전체선택  -->
+                                <script>
+                                    $("#allCheck").click(function () {
+                                        var chk = $("#allCheck").prop("checked");
+                                        if (chk) {
+                                            $(".chkbox").prop("checked", true);
+                                            itemSum();
+                                        } else {
+                                            $(".chkbox").prop("checked", false);
+                                            itemSum();
+                                        }
+                                    });
+                                </script>전체선택
+                                <script>
+			                        $(".chkbox").click(function () {
+			                            $("#allCheck").prop("checked", false);
+			                        });
+			                    </script>
+			                    
+			                     <!-- 금액 총 합계  -->
+						        <script>
+						 
+						            function itemSum() {
+					                var str = "";
+					                var sum = 0;
+					                var count = $(".chkbox").length;
+					                for (var i = 0; i < count; i++) {
+					                    if ($(".chkbox")[i].checked == true) {
+					                        sum += parseInt($(".chkbox")[i].value);
+					                    }
+						                var balance = $("span#myDotory").text() - sum;
+						                
+						                $("a#balance").text(balance);
+					                }
+					                $("#total_sum").html(sum);
+
+					                 
+					            }
+			 
+			        </script>
             <br><br>
             <table class="cart_main_content_table" >
                     <tr>
@@ -36,8 +76,8 @@
                     
                     <c:forEach items="${cartList }" var="cartVO">
 	                    <tr >
-	                        <td rowspan="2" class="cart_main_content_table_td_check" ><input type="checkbox"></td>
-	                        <td rowspan="2" class="cart_main_content_table_td_productimg" ><img class= "cart_main_content_table_productimg" src="${pageContext.request.contextPath}/resources/img/${cartVO.category }/${cartVO.name}.gif"></td>
+	                        <td rowspan="2" class="cart_main_content_table_td_check" ><input class="chkbox" type="checkbox" onClick="itemSum()" value="${cartVO.price }"></td>
+	                        <td rowspan="2" class="cart_main_content_table_td_productimg" ><img class= "cart_main_content_table_productimg" src="${pageContext.request.contextPath}/resources/img/${cartVO.category }/${cartVO.location}"></td>
 	                        <td colspan="2" style="border:none;">${cartVO.name}</td>
 	                        <td rowspan="2" class="cart_main_content_table_td_price" style="color: rgb(161, 104, 104);" ><img class= "cart_main_content_table_dotoriimg" src="/img/dotori.png">${cartVO.price } 도토리</td>
 	                    </tr>
@@ -47,11 +87,6 @@
 	                        <td>도토리 가격</td>
 	                    </tr>
 	                 </c:forEach>
-
-                    
-
-
-
 
             </table>
 
@@ -71,22 +106,25 @@
                         </select>
                     </div>
                 </div>
+                
+               
+        
                 <div class = "cart_main_content_footer_purchase">
                     <a>최종결제</a>
                     <div class="cart_main_content_footer_purchase_div">
                         <table class="cart_main_content_footer_purchase_div_table">
                             <tr>
                                 <td style="color: rgb(97, 97, 97);">보유중 도토리</td>
-                                <td style="font-weight: 600;">300 도토리</td>
+                                <td style="font-weight: 600;"><span id="myDotory">${myDotory }</span> 도토리</td>
                             </tr>
                             <tr>
                                 <td style="color: rgb(97, 97, 97);" >총 상품금액</td>
-                                <td style="font-weight: 600;">120 도토리</td>
+                                <td style="font-weight: 600;"><a id="total_sum"></a> <a>도토리</a></td>
                             </tr>
                             <tr>
                                 <td  style="font-weight: 800; font-size: 15px; height: 30px;" >잔여 도토리</td>
                                 <td>
-                                    <a style="color: red; font-size: 25px; font-weight: 700;">180</a>
+                                    <a id="balance" style="color: red; font-size: 25px; font-weight: 700;" > </a>
                                     <a style="font-weight: 700;" >도토리</a>
                                 </td>
                             </tr>

@@ -49,5 +49,9 @@ public class MemberDAO {
 		System.out.println("===MemberDAO confirmID() email :" + email + "," + password);
 		return sqlSession.selectOne("MemberDAO.confirmID");
 	}
+	
+	public String getNameByUserId(String userId) {
+		return sqlSession.selectOne("MemberDAO.getNameByUserId", userId);
+	}
 
 }

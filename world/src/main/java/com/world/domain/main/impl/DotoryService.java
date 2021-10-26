@@ -6,4 +6,5 @@ public interface DotoryService {
 
 	void insertCart(DotoryVO vo);
 
+	int getMyDotory(String userId);
 }

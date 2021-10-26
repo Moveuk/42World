@@ -1,7 +1,6 @@
 package com.world.domain.main.controller;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,6 +8,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.world.domain.main.impl.CartService;
+import com.world.domain.main.impl.DotoryService;
+import com.world.domain.main.impl.FriendService;
+import com.world.domain.main.impl.MemberService;
 import com.world.domain.main.impl.ProductService;
 import com.world.domain.main.vo.CartVO;
 import com.world.domain.main.vo.ProductVO;
@@ -18,9 +20,18 @@ public class CartController {
 
 	@Autowired
 	CartService cartService;
+	
+	@Autowired
+	FriendService friendService;
 
 	@Autowired
 	ProductService productService;
+	
+	@Autowired
+	DotoryService dotoryService;
+	
+	@Autowired
+	MemberService memberService;
 
 	@RequestMapping("/product/insertCart")
 	public String insertCart(HttpServletRequest req, CartVO vo, Model model) throws IllegalStateException {
@@ -65,27 +76,28 @@ public class CartController {
 		return "/main/purchase";
 	}
 
+
 	@RequestMapping("/cart/cartList")
-	public String getCartList(HttpServletRequest req, CartVO vo, Model model) throws IllegalStateException {
-		// 장바구니 아이템 정보
-		HttpSession session = req.getSession();
-
-		System.out.println(session.getAttribute("loginUser"));
-		String userid = (String) session.getAttribute("loginUser");
-		vo.setUserid(userid);
-
+	public String getCartList(HttpServletRequest req, CartVO vo, Model model) throws IllegalStateException{
+		//장바구니 아이템 정보
+		String userId = req.getParameter("userId");
+		vo.setUserid(userId);
+		
 		model.addAttribute("cartList", cartService.getCartList(vo));
-
-		// 장바구니 아이템 개수
+		
+		//장바구니 아이템 개수
 		model.addAttribute("cartListCount", cartService.getCartListCount(vo));
-
-//		//일촌에게 선물하기 - 일촌 이름 띄우기
-//		model.addAttribute("myFriendName", friendService.getFriendNameById(userId));
-//		
-//		//일촌에게 선물하기 - 일촌명(별명) 띄우기
-//		model.addAttribute("myFriendNickname", friendService.myFriendList(userId));
-//		
-
+		
+		//일촌에게 선물하기 - 일촌 이름 띄우기
+		model.addAttribute("myFriendName", friendService.getFriendNameById(userId));
+		
+		//일촌에게 선물하기 - 일촌명(별명) 띄우기
+		model.addAttribute("myFriendNickname", friendService.myFriendList(userId));
+		
+		//내 보유 도토리 개수 구하기
+		model.addAttribute("myDotory", dotoryService.getMyDotory(userId));
+		
+				
 		return "/main/cart_list";
 	}
 
