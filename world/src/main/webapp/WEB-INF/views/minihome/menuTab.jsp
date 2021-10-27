@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/photo.css">
 	
 	<div class="rightHomeTab">
 		<ul class="tabs">
@@ -21,6 +20,9 @@
 			</li>
 			<li>
 				<a href="visitors">VISITORS</a>
+			</li>
+			<li>
+				<a href="setting">SETTING</a>
 			</li>
 		</ul>
 	</div>
