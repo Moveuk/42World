@@ -26,7 +26,7 @@ public class VideoController {
 			vo.setFolderNo(0);
 			System.out.println("null check 성공 후 0 삽입 : "+vo.getFolderNo());
 		}
-		// 폴더 확인, 홈페이지 주인장(session-userid) 확인, 
+		// 폴더 확인, 홈페이지 주인장(session-memberNo) 확인, 
 		List<VideoVO> videoList = VideoService.getVideoListByFolder(vo);
 		if(videoList != null) {
 			System.out.print(vo.getVideoNo());

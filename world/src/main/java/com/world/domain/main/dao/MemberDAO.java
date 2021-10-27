@@ -20,9 +20,9 @@ public class MemberDAO {
 		return sqlSession.selectList("MemberDAO.getMemberList");
 	}
 
-	public MemberVO getMember() {
+	public MemberVO getMember(int memberNo) {
 		System.out.println("===MemberDAO  getMember()  ");
-		return sqlSession.selectOne("MemberDAO.getMember");
+		return sqlSession.selectOne("MemberDAO.getMember", memberNo);
 	}
 
 	public MemberVO getPassword(MemberVO vo) {

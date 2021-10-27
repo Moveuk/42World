@@ -3,11 +3,11 @@ package com.world.domain.main.vo;
 public class ProductVO {
 
 	private int marketid;
-	private String userid;
+	private String memberNo;
 	private String category;
 	private String name;
 	private int price;
-	private String location;
+	private String filename;
 	private String rgb;
 	private String font;
 
@@ -19,12 +19,12 @@ public class ProductVO {
 		this.marketid = marketid;
 	}
 
-	public String getUserid() {
-		return userid;
+	public String getMemberNo() {
+		return memberNo;
 	}
 
-	public void setUserid(String userid) {
-		this.userid = userid;
+	public void setMemberNo(String memberNo) {
+		this.memberNo = memberNo;
 	}
 
 	public String getCategory() {
@@ -51,12 +51,12 @@ public class ProductVO {
 		this.price = price;
 	}
 
-	public String getLocation() {
-		return location;
+	public String getFilename() {
+		return filename;
 	}
 
-	public void setLocation(String location) {
-		this.location = location;
+	public void setFilename(String filename) {
+		this.filename = filename;
 	}
 
 	public String getRgb() {

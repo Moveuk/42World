@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
@@ -289,7 +289,7 @@ function openWin(){
                         <br>
                     </div>
                     <div class="main1_main_profile_div_footer">
-                        <input type="button" onclick="window.open('openMinihome','userID minihome','width=1400,height=800,location=no,status=no,scrollbars=yes')" value="내 미니홈피가기">
+                        <input type="button" onclick="window.open('openMinihome','memberNo minihome','width=1400,height=800,location=no,status=no,scrollbars=yes')" value="내 미니홈피가기">
                     </div>
 
                 </div>

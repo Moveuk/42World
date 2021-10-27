@@ -10,11 +10,11 @@ import lombok.Setter;
 public class PhotoVO {
 	
 	private int photoNo;
-	private String userId;
+	private int memberNo;
 	private Date uploadDate;
 	private String folder;
 	private String title;
-	private String location;
+	private String filename;
 	private String photoContent;
 	private int cnt;
 	

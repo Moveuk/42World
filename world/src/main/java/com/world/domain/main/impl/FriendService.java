@@ -6,7 +6,7 @@ import com.world.domain.main.vo.FriendVO;
 
 public interface FriendService {
 
-	FriendVO getFriendCount(String userid);
+	FriendVO getFriendCount(String memberNo);
 
 	void requestFriend(FriendVO vo);
 

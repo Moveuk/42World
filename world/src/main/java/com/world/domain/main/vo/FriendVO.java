@@ -2,8 +2,8 @@ package com.world.domain.main.vo;
 
 public class FriendVO {
 	private int friendNo;
-	private String friendTo;
-	private String friendFrom;
+	private int friendTo;
+	private int friendFrom;
 	private String nicknameTo;
 	private String nicknameFrom;
 	private int accept;
@@ -17,19 +17,19 @@ public class FriendVO {
 		this.friendNo = friendNo;
 	}
 
-	public String getFriendTo() {
+	public int getFriendTo() {
 		return friendTo;
 	}
 
-	public void setFriendTo(String friendTo) {
+	public void setFriendTo(int friendTo) {
 		this.friendTo = friendTo;
 	}
 
-	public String getFriendFrom() {
+	public int getFriendFrom() {
 		return friendFrom;
 	}
 
-	public void setFriendFrom(String friendFrom) {
+	public void setFriendFrom(int friendFrom) {
 		this.friendFrom = friendFrom;
 	}
 

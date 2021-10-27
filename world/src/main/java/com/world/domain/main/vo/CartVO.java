@@ -6,11 +6,11 @@ public class CartVO {
 
 	private int cartno;
 	private Date resdate;
-	private String userid;
+	private String memberNo;
 	private String category;
 	private String name;
 	private int price;
-	private String location;
+	private String filename;
 	private String rgb;
 	private String font;
 
@@ -30,12 +30,12 @@ public class CartVO {
 		this.resdate = resdate;
 	}
 
-	public String getUserid() {
-		return userid;
+	public String getMemberNo() {
+		return memberNo;
 	}
 
-	public void setUserid(String userid) {
-		this.userid = userid;
+	public void setMemberNo(String memberNo) {
+		this.memberNo = memberNo;
 	}
 
 	public String getCategory() {
@@ -62,12 +62,12 @@ public class CartVO {
 		this.price = price;
 	}
 
-	public String getLocation() {
-		return location;
+	public String getFilename() {
+		return filename;
 	}
 
-	public void setLocation(String location) {
-		this.location = location;
+	public void setFilename(String filename) {
+		this.filename = filename;
 	}
 
 	public String getRgb() {

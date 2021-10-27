@@ -7,7 +7,7 @@ public class DotoryVO {
 	private int dotoryno;
 	private Date buydate;
 	private String division;
-	private String userid;
+	private String memberNo;
 	private String giftto;
 	private int giftstate;
 	private String category;
@@ -37,13 +37,13 @@ public class DotoryVO {
 	public void setDivision(String division) {
 		this.division = division;
 	}
-
-	public String getUserid() {
-		return userid;
+	
+	public String getMemberNo() {
+		return memberNo;
 	}
 
-	public void setUserid(String userid) {
-		this.userid = userid;
+	public void setMemberNo(String memberNo) {
+		this.memberNo = memberNo;
 	}
 
 	public String getGiftto() {

@@ -99,8 +99,8 @@
 	                <input type="hidden" name="category" value="${ productVO.category}">
 	                <input type="hidden" name="name" value="${ productVO.name}">	               
 	                <input type="hidden" name="price" value="${ productVO.price}">
-	                <input type="hidden" name="location" value="${ productVO.location}">
-					<input type = "hidden" name = "userid" value = "${sessionScope.loginUser}">
+	                <input type="hidden" name="filename" value="${ productVO.filename}">
+					<input type = "hidden" name = "memberNo" value = "${sessionScope.loginUser}">
 
 	                <a class="purchase_main_product_div_dotori" id="price"  >${productVO.price}</a>
 	            </div>

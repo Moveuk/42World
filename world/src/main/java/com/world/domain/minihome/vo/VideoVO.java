@@ -12,11 +12,11 @@ import lombok.ToString;
 public class VideoVO {
 	
 	private int videoNo;
-	private String userId;
+	private int memberNo;
 	private Date uploadDate;
 	private Integer folderNo;
 	private String title;
-	private String location;
+	private String filename;
 	private String content;
 	private int cnt;
 	

@@ -39,7 +39,7 @@
 						</div>
 						<div class="video">
 							<video autoplay controls width="480" style="border: 1px rgb(93, 94, 93) solid;">
-								<source src="/resources/video/${videoVO.location}" type="video/mp4">
+								<source src="/resources/video/${videoVO.filename}" type="video/mp4">
 								<source src="ds2.ogv" type="video/ogv">
 								<source src="ds2.webm" type="video/webm">
 							</video>

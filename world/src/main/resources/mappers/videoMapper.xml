@@ -12,8 +12,8 @@
   	</select>
   	
   	<insert id="insertVideo"  parameterType="video">
-  		insert into world.video (userId,folderNo,title,location,content)
-  		values(#{userId},#{folderNo},#{title},#{location},#{content});
+  		insert into world.video (memberNo,folderNo,title,filename,content)
+  		values(#{memberNo},#{folderNo},#{title},#{filename},#{content});
   	</insert>
   	
   	<update id="updateVideo" parameterType="video">

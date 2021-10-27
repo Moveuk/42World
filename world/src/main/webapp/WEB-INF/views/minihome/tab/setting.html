@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="${pageContext.request.contextPath}/resources/js/minihome/visitors.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.7/tailwind.min.css">
+	<link rel="stylesheet" type="text/css" href="../../../../resources/css/setting.css">
+	<title>Document</title>
+</head>
+
+<body class="grid grid-flow-col grid-cols-3">
+	<div class="left">
+		<div id="setting_menu" class="leftContent text-green-400">
+			<h2 id="setting_title" class="font-bold text-3xl">Manager</h2>
+			<hr>
+			<div id="setting_manageMinihome">
+				<h3 class="text-lg text-gray-700 font-bold">미니홈피관리</h3>
+				<ul>
+					<li><a href="setting/myinfo">기본정보</a></li>
+					<li><a href="setting/menu">메뉴 관리</a></li>
+				</ul>
+			</div>
+			<div id="setting_setItem">
+				<h3 class="text-lg text-gray-700 font-bold">아이템 설정관리</h3>
+				<ul>
+					<li><a href="setting/skin">미니홈피 스킨 설정</a></li>
+					<li><a href="setting/font">글꼴 설정</a></li>
+					<li><a href="setting/minimi">스토리룸, 미니미 설정</a></li>
+					<li><a href="setting/music">음악 설정</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="right col-span-2 ">
+		<div class="rightContent">
+		</div>
+	</div>
+</body>
+
+</html>

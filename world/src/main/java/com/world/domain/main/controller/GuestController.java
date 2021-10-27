@@ -19,7 +19,7 @@ public class GuestController {
 	
 	@RequestMapping("/guest/guestList")
 	public String getGuestList(HttpServletRequest req, GuestVO vo, Model model) throws IllegalStateException{
-		String visitTo = req.getParameter("visitTo");
+		int visitTo = Integer.parseInt(req.getParameter("visitTo"));
 		
 		System.out.println("visitTo : " + visitTo);
 		

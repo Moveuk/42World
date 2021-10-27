@@ -84,7 +84,7 @@
   			   <c:forEach items="${itemList}" var="itemVO">
                     <tr>
                         <td class="myItem_main_td_date">${itemVO.buydate }</td>
-                        <td>${itemVO.userid }</td>
+                        <td>${itemVO.memberNo }</td>
                         <c:choose>
 	                        <c:when test="${itemVO.division  == 1}">
 	                      	  <td>구매</td>
@@ -95,7 +95,7 @@
                         </c:choose>
                         <td>${itemVO.category }</td>
                         <td>${itemVO.name }</td>
-                        <td>${itemVO.location }</td>
+                        <td>${itemVO.filename }</td>
                         <td class="myItem_main_td_price">
                             <img src="${pageContext.request.contextPath}/resources/img/dotori.png">${itemVO.price }
                         </td>

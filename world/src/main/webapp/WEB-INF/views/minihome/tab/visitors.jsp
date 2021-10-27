@@ -41,8 +41,8 @@
 				</div>
 				<div class="visitor_content">
 					<form id="insertVisitorsLogForm" action="visitors/insertVisitorsLog" method="post">
-						<input type="hidden" name="ownerId" value="${session.userId }">
-						<input type="hidden" name="writerId" value="${session.userId }">
+						<input type="hidden" name="ownerId" value="${session.memberNo }">
+						<input type="hidden" name="writerId" value="${session.memberNo }">
 						<div class="visitor_content_minimi">
 							<img src="/resources/img/minimi/minimi2.png" alt="미니미">
 						</div>
