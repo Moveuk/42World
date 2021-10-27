@@ -48,7 +48,7 @@ public class PhotoController {
 		 * System.out.println(dd.getTitle());
 		 */
 		
-		return "/minihome/tab/photo";
+		return folder;
 	}
 
 	

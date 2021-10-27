@@ -21,7 +21,7 @@
 		select distinct (folder)"folder" from photo order by folder asc
   	</select>
   	 <select id="firstPhotoList" resultType="photo">
-		select * from photo where folder='2'
+		select * from photo where folder='1'
   	</select>
   	
   	<!-- <select id="getReplyList" resultType="photo" parameterType="photo">

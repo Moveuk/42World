@@ -16,68 +16,56 @@
 			$(".photo_content").css('display', 'none');
 			var href = $(this).find("a").attr("href");
 			$(href).css('display', 'block');
-			var folderName = $(this).find("span").text();
-			console.log(folderName);
+
 			//   $(".photoFolders li").removeClass("active");
 			$(".photoFolders img").attr('src', '../resources/img/close.png');
 			$(this).children("img").attr('src', '../resources/img/open.png');
 			// 
-			console.log("여기까지는 옵니다1");
+
 			var string = href
 			var no = string.replace(/[^0-9]/g, '');
-			console.log("여기까지는 옵니다2");
 			$(".photo_content").eq(no - 1).css('display', 'block');
-			console.log("여기까지는 옵니다3");
-			
-			 $.ajax({
 
-				url:'openMinihome/photoList'
-				, method : 'POST'
-			        , data: 'folder='+folderName
-			        , success :function(resp){
+			var folderName = $(this).children("a").text();
+			console.log("==" + folderName);
+
+			$.ajax({
+				url : 'openMinihome/photoList',
+				method : 'POST',
+				data : 'folder=' + folderName,
+				success : function(data) {
 					//$(".photo_content").eq(no - 1).
-			        //	$(".right").html(resp);
-					console.log(resp);
+					//$(".right").html(data);
+					console.log("--" + data);
+					//location.href="photo";
+					//$('.photo_content').load(location.href+".photo_content>*","");
+
+					$('.photo_content').load(document.URL + '.photo_content');
 				}
-				
-				
-			}) 
-			
+			})
+
+			//	 $(activeTab).fadeIn();
 			return false;
 		});
 	})
-	function form_submit() {
-		open.window('../minihome/addPhoto.html', 'ap', 'width=600,height=800');
-	}
-
-<<<<<<< HEAD
-
-        $(activeTab).fadeIn();
-
-        return false;
-    });
-})
-$(function () {
-    $(".photoFolders li a").click(function () {
-        var folder = $(this).children('span').html();
-        $(".photo_content input[name=kind]").attr('value', folder);
-
-    })
-})
-
-function folder(){
-	var po = JSON.parse(${photoList});
-	
-	
-	
-	
-}
-		
-=======
 	function send() {
 		$(".photo_content").eq(no).css('display', 'block');
 	}
->>>>>>> develop
+	function form_submit() {
+		open.window('../minihome/addPhoto.html', 'ap', 'width=600,height=800');
+	}
+	/* $(function () {
+	    $(".photoFolders li a").click(function () {
+	        var folder = $(this).children('span').html();
+	        $(".photo_content input[name=kind]").attr('value', folder);
+	    })
+	}) */
+	/* function folder(){
+		var po = JSON.parse(${photoList});
+	}
+	function send() {
+		$(".photo_content").eq(no).css('display', 'block');
+	} */
 </script>
 <div class="left">
 	<div class="leftContent">
@@ -99,6 +87,7 @@ function folder(){
 
 <div class="right">
 	<div class="rightContent">
+
 		<c:forEach items="${photoFolderList}" var="photoFolderList"
 			varStatus="status">
 			<div id="#photoFolder${status.index+1}" class="photo_content">
@@ -109,7 +98,7 @@ function folder(){
 
 				<c:forEach items="${photoList}" var="photoVO">
 						${status.index+1}
-						<div class="photoForm">
+					<div class="photoForm">
 						<div class="photoTitle">
 							<input type="text" name="photoTitleInput" id="photoTitleInput"
 								value="${photoVO.title}" readonly>
@@ -145,6 +134,43 @@ function folder(){
 			</div>
 		</c:forEach>
 
-		
+		<!--  <div id="photoFolder2" class="photo_content">
+			<input type="text" value="" name="kind" id="kind">
+				<input type="button" value="사진추가d" name="addBoard" onclick="writingBoard()">
+					
+			<div class="photoForm">
+				<div class="photoTitle">
+					<input type="text" name="photoTitleInput" id="photoTitleInput" value="dd" readonly>
+				</div>
+				<div class="img">
+					<img src="../resources/photo/1.jpg">
+				</div>
+				<div class="photoFooter">
+					<button class="photoButton" onclick="">수정</button>
+					<button class="photoButton" onclick="">이동</button>
+					<button class="photoButton" onclick="">삭제</button>
+				</div>
+				<div class="comment">
+					<div class="commentForm">
+						<span>댓글</span> <input type="text" name="commentInput" placeholder="댓글을 작성해주세요" id="commentInput" name="commentInput">
+						<input type="button" onclick="comentSubmit()" name="commentSubmit" id="commentSubmit" value="확인">
+					</div>
+					<div class="commentList">
+						<ul>
+							<li>도도리 귀여워요~ <a href="#">&nbsp;&nbsp;홍길동</a>
+							</li>
+							<li>퍼가요~♡ <a href="#">&nbsp;&nbsp;뽀로로</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div> -->
+		<!--<div id="photoFolder3" class="photo_content">
+			<input type="text" value="" name="kind" id="kind">
+			<div class="photoForm">
+				<img src="/resources/img/friend.png">
+			</div>
+		</div> -->
 	</div>
 </div>
