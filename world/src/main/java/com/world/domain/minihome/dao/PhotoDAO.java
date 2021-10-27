@@ -24,10 +24,23 @@ public class PhotoDAO {
 		System.out.println("run PhotoDAO photo()");
 		return sqlSession.selectList("PhotoDAO.photo");
 	}
-	public List<PhotoVO> photoList(PhotoVO vo){
-		System.out.println("run PhotoDAO photoList()");
-		return sqlSession.selectList("PhotoDAO.photoList",vo);
-	}
+
+	
+	  public List<PhotoVO> photoList(PhotoVO vo){
+		  System.out.println("run PhotoDAO photoList()");
+		  
+		  System.out.println(vo.toString());
+		  
+	  return sqlSession.selectList("PhotoDAO.photoList",vo); 
+	  }
+	 
+		/*
+		 * public List<PhotoVO> photoList2(int value){
+		 * System.out.println("run PhotoDAO photoList()");
+		 * 
+		 * 
+		 * return sqlSession.selectList("PhotoDAO.photoList",value); }
+		 */
 	public List<PhotoVO> firstPhotoList(){
 		System.out.println("run PhotoDAO firstPhotoList()");
 		return sqlSession.selectList("PhotoDAO.firstPhotoList");

@@ -26,13 +26,15 @@
 			var no = string.replace(/[^0-9]/g, '');
 			$(".photo_content").eq(no - 1).css('display', 'block');
 
-			var folderName = $(this).children("a").text();
-			console.log("==" + folderName);
+			//var folderName = $(this).children("a").text();
+			//console.log("==" + folderName);
+			var folderIndex = no;
+			console.log("==" +folderIndex);
 
 			$.ajax({
 				url : 'openMinihome/photoList',
 				method : 'POST',
-				data : 'folder=' + folderName,
+				data : "value="+folderIndex,
 				success : function(data) {
 					//$(".photo_content").eq(no - 1).
 					//$(".right").html(data);
@@ -40,7 +42,7 @@
 					//location.href="photo";
 					//$('.photo_content').load(location.href+".photo_content>*","");
 
-					$('.photo_content').load(document.URL + '.photo_content');
+					//$('.photo_content').load(document.URL + '.photo_content');
 				}
 			})
 
@@ -104,7 +106,7 @@
 								value="${photoVO.title}" readonly>
 						</div>
 						<div class="img">
-							<img src="../resources/photo/${photoVO.location}">
+							<img src="../resources/photo/${photoVO.filename}">
 						</div>
 						<div class="content">
 							<p>내용</p>

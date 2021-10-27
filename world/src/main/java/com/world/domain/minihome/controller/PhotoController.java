@@ -2,12 +2,8 @@ package com.world.domain.minihome.controller;
 
 
 import javax.inject.Inject;
-import javax.servlet.http.HttpServletRequest;
-
-
 
 import org.apache.ibatis.session.SqlSession;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -38,18 +34,56 @@ public class PhotoController {
 	}
 	@ResponseBody
 	@RequestMapping(value="/photoList")
-	public String photoList(HttpServletRequest request,PhotoVO vo, Model model,String folder) {
-		System.out.println("run PhotoController photoList()");
-		System.out.println(folder);
-		model.addAttribute("photoList", photoService.photoList(vo));
-		
-		/*
-		 * PhotoVO dd = sqlSession.selectOne("PhotoDAO.photoList1",folder);
-		 * System.out.println(dd.getTitle());
-		 */
-		
-		return folder;
+	public int photoList(PhotoVO vo)throws Exception{
+		photoService.photoList(vo);
+		return "photoList";
 	}
+//	@ResponseBody
+//	@RequestMapping(value="/photoList")
+//	public int photoList(HttpServletRequest request,PhotoVO vo, Model model,int value) {
+//		
+//		  System.out.println("run PhotoController photoList()");
+//		  System.out.println("controller value:"+value);
+//		  model.addAttribute("photoList", photoService.photoList(vo));
+//		  System.out.println("controller vo:"+vo.toString());
+//		 
+//		
+//		//  List<Object> dd = sqlSession.selectList("PhotoDAO.photoList",value);
+//		 //System.out.println(dd.get(0).toString());
+//		  PhotoVO pho = sqlSession.selectOne("PhotoDAO.photoList",value);
+//		  System.out.println("chk@@:"+pho.getPhotoContent());
+//		 
+//		HttpSession session = request.getSession();
+//		session.setAttribute("value", value);
+//		System.out.println("photoList value:"+value);
+//		return value;
+//	}
+//	---
+//	@ResponseBody
+//	@RequestMapping(value="/photoList2")
+//	public List<PhotoVO> photoList2(HttpServletRequest request, Model model,int value) {
+//		/*
+//		 * System.out.println("run PhotoController photoList()");
+//		 * System.out.println("controller value:"+value);
+//		 * model.addAttribute("photoList", photoService.photoList(vo));
+//		 * System.out.println("controller vo:"+vo.toString());
+//		 */
+//		List<PhotoVO> vo=null;
+//		System.out.println("photoList2도착");
+//		HttpSession session = request.getSession();
+//		System.out.println("sessionvalue:"+session.getAttribute("value"));
+//		value=(int)session.getAttribute("value");
+//		//vo=photoService.photoList2(value);
+//		
+//		model.addAttribute("photoList", photoService.photoList2(value));
+//		/*
+//		 * PhotoVO dd = sqlSession.selectOne("PhotoDAO.photoList1",folder);
+//		 * System.out.println(dd.getTitle());
+//		 */
+//		System.out.println("photoList2 value:"+value);
+//		System.out.println("photoList2 vo:"+vo.toString());
+//		return vo;
+//	}
 
 	
 
