@@ -50,8 +50,8 @@
 		<url-pattern>/board/*</url-pattern>
 		<url-pattern>/visitors/*</url-pattern>
 		<url-pattern>/openMinihome/*</url-pattern>
-		<url-pattern>/upload/*</url-pattern>
-		<url-pattern>/uploadPhoto/*</url-pattern>
+		<url-pattern>/upload*</url-pattern>
+		<url-pattern>/setting/*</url-pattern>
 	</servlet-mapping>
 
 	<!-- 한글 처리 코드 -->
