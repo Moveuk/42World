@@ -15,9 +15,9 @@ public class FriendServiceImpl implements FriendService {
 	private FriendDAO friendDAO;
 
 	@Override
-	public FriendVO getFriendCount(String userid) {
-		System.out.println("ProductServiceImpl getProduct() :" + userid);
-		return friendDAO.getfriendCount(userid);
+	public FriendVO getFriendCount(String memberNo) {
+		System.out.println("ProductServiceImpl getProduct() :" + memberNo);
+		return friendDAO.getfriendCount(memberNo);
 	}
 
 	@Override

@@ -69,7 +69,7 @@ public class LoginOutIndexController {
 
 			MemberVO member = memberService.getPassword(vo);
 
-			System.out.println("====== else 3 : " + member.getPassword() + "/" + member.getUserid());
+			System.out.println("====== else 3 : " + member.getPassword() + "/" + member.getMemberNo());
 			System.out.println(member.getPassword() + "/" + password);
 			if (member.getPassword().equals(password)) {
 
@@ -78,39 +78,26 @@ public class LoginOutIndexController {
 
 				HttpSession session = request.getSession();
 				// 여기서부터 세션에 값 저장
-				session.setAttribute("loginUser", member.getUserid());
-				session.setAttribute("loginEmail", member.getEmail());
-				session.setAttribute("loginName", member.getName());
-				session.setAttribute("loginBirth", member.getBirth());
-				session.setAttribute("loginGender", member.getGender());
-				session.setAttribute("loginTitle", member.getTitle());
-				session.setAttribute("loginSubTitle", member.getSubtitle());
-				session.setAttribute("loginPropic", member.getPropic());
-				session.setAttribute("loginPhoto", member.getPhoto());
-				session.setAttribute("loginBoard", member.getBoard());
-				session.setAttribute("loginVideo", member.getVideo());
-
-				System.out.println(session.getAttribute("loginUser"));
-
-//				GuestVO guest =  guestService.getGuest(member.getUserid());
+				session.setAttribute("member", member);
+				
+//				GuestVO guest =  guestService.getGuest(member.getMemberNo());
 //				System.out.println(guest.getGuestno());
 
-				GuestVO GuestCount = sqlSession.selectOne("GuestDAO.getguest", member.getUserid());
+				GuestVO GuestCount = sqlSession.selectOne("GuestDAO.getguest", member.getMemberNo());
 				System.out.println("오늘의 방문자: " + GuestCount.getGuestno());// Guest Count
 
-				FriendVO FriendCount = sqlSession.selectOne("FriendDAO.getfriendCount", member.getUserid());
+				FriendVO FriendCount = sqlSession.selectOne("FriendDAO.getfriendCount", member.getMemberNo());
 				System.out.println("일촌신청: " + FriendCount.getFriendNo());// Friend Count
 
-				ItemVO ItemCount = sqlSession.selectOne("ItemDAO.getitemCount", member.getUserid());
+				ItemVO ItemCount = sqlSession.selectOne("ItemDAO.getitemCount", member.getMemberNo());
 				System.out.println("선물함: " + ItemCount.getItemno());// Item Count
 
-				DotoryVO DotorySum = sqlSession.selectOne("DotoryDAO.getdotorySum", member.getUserid());
+				DotoryVO DotorySum = sqlSession.selectOne("DotoryDAO.getdotorySum", member.getMemberNo());
 				if (DotorySum.getDotoryno() == 1) {
 					System.out.println("내 도토리: " + DotorySum.getDotoryno());// Dotory Sum
-
 				}
 
-				CartVO CartCount = sqlSession.selectOne("CartDAO.getcartCount", member.getUserid());
+				CartVO CartCount = sqlSession.selectOne("CartDAO.getcartCount", member.getMemberNo());
 				System.out.println("장바구니: " + CartCount.getCartno());// Item Count
 
 				/*

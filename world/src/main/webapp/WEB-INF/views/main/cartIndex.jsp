@@ -13,7 +13,7 @@
 	
 	<form name="formm" method="post" action="cart/cartList">
 		조회할 장바구니의 유저 아이디를 입력하세요.<br>
-		<input type="text" name="userId" value="fox">
+		<input type="text" name="memberNo" value="fox">
 		
 		<input type="submit" value="내 장바구니 가기"> <br>
 	</form>

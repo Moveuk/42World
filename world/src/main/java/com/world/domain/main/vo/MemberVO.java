@@ -6,12 +6,12 @@ import org.springframework.web.multipart.MultipartFile;
 
 public class MemberVO {
 
-	private String userid;
-	private String password;
+	private int memberNo;
 	private String email;
+	private String password;
 	private String name;
 	private Date birth;
-	private String gender;
+	private int gender;
 	private String title;
 	private String subtitle;
 	private String propic;
@@ -23,12 +23,12 @@ public class MemberVO {
 	private String searchKeyword;
 	private MultipartFile uploadFile;
 
-	public String getUserid() {
-		return userid;
+	public int getMemberNo() {
+		return memberNo;
 	}
 
-	public void setUserid(String userid) {
-		this.userid = userid;
+	public void setMemberNo(int memberNo) {
+		this.memberNo = memberNo;
 	}
 
 	public String getPassword() {
@@ -63,11 +63,11 @@ public class MemberVO {
 		this.birth = birth;
 	}
 
-	public String getGender() {
+	public int getGender() {
 		return gender;
 	}
 
-	public void setGender(String gender) {
+	public void setGender(int gender) {
 		this.gender = gender;
 	}
 

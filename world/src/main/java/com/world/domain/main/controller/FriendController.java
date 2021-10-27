@@ -90,8 +90,8 @@ public class FriendController {
 	@RequestMapping("/friend/checkRequest")
 	public String getOneRequestFriend(HttpServletRequest req, Model model, FriendVO vo) throws IllegalStateException {
 
-		String friendTo = req.getParameter("friendTo");
-		String friendFrom = req.getParameter("friendFrom");
+		int friendTo = Integer.parseInt(req.getParameter("friendTo"));
+		int friendFrom = Integer.parseInt(req.getParameter("friendFrom"));
 
 		System.out.println("üũ����Ʈ3 - friendTo : " + friendTo + " friendFrom : " + friendFrom);
 
@@ -165,8 +165,8 @@ public class FriendController {
 	public String updateFriend(HttpServletRequest req, Model model, FriendVO vo) throws IllegalStateException {
 
 		String nicknameFrom = req.getParameter("nicknameFrom");
-		String friendFrom = req.getParameter("friendFrom");
-		String friendTo = req.getParameter("friendTo");
+		int friendTo = Integer.parseInt(req.getParameter("friendTo"));
+		int friendFrom = Integer.parseInt(req.getParameter("friendFrom"));
 		System.out
 				.println("nicknameFrom : " + nicknameFrom + " friendFrom : " + friendFrom + " friendTo : " + friendTo);
 
@@ -193,9 +193,9 @@ public class FriendController {
 	// ���� ����
 	@RequestMapping("/friend/deleteFriend")
 	public String deleteFriend(HttpServletRequest req, Model model, FriendVO vo) throws IllegalStateException {
-		String friendFrom = req.getParameter("friendFrom");
+		int friendFrom = Integer.parseInt(req.getParameter("friendFrom"));
 		String nicknameFrom = req.getParameter("nicknameFrom");
-		String friendTo = req.getParameter("friendTo");
+		int friendTo = Integer.parseInt(req.getParameter("friendTo"));
 
 		vo.setFriendFrom(friendFrom);
 		vo.setNicknameFrom(nicknameFrom);

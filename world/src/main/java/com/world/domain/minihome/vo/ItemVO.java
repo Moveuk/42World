@@ -11,14 +11,14 @@ public class ItemVO {
 	
 	private int itemNo;
 	private Date buydate;
-	private String userId;
+	private int memberNo;
 	private String division;
-	private String giftTo;
+	private int giftTo;
 	private int giftState;
 	private String category;
 	private String name;
 	private int price;
-	private String glocation;
+	private String filename;
 	private String rgb;
 	private String font;
 	private int use;

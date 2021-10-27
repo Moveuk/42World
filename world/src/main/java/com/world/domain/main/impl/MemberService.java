@@ -10,7 +10,7 @@ public interface MemberService {
 
 	public MemberVO confirmID(String email, String pasword);
 
-	public MemberVO getMember();
+	public MemberVO getMember(int memberNo);
 
 	void insertMember(MemberVO vo);
 

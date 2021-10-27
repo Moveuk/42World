@@ -21,9 +21,9 @@ public class GuestServiceImpl implements GuestService {
 	}
 
 	@Override
-	public GuestVO getGuest(String userid) {
-		System.out.println("ProductServiceImpl getProduct() :" + userid);
-		return guestDAO.getguest(userid);
+	public GuestVO getGuest(String memberNo) {
+		System.out.println("ProductServiceImpl getProduct() :" + memberNo);
+		return guestDAO.getguest(memberNo);
 	}
 
 	@Override

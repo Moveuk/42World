@@ -20,7 +20,7 @@ public class FriendDAO {
 		return sqlSession.selectList("FriendDAO.getfriendList");// mapper:id~
 	}
 
-	public FriendVO getfriend(String userID) {
+	public FriendVO getfriend(String memberNo) {
 		System.out.println("===FriendDAO  getfriend()  ");
 		return sqlSession.selectOne("FriendDAO.getfriend");
 	}
@@ -30,7 +30,7 @@ public class FriendDAO {
 		sqlSession.update("FriendDAO.insertfriend", vo);
 	}
 
-	public FriendVO getfriendCount(String userID) {
+	public FriendVO getfriendCount(String memberNo) {
 		System.out.println("===FriendDAO  getfriendCount()  ");
 		return sqlSession.selectOne("FriendDAO.getfriendCount");
 	}

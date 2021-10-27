@@ -1,11 +1,13 @@
 package com.world.domain.main.vo;
 
+import java.sql.Date;
+
 public class GuestVO {
 
 	private int guestno;
-	private String visitto;
-	private String visitfrom;
-	private String visitdate;
+	private int visitto;
+	private int visitfrom;
+	private Date visitdate;
 
 	public int getGuestno() {
 		return guestno;
@@ -15,27 +17,27 @@ public class GuestVO {
 		this.guestno = guestno;
 	}
 
-	public String getVisitto() {
+	public int getVisitto() {
 		return visitto;
 	}
 
-	public void setVisitto(String visitto) {
+	public void setVisitto(int visitto) {
 		this.visitto = visitto;
 	}
 
-	public String getVisitfrom() {
+	public int getVisitfrom() {
 		return visitfrom;
 	}
 
-	public void setVisitfrom(String visitfrom) {
+	public void setVisitfrom(int visitfrom) {
 		this.visitfrom = visitfrom;
 	}
 
-	public String getVisitdate() {
+	public Date getVisitdate() {
 		return visitdate;
 	}
 
-	public void setVisitdate(String visitdate) {
+	public void setVisitdate(Date visitdate) {
 		this.visitdate = visitdate;
 	}
 

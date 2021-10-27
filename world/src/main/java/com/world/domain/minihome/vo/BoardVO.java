@@ -10,11 +10,11 @@ import lombok.Setter;
 public class BoardVO {
 	
 	private int boardNo;
-	private String userId;
+	private int memberNo;
 	private Date uploadDate;
 	private String folder;
 	private String title;
-	private String location;
+	private String filename;
 	private String content;
 	private int cnt;
 	

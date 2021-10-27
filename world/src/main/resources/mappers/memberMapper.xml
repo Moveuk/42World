@@ -11,8 +11,8 @@
   		select * from member 
   	</select>
   
-  	<select id="getMember" resultType="member" parameterType="member">
-  		select * from member where seq=#{seq}
+  	<select id="getMember" resultType="member" parameterType="int">
+  		select * from member where memberNo=#{memberNo}
   	</select>
   	
   	<select id="getPassword" resultType="member" parameterType="member">

@@ -35,13 +35,13 @@ public class CartController {
 		String name = req.getParameter("name");
 		String price = req.getParameter("price");
 		String category = req.getParameter("category");
-		String location = req.getParameter("location");
+		String filename = req.getParameter("filename");
 
 		System.out.println("주문 할 상품 ID : " + marketID);
 		System.out.println("주문 할 상품 NAME : " + name);
 		System.out.println("주문 할 상품 PRICE : " + price);
 		System.out.println("주문 할 상품 CATEGORY : " + category);
-		System.out.println("주문 할 상품 LOCATION : " + location);
+		System.out.println("주문 할 상품 filename : " + filename);
 
 		// 1번 방법
 
@@ -71,8 +71,8 @@ public class CartController {
 		HttpSession session = req.getSession();
 
 		System.out.println(session.getAttribute("loginUser"));
-		String userid = (String) session.getAttribute("loginUser");
-		vo.setUserid(userid);
+		String memberNo = (String) session.getAttribute("loginUser");
+		vo.setMemberNo(memberNo);
 
 		model.addAttribute("cartList", cartService.getCartList(vo));
 
@@ -80,10 +80,10 @@ public class CartController {
 		model.addAttribute("cartListCount", cartService.getCartListCount(vo));
 
 //		//일촌에게 선물하기 - 일촌 이름 띄우기
-//		model.addAttribute("myFriendName", friendService.getFriendNameById(userId));
+//		model.addAttribute("myFriendName", friendService.getFriendNameById(memberNo));
 //		
 //		//일촌에게 선물하기 - 일촌명(별명) 띄우기
-//		model.addAttribute("myFriendNickname", friendService.myFriendList(userId));
+//		model.addAttribute("myFriendNickname", friendService.myFriendList(memberNo));
 //		
 
 		return "/main/cart_list";

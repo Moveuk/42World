@@ -13,7 +13,7 @@
 	</select>
 
 	<select id="getitemCount" resultType="item" parameterType="item">
-  		select count(*)"itemno" from item where userid =#{value} and giftstate='1'
+  		select count(*)"itemno" from item where memberNo =#{value} and giftstate='1'
   	</select>
 
   

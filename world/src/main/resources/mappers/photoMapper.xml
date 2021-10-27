@@ -8,10 +8,10 @@
 
   <!-- 	<resultMap id="resultGetFile" type="PhotoVO">
   		<result property="photoNo" column="photono"/>
-  		<result property="userId" column="userid"/>
+  		<result property="memberNo" column="memberNo"/>
   		<result property="uploadDate" column="uploaddate"/>
   		<result property="title" column="title"/>
-  		<result property="location" column="location"/>
+  		<result property="filename" column="filename"/>
   		<result property="photoContent" column="photocontent"/>
   		<result property="cnt" column="cnt"/>
   		<result property="folder" column="folder"/>

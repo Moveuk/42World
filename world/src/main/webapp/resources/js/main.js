@@ -18,18 +18,6 @@ $(function () {
 		/* 탭 href에서 jsp파일 이름 불러옴 */
         var activeFilePath = $(this).find("a").attr("href");
 
-		// 콘솔에 tab 주소값 불러옴.
-		console.log(activeFilePath);
-		console.log("<%@ include file='./left/left"+activeFilePath+".jsp'%>");
-
-		// html 정적이라 실패함
-		//$(".tab_content .left").html("<%@ include file='./left/left"+activeFilePath+".jsp'%>");
-		//$(".tab_content .right").html("<%@ include file='./right/right"+activeFilePath+".jsp'%>");
-		
-		// jquery load로 각 페이지 부위별로 불러옴 -> 스프링에서 묶는 도중 load가 url패턴으로 인식하여 변경시도
-	//	$(".tab_content .leftContent").load("./left/left"+activeFilePath+".jsp");
-	//	$(".tab_content .rightContent").load("./right/right"+activeFilePath+".jsp");
-		
 		// jquery load로 탭별로 불러옴
 		$(".tab_content").load(activeFilePath);
 		

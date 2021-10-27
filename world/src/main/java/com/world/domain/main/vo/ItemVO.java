@@ -6,14 +6,14 @@ public class ItemVO {
 
 	private int itemno;
 	private Date buydate;
-	private String userid;
+	private int memberNo;
 	private String division;
-	private String giftto;
+	private int giftto;
 	private int giftstate;
 	private String category;
 	private String name;
 	private int price;
-	private String location;
+	private String filename;
 	private String rgb;
 	private String font;
 	private int use;
@@ -34,12 +34,20 @@ public class ItemVO {
 		this.buydate = buydate;
 	}
 
-	public String getUserid() {
-		return userid;
+	public int getMemberNo() {
+		return memberNo;
 	}
 
-	public void setUserid(String userid) {
-		this.userid = userid;
+	public void setMemberNo(int memberNo) {
+		this.memberNo = memberNo;
+	}
+
+	public int getGiftto() {
+		return giftto;
+	}
+
+	public void setGiftto(int giftto) {
+		this.giftto = giftto;
 	}
 
 	public String getDivision() {
@@ -48,14 +56,6 @@ public class ItemVO {
 
 	public void setDivision(String division) {
 		this.division = division;
-	}
-
-	public String getGiftto() {
-		return giftto;
-	}
-
-	public void setGiftto(String giftto) {
-		this.giftto = giftto;
 	}
 
 	public int getGiftstate() {
@@ -90,12 +90,12 @@ public class ItemVO {
 		this.price = price;
 	}
 
-	public String getLocation() {
-		return location;
+	public String getFilename() {
+		return filename;
 	}
 
-	public void setLocation(String location) {
-		this.location = location;
+	public void setFilename(String filename) {
+		this.filename = filename;
 	}
 
 	public String getRgb() {

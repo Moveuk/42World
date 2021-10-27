@@ -8,7 +8,7 @@ public interface GuestService {
 
 	void insertGuest(GuestVO vo);
 
-	GuestVO getGuest(String userid);
+	GuestVO getGuest(String memberNo);
 
 	List<GuestVO> getGuestList(GuestVO vo);
 }

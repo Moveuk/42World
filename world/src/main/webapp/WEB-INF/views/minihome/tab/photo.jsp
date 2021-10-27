@@ -73,7 +73,7 @@
 								value="${photoVO.title}" readonly>
 						</div>
 						<div class="img">
-							<img src="${pageContext.request.contextPath}/resources/photo/${photoVO.location}">
+							<img src="${pageContext.request.contextPath}/resources/photo/${photoVO.filename}">
 						</div>
 						<div class="content">
 							<p>내용</p>

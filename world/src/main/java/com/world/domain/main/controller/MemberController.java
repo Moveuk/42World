@@ -26,7 +26,7 @@ public class MemberController {
 	@RequestMapping("/member/getMember")
 	public String getMember(MemberVO vo, Model model) {
 
-		model.addAttribute("member", memberService.getMember());
+		model.addAttribute("member", memberService.getMember(vo.getMemberNo()));
 		return "/admin/memberList";
 	}
 

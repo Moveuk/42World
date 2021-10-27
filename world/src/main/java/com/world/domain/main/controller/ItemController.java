@@ -22,7 +22,7 @@ public class ItemController {
 		model.addAttribute("itemList", itemService.getItemList());
 
 		Date dt = vo.getBuydate();
-		String di = vo.getUserid();
+		int di = vo.getMemberNo();
 
 		System.out.println("저장되어있는 db : " + dt + "/" + di);
 
