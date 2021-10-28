@@ -24,6 +24,21 @@ public class PhotoVO {
 				+ ", filename=" + filename + ", photoContent=" + photoContent + ", cnt=" + cnt + ", folder=" + folder
 				+ ", value=" + value + "]";
 	}
+	public PhotoVO() {}
+	public PhotoVO(int photoNo,String memberNo,String value,Date uploadDate,int cnt,String filename,String title,String photoContent,String folder) {
+		this.photoContent=photoContent;
+		this.photoNo=photoNo;
+		this.memberNo=memberNo;
+		this.value=value;
+		this.uploadDate=uploadDate;
+		this.cnt=cnt;
+		this.filename=filename;
+		this.title=title;
+		this.folder=folder;
+		
+	}
+
+
 	
 	
 	

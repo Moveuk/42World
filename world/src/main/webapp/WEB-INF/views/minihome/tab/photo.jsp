@@ -2,7 +2,11 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript">
+
+	
+	
 	$(function() {
 		$(".photo_content").hide();
 		$(".photoFolders li:first").addClass("active").show();
@@ -34,25 +38,41 @@
 			$.ajax({
 				url : 'openMinihome/photoList',
 				method : 'POST',
-				data : "value="+folderName,
-				success : function(data) {
-					//$(".photo_content").eq(no - 1).
-					//$(".right").html(data);
+				data : 'value='+folderName,
+				type: "POST", 
+				
+				success : function(data){
+					//$(".photo_content input[name=kind]").attr('value', this.folder);
+					$(data).each(function(){
+						console.log(this.photoNo + " " + this.photoContent+ " " + this.uploadDate+ " " + this.filename);
+						// 1. <div> element 만들기
+						  const newDiv = document.createElement('div');
+						  
+						  // 2. <div>에 들어갈 text node 만들기
+						  const newText = document.createTextNode(this.photoNo);
+						  
+						  // 3. <div>에 text node 붙이기
+						  newDiv.appendChild(newText);
+						  
+						  // 4. <body>에 1에서 만든 <div> element 붙이기
+						  document.body.appendChild(newDiv);
 					
-					//location.href="photo";
-					//$('.photo_content').load(location.href+".photo_content>*","");
-
-<<<<<<< Updated upstream
-					//$('.photo_content').load(document.URL + ' .photo_content');
-					//$('.photo_content').load(window.location + ' .photo_content');
 					
-					//const json = '{"result":true, "count":42}';
-					//const json = '{"fileName":"jpg","date":42}'
-					//const obj = JSON.parse(json);
-					console.log("넘어옵니다");
+					});
+					
+					//$('.reload').load(location.href + ' .reload');
+					
+					
+					},
+				error :function(){
+					alert("request error!");
+					}
+					
+					/* console.log("넘어옵니다");
 					console.log(data.length);
 					for(var i=0;i<data.length;i++){
 						console.log(data.title);
+						
 					}
 					
 					
@@ -63,18 +83,20 @@
 					
 					console.log(window.location);
 					console.log(obj.folder);
-					$(".photo_content input[name=kind]").attr('value', obj.folder);
+					$(".photo_content input[name=kind]").attr('value', obj.folder); */
 					
 					
-				},error:function(){
+					
+					
+					
+				
+		/* 	,error:function(){
 					console.log("ajax 통신 실패");
 				}
 				,complete:function(){// complete : ajax 통신 성공여부와 상관없이 무조건 실행할 함수 정의
 					console.log("ajax 통신 성공여부와 상관없이 무조건 실행");
-=======
 					$('.photo_content').load(document.URL + '.photo_content');
->>>>>>> Stashed changes
-				}
+				} */
 			})
 
 			//	 $(activeTab).fadeIn();
@@ -115,7 +137,15 @@
 
 	<input type="button" value="button" onclick="send()"> <input
 		type="button" value="폴더추가" name="addFolder" onclick="folder()">
-
+	
+	
+	<!-- ---------- -->
+	
+	<a href="#" onclick="request()">test</a>
+	
+	
+	<!-- ---------- -->
+	
 </div>
 
 <div class="right">
@@ -130,7 +160,7 @@
 					value="사진추가하기">
 <div class="reload">
 				<c:forEach items="${photoList}" var="photoVO">
-					<div class="photoForm">
+					<div id="test" class="photoForm">
 						<div class="photoTitle">
 							<input type="text" name="photoTitleInput" id="photoTitleInput"
 								value="${photoVO.title}" readonly>
