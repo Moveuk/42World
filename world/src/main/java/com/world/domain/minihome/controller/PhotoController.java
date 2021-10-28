@@ -37,6 +37,7 @@ public class PhotoController {
 	}
 	
 	@ResponseBody
+<<<<<<< Updated upstream
 	@RequestMapping(value="/photoList",produces = "application/text; charset=UTF-8")
 	public List<PhotoVO> photoList(PhotoVO vo, Model model)throws Exception{
 		System.out.println("run PhotoController photoList()");
@@ -55,5 +56,11 @@ public class PhotoController {
 		
 System.out.println("========= photoVo size:: "+photoVo.size());
 		return list;
+=======
+	@RequestMapping(value="/photoList")
+	public String photoList(PhotoVO vo)throws Exception{
+		photoService.photoList(vo);
+		return "photoList";
+>>>>>>> Stashed changes
 	}
 }

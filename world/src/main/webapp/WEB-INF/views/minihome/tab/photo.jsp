@@ -42,6 +42,7 @@
 					//location.href="photo";
 					//$('.photo_content').load(location.href+".photo_content>*","");
 
+<<<<<<< Updated upstream
 					//$('.photo_content').load(document.URL + ' .photo_content');
 					//$('.photo_content').load(window.location + ' .photo_content');
 					
@@ -70,6 +71,9 @@
 				}
 				,complete:function(){// complete : ajax 통신 성공여부와 상관없이 무조건 실행할 함수 정의
 					console.log("ajax 통신 성공여부와 상관없이 무조건 실행");
+=======
+					$('.photo_content').load(document.URL + '.photo_content');
+>>>>>>> Stashed changes
 				}
 			})
 
