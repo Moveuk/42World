@@ -9,4 +9,6 @@ public interface PhotoService {
 	List<PhotoVO> photoList(PhotoVO vo);
 	List<PhotoVO> photo();
 	List<PhotoVO> firstPhotoList();
+
+	List<PhotoVO> photoList2();
 }

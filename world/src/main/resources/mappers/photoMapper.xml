@@ -22,11 +22,14 @@
 	<!--	select * from (select distinct (folder)"folder" from photo order by folder asc) where rownum=1-->
   	</select>
   	 <select id="firstPhotoList" resultType="photo">
-  	 	 select * from photo where folder=(select * from (select distinct (folder)"folder" from photo order by folder asc) where rownum=1) 
+  	 	select * from photo where folder=(select folder from (select distinct folder, rownum from photo) where rownum=1)
+  	 	 <!-- select * from photo where folder=(select * from (select distinct (folder)"folder" from photo order by folder asc) where rownum=1) --> 
   	 	<!--select * from photo where folder='기본 사진첩'-->
   	</select>
   	  <select id="photoList" resultType="photo" parameterType="photo">
-	select folder from (select distinct folder, rownum as rn from photo order by folder asc) where rn=#{value}
+  	  select * from photo where folder=#{value}
+	<!-- select * from (select distinct folder, rownum as rn from photo order by folder asc) where rn=#{value} -->
+	<!-- select * from photo where photoNo=#{value} -->
   	</select> 
   	
   	<select id="photoList1" resultType="photo" parameterType="photo">
@@ -37,4 +40,9 @@
   		from reply r,photo p
   		where r.photoNo=p.photoNo and p.photoNo=#{photoNo}
   	</select> -->
+  	
+  	<insert id="insertVisitorLog"  parameterType="visitorLog">
+  		insert into VisitorLog (visitorLogNo,ownerId,writerId,type,content)
+  		values(SEQ_VISITORLOG.NEXTVAL,#{ownerId},#{writerId},#{type},#{content})
+  	</insert>
 </mapper>

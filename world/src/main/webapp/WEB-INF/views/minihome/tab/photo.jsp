@@ -28,21 +28,48 @@
 
 			//var folderName = $(this).children("a").text();
 			//console.log("==" + folderName);
-			var folderIndex = no;
-			console.log("==" +folderIndex);
+			var folderName = $(this).children("a").text();
+			console.log("==" +folderName);
 
 			$.ajax({
 				url : 'openMinihome/photoList',
 				method : 'POST',
-				data : "value="+folderIndex,
+				data : "value="+folderName,
 				success : function(data) {
 					//$(".photo_content").eq(no - 1).
 					//$(".right").html(data);
-					console.log("--" + data);
+					
 					//location.href="photo";
 					//$('.photo_content').load(location.href+".photo_content>*","");
 
-					//$('.photo_content').load(document.URL + '.photo_content');
+					//$('.photo_content').load(document.URL + ' .photo_content');
+					//$('.photo_content').load(window.location + ' .photo_content');
+					
+					//const json = '{"result":true, "count":42}';
+					//const json = '{"fileName":"jpg","date":42}'
+					//const obj = JSON.parse(json);
+					console.log("넘어옵니다");
+					console.log(data.length);
+					for(var i=0;i<data.length;i++){
+						console.log(data.title);
+					}
+					
+					
+					console.log("--" + data);
+					console.log(JSON.parse(data));
+					obj = JSON.parse(data);
+					$('.reload').load(location.href + ' .reload');
+					
+					console.log(window.location);
+					console.log(obj.folder);
+					$(".photo_content input[name=kind]").attr('value', obj.folder);
+					
+					
+				},error:function(){
+					console.log("ajax 통신 실패");
+				}
+				,complete:function(){// complete : ajax 통신 성공여부와 상관없이 무조건 실행할 함수 정의
+					console.log("ajax 통신 성공여부와 상관없이 무조건 실행");
 				}
 			})
 
@@ -97,9 +124,8 @@
 				<input type="button"
 					onclick="window.open('uploadPhoto','ap','width=600,height=800')"
 					value="사진추가하기">
-
+<div class="reload">
 				<c:forEach items="${photoList}" var="photoVO">
-						${status.index+1}
 					<div class="photoForm">
 						<div class="photoTitle">
 							<input type="text" name="photoTitleInput" id="photoTitleInput"
@@ -133,6 +159,7 @@
 					</div>
 
 				</c:forEach>
+				</div>
 			</div>
 		</c:forEach>
 

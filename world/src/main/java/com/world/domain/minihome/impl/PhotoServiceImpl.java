@@ -27,6 +27,8 @@ public class PhotoServiceImpl implements PhotoService {
 
 	
 	  @Override public List<PhotoVO> photoList(PhotoVO vo) {
+		  System.out.println("service call");
+		  System.out.println("PhotoService photoList() : "+vo.getValue());
 		  System.out.println("run PhotoServiceImpl photoList()"); 
 		  return photoDAO.photoList(vo);
 	  
@@ -36,6 +38,12 @@ public class PhotoServiceImpl implements PhotoService {
 	public List<PhotoVO> firstPhotoList() {
 		System.out.println("run PhotoServiceImpl firstPhotoList()");
 		return photoDAO.firstPhotoList();
+	}
+
+	@Override
+	public List<PhotoVO> photoList2() {
+		System.out.println("run PhotoServiceImpl photoList2()");
+		return photoDAO.photoList2();
 	}
 
 

@@ -31,9 +31,9 @@ public class PhotoDAO {
 		  
 		  System.out.println(vo.toString());
 		  
-	  return sqlSession.selectList("PhotoDAO.photoList",vo); 
+		  return sqlSession.selectList("PhotoDAO.photoList",vo); 
 	  }
-	 
+
 		/*
 		 * public List<PhotoVO> photoList2(int value){
 		 * System.out.println("run PhotoDAO photoList()");
@@ -44,6 +44,10 @@ public class PhotoDAO {
 	public List<PhotoVO> firstPhotoList(){
 		System.out.println("run PhotoDAO firstPhotoList()");
 		return sqlSession.selectList("PhotoDAO.firstPhotoList");
+	}
+	public List<PhotoVO> photoList2(){
+		System.out.println("run PhotoDAO photoList2()");
+		return sqlSession.selectList("PhotoDAO.photoList2");
 	}
 	
 	public void makeFolder(PhotoVO vo) {
