@@ -11,6 +11,7 @@ import com.world.domain.minihome.impl.VisitorLogService;
 import com.world.domain.minihome.vo.VisitorLogVO;
 
 @Controller
+@RequestMapping(value = "/{userUrl}")
 public class VisitorLogController {
 	
 	@Autowired
@@ -22,14 +23,6 @@ public class VisitorLogController {
 		model.addAttribute("visitorLogList", visitorLogService.getVisitorLogList());
 		return "/minihome/tab/visitors";
 	}
-	
-	/*
-	 * @RequestMapping("/getVisitorLog") public String getVisitorLog(VisitorLogVO
-	 * vo, Model model) {
-	 * 
-	 * model.addAttribute("VisitorLog", visitorLogService.getVisitorLog()); return
-	 * "/minihome/VisitorLogList"; }
-	 */
 	
 	@RequestMapping("/visitors/insertVisitorsLog")
 	public String insertVisitorLog(HttpServletRequest req, VisitorLogVO vo, Model model) throws IllegalStateException{

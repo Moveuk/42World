@@ -12,6 +12,7 @@ import com.world.domain.minihome.impl.PhotoService;
 import com.world.domain.minihome.vo.PhotoVO;
 
 @Controller
+@RequestMapping(value = "/{userUrl}")
 public class PhotoController {
 	
 	@Autowired

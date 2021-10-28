@@ -13,6 +13,7 @@ import com.world.domain.minihome.impl.VideoService;
 import com.world.domain.minihome.vo.VideoVO;
 
 @Controller
+@RequestMapping(value = "/{userUrl}")
 public class VideoController {
 	
 	@Autowired

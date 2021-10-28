@@ -1,9 +1,11 @@
 /* 메인 페이지 오른쪽 탭 기능 */
 $(function () {
-	$(".tab_content").load("home");
+	// 페이지 띄움
+	$(".tab_content").load(document.location.href+"/home");
+	console.log(document.location.href);
+	// 탭 클릭 상태 표시
     $(".tabs li:first").addClass("active").show();
     $(".tabs li:first a").css({ "color": "black" });
-    $(".tab_content:first").show();
 
     $(".tabs li").click(function (e) {
 		
@@ -17,13 +19,17 @@ $(function () {
 
 		/* 탭 href에서 jsp파일 이름 불러옴 */
         var activeFilePath = $(this).find("a").attr("href");
-
+	
 		// jquery load로 탭별로 불러옴
 		$(".tab_content").load(activeFilePath);
 		
+		console.log(activeFilePath);
+			
         return false;
     });
 })
+
+/*
 $(function () {
     $(".profile_content").hide();
     $(".profileFolders li:first").addClass("active").show();
@@ -124,7 +130,7 @@ $(function () {
         
     })
 })
-
+*/
 
 function edit() {
     window.open("editLeftHome.html", "edit", "width=400, height=600")

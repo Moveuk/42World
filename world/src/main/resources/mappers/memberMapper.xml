@@ -12,7 +12,7 @@
   	</select>
   
   	<select id="getMember" resultType="member" parameterType="int">
-  		select * from member where memberNo=#{memberNo}
+  		select * from member where memberNo=#{value}
   	</select>
   	
   	<select id="getPassword" resultType="member" parameterType="member">

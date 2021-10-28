@@ -100,13 +100,13 @@ public class LoginOutIndexController {
 				CartVO CartCount = sqlSession.selectOne("CartDAO.getcartCount", member.getMemberNo());
 				System.out.println("장바구니: " + CartCount.getCartno());// Item Count
 
-				/*
-				 * model.addAttribute("GuestCount", GuestCount.getGuestno());
-				 * model.addAttribute("FriendCount", FriendCount.getFriendNo());
-				 * model.addAttribute("ItemCount", ItemCount.getItemno());
-				 * model.addAttribute("DotorySum", DotorySum.getDotoryno());
-				 * model.addAttribute("CartCount", CartCount.getCartno());
-				 */
+				
+				 model.addAttribute("GuestCount", GuestCount.getGuestno());
+				 model.addAttribute("FriendCount", FriendCount.getFriendNo());
+				 model.addAttribute("ItemCount", ItemCount.getItemno());
+				 model.addAttribute("DotorySum", DotorySum.getDotoryno());
+				 model.addAttribute("CartCount", CartCount.getCartno());
+				 
 				// session.removeAttribute("id");
 				// session.setAttribute("loginUser",member);
 				return "redirect:start";

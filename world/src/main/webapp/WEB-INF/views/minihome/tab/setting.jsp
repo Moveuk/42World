@@ -38,7 +38,7 @@
 		</div>
 	</div>
 </div>
-<div class="right col-span-2 ">
+<div class="right">
 	<div class="rightContent">
 		<%@ include file="./setting/updateInfo.jsp"%>
 	</div>

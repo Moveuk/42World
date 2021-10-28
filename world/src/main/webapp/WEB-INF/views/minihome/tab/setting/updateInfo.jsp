@@ -5,7 +5,7 @@
 				<table>
 					<tr>
 						<td class="p-3">이메일</td>
-						<td><input class="border border-gray-200 bg-gray-100 text-gray-600" type="text" value="{member.email}" readonly></td>
+						<td><input class="border border-gray-200 bg-gray-100 text-gray-600" type="text" value="${ownerInfo.email}" readonly></td>
 					</tr>
 					<tr>
 						<td class="p-3">비밀번호</td>
@@ -13,11 +13,11 @@
 					</tr>
 					<tr>
 						<td class="p-3">이름</td>
-						<td><input class="border border-gray-200 bg-gray-100 text-gray-600" type="text" value="{member.name}" readonly></td>
+						<td><input class="border border-gray-200 bg-gray-100 text-gray-600" type="text" value="${ownerInfo.name}" readonly></td>
 					</tr>
 					<tr>
 						<td class="p-3">생년월일</td>
-						<td><input class="border border-gray-200 bg-gray-100 text-gray-600" type="text" value="{member.birth}" readonly></td>
+						<td><input class="border border-gray-200 bg-gray-100 text-gray-600" type="text" value="${ownerInfo.birth}" readonly></td>
 					</tr>
 				</table>
 				<div id="btns" class="text-center">

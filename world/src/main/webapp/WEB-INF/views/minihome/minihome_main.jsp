@@ -13,7 +13,7 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/video.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/board.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/visitors.css">
-<title>${member.name}의minihomepage</title>
+<title>${member.name}의 minihomepage</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/jquery-ui.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/jquery.js"></script>
@@ -21,7 +21,7 @@
 <script src="${pageContext.request.contextPath}/resources/js/minihome/photo.js"></script>
 </head>
 <body>
-	<input type="hidden" name="memberNo" value="${session.member.memberNo}">
+	<input type="hidden" id="memberNo" name="memberNo" value="${ownerInfo.memberNo}">
 	<div class="back">
 		<div class="blueBox">
 			<div class="dot">
@@ -31,7 +31,7 @@
 							<input type="text" name="count_today" id="count_today" value="today | total" readonly>
 						</div>
 						<div class="mainTitle">
-							<input type="text" name="mainTitle_content" id="mainTitle_content" value="${memberNo.title }" readonly>
+							<input type="text" name="mainTitle_content" id="mainTitle_content" value="${ownerInfo.title }" readonly>
 						</div>
 					</div>
 					<div class="bottom tab_content">
