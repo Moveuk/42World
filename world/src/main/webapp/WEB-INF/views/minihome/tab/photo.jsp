@@ -2,106 +2,81 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script type="text/javascript">
-
-	
-	
 	$(function() {
 		$(".photo_content").hide();
 		$(".photoFolders li:first").addClass("active").show();
 		$(".photoFolders:first img").attr('src', '../resources/img/open.png');
 		$(".photo_content:first").show();
+		$(".photoForm_hide").hide();
 
-		$(".photoFolders li").click(function() {
+		$(".photoFolders li").click(
+				function() {
 
-			// $(".photo_content").hide();
+					// $(".photo_content").hide();
 
-			$(".photo_content").css('display', 'none');
-			var href = $(this).find("a").attr("href");
-			$(href).css('display', 'block');
+					$(".photo_content").css('display', 'none');
+					var href = $(this).find("a").attr("href");
+					$(href).css('display', 'block');
 
-			//   $(".photoFolders li").removeClass("active");
-			$(".photoFolders img").attr('src', '../resources/img/close.png');
-			$(this).children("img").attr('src', '../resources/img/open.png');
-			// 
+					$(".photoFolders img").attr('src',
+							'../resources/img/close.png');
+					$(this).children("img").attr('src',
+							'../resources/img/open.png');
 
-			var string = href
-			var no = string.replace(/[^0-9]/g, '');
-			$(".photo_content").eq(no - 1).css('display', 'block');
+					var string = href
+					var no = string.replace(/[^0-9]/g, '');
+					$(".photo_content").eq(no - 1).css('display', 'block');
 
-			//var folderName = $(this).children("a").text();
-			//console.log("==" + folderName);
-			var folderName = $(this).children("a").text();
-			console.log("==" +folderName);
+					var folderName = $(this).children("a").text();
+					console.log("==" + folderName);
 
-			$.ajax({
-				url : 'openMinihome/photoList',
-				method : 'POST',
-				data : 'value='+folderName,
-				type: "POST", 
-				
-				success : function(data){
-					//$(".photo_content input[name=kind]").attr('value', this.folder);
-					$(data).each(function(){
-						console.log(this.photoNo + " " + this.photoContent+ " " + this.uploadDate+ " " + this.filename);
-						// 1. <div> element 만들기
-						  const newDiv = document.createElement('div');
-						  
-						  // 2. <div>에 들어갈 text node 만들기
-						  const newText = document.createTextNode(this.photoNo);
-						  
-						  // 3. <div>에 text node 붙이기
-						  newDiv.appendChild(newText);
-						  
-						  // 4. <body>에 1에서 만든 <div> element 붙이기
-						  document.body.appendChild(newDiv);
-					
-					
-					});
-					
-					//$('.reload').load(location.href + ' .reload');
-					
-					
-					},
-				error :function(){
-					alert("request error!");
-					}
-					
-					/* console.log("넘어옵니다");
-					console.log(data.length);
-					for(var i=0;i<data.length;i++){
-						console.log(data.title);
-						
-					}
-					
-					
-					console.log("--" + data);
-					console.log(JSON.parse(data));
-					obj = JSON.parse(data);
-					$('.reload').load(location.href + ' .reload');
-					
-					console.log(window.location);
-					console.log(obj.folder);
-					$(".photo_content input[name=kind]").attr('value', obj.folder); */
-					
-					
-					
-					
-					
-				
-		/* 	,error:function(){
-					console.log("ajax 통신 실패");
-				}
-				,complete:function(){// complete : ajax 통신 성공여부와 상관없이 무조건 실행할 함수 정의
-					console.log("ajax 통신 성공여부와 상관없이 무조건 실행");
-					$('.photo_content').load(document.URL + '.photo_content');
-				} */
-			})
+					$.ajax({
+						url : 'openMinihome/photoList',
+						method : 'POST',
+						data : 'value=' + folderName,
+						type : "POST",
 
-			//	 $(activeTab).fadeIn();
-			return false;
-		});
+						success : function(data) {
+							//$(".photo_content input[name=kind]").attr('value', this.folder);
+							$(data).each(
+									function() {
+										console.log(this.photoNo + " "
+												+ this.photoContent + " "
+												+ this.uploadDate + " "
+												+ this.filename);
+										// 1. <div> element 만들기
+										const newDiv = document
+												.createElement('div');
+										// 2. <div>에 들어갈 text node 만들기
+										const newText = document
+												.createTextNode(this.photoNo);
+										// 3. <div>에 text node 붙이기
+										newDiv.appendChild(newText);
+										// 4. <body>에 1에서 만든 <div> element 붙이기
+										document.body.appendChild(newDiv);
+										document.getElementById('reload').appendChild('test2');
+										
+										
+										var test=document.getElementById('photoForm');
+										var test1=test.cloneNode(true);
+										
+										$(".photoForm").remove();
+										
+										
+									});
+
+						},
+						error : function() {
+							alert("request error!");
+						}
+
+					})
+
+					return false;
+				});
 	})
 	function send() {
 		$(".photo_content").eq(no).css('display', 'block');
@@ -109,18 +84,7 @@
 	function form_submit() {
 		open.window('../minihome/addPhoto.html', 'ap', 'width=600,height=800');
 	}
-	/* $(function () {
-	    $(".photoFolders li a").click(function () {
-	        var folder = $(this).children('span').html();
-	        $(".photo_content input[name=kind]").attr('value', folder);
-	    })
-	}) */
-	/* function folder(){
-		var po = JSON.parse(${photoList});
-	}
-	function send() {
-		$(".photo_content").eq(no).css('display', 'block');
-	} */
+	
 </script>
 <div class="left">
 	<div class="leftContent">
@@ -137,15 +101,8 @@
 
 	<input type="button" value="button" onclick="send()"> <input
 		type="button" value="폴더추가" name="addFolder" onclick="folder()">
-	
-	
-	<!-- ---------- -->
-	
-	<a href="#" onclick="request()">test</a>
-	
-	
-	<!-- ---------- -->
-	
+
+
 </div>
 
 <div class="right">
@@ -158,42 +115,79 @@
 				<input type="button"
 					onclick="window.open('uploadPhoto','ap','width=600,height=800')"
 					value="사진추가하기">
-<div class="reload">
-				<c:forEach items="${photoList}" var="photoVO">
-					<div id="test" class="photoForm">
-						<div class="photoTitle">
-							<input type="text" name="photoTitleInput" id="photoTitleInput"
-								value="${photoVO.title}" readonly>
-						</div>
-						<div class="img">
-							<img src="../resources/photo/${photoVO.filename}">
-						</div>
-						<div class="content">
-							<p>내용</p>
-						</div>
-						<div class="photoFooter">
-							<button class="photoButton" onclick="">수정</button>
-							<button class="photoButton" onclick="">이동</button>
-							<button class="photoButton" onclick="">삭제</button>
-						</div>
-						<div class="comment">
-							<div class="commentForm">
-								<span>댓글</span> <input type="text" name="commentInput"
-									placeholder="댓글을 작성해주세요" id="commentInput" name="commentInput">
-								<input type="button" onclick="comentSubmit()"
-									name="commentSubmit" id="commentSubmit" value="확인">
+					
+					
+				<div id="dv" class="reload">
+					<c:forEach items="${photoList}" var="photoVO">
+						<div id="test" class="photoForm">
+							<div class="photoTitle">
+								<input type="text" name="photoTitleInput" id="photoTitleInput"
+									value="${photoVO.title}" readonly>
 							</div>
-							<div class="commentList">
-								<ul>
-									<li>dd<a href="#">&nbsp;&nbsp;</a>
-									</li>
-								</ul>
+							<div class="img">
+								<img src="../resources/photo/${photoVO.filename}">
+							</div>
+							<div class="content">
+								<p>내용</p>
+							</div>
+							<div class="photoFooter">
+								<button class="photoButton" onclick="">수정</button>
+								<button class="photoButton" onclick="">이동</button>
+								<button class="photoButton" onclick="">삭제</button>
+							</div>
+							<div class="comment">
+								<div class="commentForm">
+									<span>댓글</span> <input type="text" name="commentInput"
+										placeholder="댓글을 작성해주세요" id="commentInput" name="commentInput">
+									<input type="button" onclick="comentSubmit()"
+										name="commentSubmit" id="commentSubmit" value="확인">
+								</div>
+								<div class="commentList">
+									<ul>
+										<li>dd<a href="#">&nbsp;&nbsp;</a>
+										</li>
+									</ul>
+								</div>
 							</div>
 						</div>
-					</div>
+						
+						
+						<div id="test2" class="photoForm_hide">
+							<div class="photoTitle">
+								<input type="text" name="photoTitleInput" id="photoTitleInput"
+									value="" readonly>
+							</div>
+							<div class="img">
+								<img src="../resources/photo/">
+							</div>
+							<div class="content">
+								<p>내용</p>
+							</div>
+							<div class="photoFooter">
+								<button class="photoButton" onclick="">수정</button>
+								<button class="photoButton" onclick="">이동</button>
+								<button class="photoButton" onclick="">삭제</button>
+							</div>
+							<div class="comment">
+								<div class="commentForm">
+									<span>댓글</span>
+									 <input type="text" name="commentInput" placeholder="댓글을 작성해주세요" id="commentInput" name="commentInput">
+									<input type="button" onclick="comentSubmit()" name="commentSubmit" id="commentSubmit" value="확인">
+								</div>
+								<div class="commentList">
+									<ul>
+										<li><a href="#">&nbsp;&nbsp;</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
 
-				</c:forEach>
+					</c:forEach>
 				</div>
+				
+				
+				
+				
 			</div>
 		</c:forEach>
 
