@@ -31,27 +31,8 @@
 	<!-- 서블링 URL Mapping 설정 -->
 	<servlet-mapping>
 		<servlet-name>appServlet</servlet-name>
-		<url-pattern>/start</url-pattern>
-		<!-- main 서블릿 필터 -->
-		<url-pattern>/main/*</url-pattern>
-		<url-pattern>/friend/*</url-pattern>
-		<url-pattern>/cart/*</url-pattern>
-		<url-pattern>/guest/*</url-pattern>
-		<url-pattern>/item/*</url-pattern>
-		<url-pattern>/product/*</url-pattern>
-		<url-pattern>/member/*</url-pattern>
-		<url-pattern>/login</url-pattern>
-		<url-pattern>/logout</url-pattern>
-		<!-- minihome 서블릿 필터 -->
-		<url-pattern>/home/*</url-pattern>
-		<url-pattern>/profile/*</url-pattern>
-		<url-pattern>/photo/*</url-pattern>
-		<url-pattern>/video/*</url-pattern>
-		<url-pattern>/board/*</url-pattern>
-		<url-pattern>/visitors/*</url-pattern>
-		<url-pattern>/openMinihome/*</url-pattern>
-		<url-pattern>/upload*</url-pattern>
-		<url-pattern>/setting*</url-pattern>
+		<!-- /로 시작하면 서블릿 작동 -> 들어오는 모든 url 호출에 반응하겠다는 의미. -->
+		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 
 	<!-- 한글 처리 코드 -->

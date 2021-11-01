@@ -20,15 +20,9 @@ public class MinihomeController {
 	public String loadProfile() {
 		return "/minihome/tab/profile";
 	}
-	
+
 	@RequestMapping("/board")
 	public String loadBoard() {
 		return "/minihome/tab/board";
-	}
-	
-	@RequestMapping("/setting/myinfo")
-	public String loadSetting() {
-		System.out.println("SettingController getMyInfo start");
-		return "/minihome/tab/setting";
 	}
 }

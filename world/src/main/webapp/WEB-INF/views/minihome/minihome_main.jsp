@@ -27,6 +27,17 @@
 			<div class="dot">
 				<div class="whiteBox">
 					<div class="top">
+<<<<<<< HEAD
+=======
+						<!-- <input type="button" onclick="send2()" value="test">
+						<form name="formm" action="photo" method="post" enctype="multipart/form-data">
+										<a href="photo" id="mainPhoto">PHOTO</a>
+		<input type="button" onclick="send2()">
+						
+		<input type="file" name="uploadfile" placeholder="파일선택"/>
+	</form>
+		<input type="button" onclick="send3()"> -->
+>>>>>>> 27462d240832c41ebc3708a41f8e554d25176f26
 						<div class="count">
 							<input type="text" name="count_today" id="count_today" value="today | total" readonly>
 						</div>

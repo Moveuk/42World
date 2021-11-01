@@ -13,14 +13,9 @@ public class DotoryServiceImpl implements DotoryService {
 	private DotoryDAO dotoryDAO;
 
 	@Override
-	public void insertCart(DotoryVO vo) {
-		// TODO Auto-generated method stub
-
+	public void insertDotory(DotoryVO vo) {
+		dotoryDAO.insertdotory(vo);
+		
 	}
-
-//	@Override
-//	public void insertProduct(ProductVO vo) {
-//		productDAO.insertProduct(vo);
-//	}
 
 }

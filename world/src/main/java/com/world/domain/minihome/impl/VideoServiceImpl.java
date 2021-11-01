@@ -10,31 +10,32 @@ import com.world.domain.minihome.vo.VideoVO;
 
 @Service
 public class VideoServiceImpl implements VideoService {
-	
 	@Autowired
 	private VideoDAO videoDAO;
 
 	@Override
-	public List<VideoVO> getVideoListByFolder(VideoVO vo) {
-		List<VideoVO> videoList = videoDAO.getVideoListByFolder(vo);
-		
-		return videoList;
+	public List<VideoVO> firstVideoList() {
+		System.out.println("run VideoServiceImpl firstVideoList()");
+		return videoDAO.firstVideoList();
 	}
 
 	@Override
-	public void insertVideo(VideoVO vo) {
-		videoDAO.insertVideo(vo);
+	public List<VideoVO> videoFolder() {
+		System.out.println("run VideoServiceImpl videoFolder()");
+		return videoDAO.videoFolder();
 	}
 
 	@Override
-	public void deleteVideo(VideoVO vo) {
-		videoDAO.deleteVideo(vo);
+	public List<VideoVO> videoList(VideoVO vo) {
+		System.out.println("VideoServiceImpl videoList() : " + vo.getFolder());
+		System.out.println("run VideoServiceImpl videoList()");
+		return videoDAO.videoList(vo);
 	}
 
 	@Override
-	public void updateVideo(VideoVO vo) {
-		videoDAO.updateVideo(vo);
+	public void videoDelete(int videoNo) {
+		System.out.println("run PhotoServiceImpl videoDelete()");
+		System.out.println(videoNo);
+		videoDAO.videoDelete(videoNo);
 	}
-
-
 }
