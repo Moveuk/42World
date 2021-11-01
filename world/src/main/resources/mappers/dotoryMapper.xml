@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+  
+<mapper namespace="DotoryDAO">
+ 
+  	<select id="getdotoryList" resultType="dotory">
+  		select * from dotory 
+  	</select>
+  
+  	<select id="getdotory" resultType="dotory" parameterType="dotory">
+  		select * from dotory where marketid=1
+  	</select>
+  	
+  	<select id="getdotorySum" resultType="dotory" parameterType="dotory">
+  		select NVL(sum(price), 0)"dotoryno" from dotory where memberNo=#{value} and giftstate='2'
+  	</select>
+
+	<insert id="insertdotory"  parameterType="dotory">
+		insert into dotory values(seq_dotory.nextval,to_char(current_timestamp,'YY/MM/DD'),1,#{memberNo},#{giftto},1,null,null,#{price})
+	</insert>
+  
+ 	
+</mapper>

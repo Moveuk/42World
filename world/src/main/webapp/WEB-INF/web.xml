@@ -32,6 +32,12 @@
 	<servlet-mapping>
 		<servlet-name>appServlet</servlet-name>
 		<!-- /로 시작하면 서블릿 작동 -> 들어오는 모든 url 호출에 반응하겠다는 의미. -->
+		<url-pattern>/start</url-pattern>
+		
+
+		<url-pattern>/</url-pattern>
+		<url-pattern>/login</url-pattern>
+		<url-pattern>/logout</url-pattern>
 		<url-pattern>/home/*</url-pattern>
 		<url-pattern>/profile/*</url-pattern>
 		<url-pattern>/photo/*</url-pattern>

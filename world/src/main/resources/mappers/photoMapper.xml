@@ -3,46 +3,46 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  
+
 <mapper namespace="PhotoDAO">
 
-  <!-- 	<resultMap id="resultGetFile" type="PhotoVO">
-  		<result property="photoNo" column="photono"/>
-  		<result property="userId" column="userid"/>
-  		<result property="uploadDate" column="uploaddate"/>
-  		<result property="title" column="title"/>
-  		<result property="location" column="location"/>
-  		<result property="photoContent" column="photocontent"/>
-  		<result property="cnt" column="cnt"/>
-  		<result property="folder" column="folder"/>
-  	</resultMap>  -->
-  	
-  <select id="photo" resultType="photo">
-		 select distinct (folder)"folder" from photo order by folder asc 
-	<!--	select * from (select distinct (folder)"folder" from photo order by folder asc) where rownum=1-->
-  	</select>
-  	 <select id="firstPhotoList" resultType="photo">
-  	 	select * from photo where folder=(select folder from (select distinct folder, rownum from photo) where rownum=1)
-  	 	 <!-- select * from photo where folder=(select * from (select distinct (folder)"folder" from photo order by folder asc) where rownum=1) --> 
-  	 	<!--select * from photo where folder='기본 사진첩'-->
-  	</select>
-  	  <select id="photoList" resultType="photo" parameterType="photo">
-  	  select * from photo where folder=#{value}
-	<!-- select * from (select distinct folder, rownum as rn from photo order by folder asc) where rn=#{value} -->
-	<!-- select * from photo where photoNo=#{value} -->
-  	</select> 
-  	
-  	<select id="photoList1" resultType="photo" parameterType="photo">
-  		select * from photo where folder=#{value}
-  	</select>
- 		<!-- <select id="getReplyList" resultType="photo" parameterType="photo">
-  		select replyContent,p.photono
-  		from reply r,photo p
-  		where r.photoNo=p.photoNo and p.photoNo=#{photoNo}
-  	</select> -->
-  	
-  	<insert id="insertVisitorLog"  parameterType="visitorLog">
-  		insert into VisitorLog (visitorLogNo,ownerId,writerId,type,content)
-  		values(SEQ_VISITORLOG.NEXTVAL,#{ownerId},#{writerId},#{type},#{content})
-  	</insert>
+	<!-- <resultMap id="resultGetFile" type="PhotoVO"> <result property="photoNo" 
+		column="photono"/> <result property="userId" column="userid"/> <result property="uploadDate" 
+		column="uploaddate"/> <result property="title" column="title"/> <result property="location" 
+		column="location"/> <result property="photoContent" column="photocontent"/> 
+		<result property="cnt" column="cnt"/> <result property="folder" column="folder"/> 
+		</resultMap> -->
+
+	<select id="photo" resultType="photo">
+		select distinct (folder)"folder" from photo order by folder asc
+	</select>
+	<select id="firstPhotoList" resultType="photo">
+		select * from photo where folder=(select folder from (select distinct folder, rownum from photo) where rownum=1)
+
+	</select>
+	<select id="photoList" resultType="photo" parameterType="photo">
+		select * from photo where folder=#{folder}
+	</select>
+
+	<select id="photoList1" resultType="photo" parameterType="photo">
+		select * from photo where folder=#{value}
+	</select>
+
+	<insert id="insertVisitorLog" parameterType="visitorLog">
+		insert into VisitorLog (visitorLogNo,ownerId,writerId,type,content)
+		values(SEQ_VISITORLOG.NEXTVAL,#{ownerId},#{writerId},#{type},#{content})
+	</insert>
+	<delete id="deletePhoto">
+		delete from photo where photoNo=#{photoNo}
+	</delete>
+	
+	
+	<select id="updatePhotoList" resultType="photo" parameterType="photo">
+		select photoNo,title,filename,photoContent,folder from photo where photoNo=#{photoNo}
+	</select>
+	
+	
+	<update id="updatePhoto">
+		update photo set title=#{title},filename=#{filename},photoContent=#{photoContent} where photoNo=#{photoNo}
+	</update>
 </mapper>

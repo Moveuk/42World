@@ -22,10 +22,6 @@ public class MinihomeController {
 	}
 	
 	
-	@RequestMapping("/video")
-	public String loadVideo() {
-		return "/minihome/tab/video";
-	}
 	
 	@RequestMapping("/board")
 	public String loadBoard() {

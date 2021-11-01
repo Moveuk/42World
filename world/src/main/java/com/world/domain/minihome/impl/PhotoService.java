@@ -11,4 +11,7 @@ public interface PhotoService {
 	List<PhotoVO> firstPhotoList();
 
 	List<PhotoVO> photoList2();
+	List<PhotoVO> deletePhoto(PhotoVO vo);
+	List<PhotoVO> updatePhoto(PhotoVO vo);
+	List<PhotoVO> updatePhotoList(PhotoVO vo);
 }
