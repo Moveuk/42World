@@ -10,8 +10,8 @@
     <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 </head>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/header.css?ver=1.1 "  >
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/main1.css?ver=1.1 "  >
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/header.css?ver=1.0"  >
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/main1.css?ver=1.0 "  >
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/main1_section05.css "  >
 
 

@@ -6,8 +6,6 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-@Getter
-@Setter
 @ToString
 public class VideoVO {
 	
@@ -31,6 +29,54 @@ public class VideoVO {
 		this.title = title;
 		this.fileName = fileName;
 		this.videoContent = videoContent;
+		this.cnt = cnt;
+	}
+	public int getVideoNo() {
+		return videoNo;
+	}
+	public void setVideoNo(int videoNo) {
+		this.videoNo = videoNo;
+	}
+	public int getMemberNo() {
+		return memberNo;
+	}
+	public void setMemberNo(int memberNo) {
+		this.memberNo = memberNo;
+	}
+	public Date getUploadDate() {
+		return uploadDate;
+	}
+	public void setUploadDate(Date uploadDate) {
+		this.uploadDate = uploadDate;
+	}
+	public String getFolder() {
+		return folder;
+	}
+	public void setFolder(String folder) {
+		this.folder = folder;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getFileName() {
+		return fileName;
+	}
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
+	public String getVideoContent() {
+		return videoContent;
+	}
+	public void setVideoContent(String videoContent) {
+		this.videoContent = videoContent;
+	}
+	public int getCnt() {
+		return cnt;
+	}
+	public void setCnt(int cnt) {
 		this.cnt = cnt;
 	}
 	

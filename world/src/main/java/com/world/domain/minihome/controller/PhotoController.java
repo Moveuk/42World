@@ -34,7 +34,7 @@ public class PhotoController {
 	}
 
 	// , produces = "application/text; charset=UTF-8"
-	@RequestMapping(value = "/photoList")
+	@RequestMapping(value = "openMinihome/photoList")
 	@ResponseBody
 	public List<PhotoVO> photoList(PhotoVO vo, Model model) throws Exception {
 		System.out.println("run PhotoController photoList()");

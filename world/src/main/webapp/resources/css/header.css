@@ -56,11 +56,11 @@ body{
     display:inline-block;
     margin-left: 130px;
      
-    width:15%;
+    width:5%;
 
 }
 
-.header_main_ul ul li a:hover{
+.header_main_ul ul li input:hover{
     color:#6AA3AC;
 }
 

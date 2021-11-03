@@ -110,10 +110,11 @@
 }
 .main1_main_profile_div_right_guest,.main1_main_profile_div_right_board,.main1_main_profile_div_right_friend,.main1_main_profile_div_right_present,.main1_main_profile_div_right_dotori{
     color: rgb(255, 143, 51);
-    font-size: 18px;
+    font-size: 16px;
 }
 .main1_main_profile_div_right_td1{
     color: rgb(119, 119, 119);
+    font-size: 12px;
 }
 
 .main1_main_profile_div_footer{

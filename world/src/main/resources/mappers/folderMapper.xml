@@ -7,7 +7,7 @@
   
 <mapper namespace="FolderDAO">
  
-  	<select id="getFolderList" resultType="folder">
+<!--   	<select id="getFolderList" resultType="folder">
   		select * from folder order by folderNo desc 
   	</select>
   	
@@ -23,6 +23,6 @@
   	
   	<delete id="deletefolder" parameterType="folder">
   		delete folder where 'FolderNo'=#{FolderNo}
-  	</delete>
+  	</delete> -->
   	
 </mapper>

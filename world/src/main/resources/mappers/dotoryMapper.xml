@@ -16,7 +16,7 @@
   	</select>
   	
   	<select id="getdotorySum" resultType="dotory" parameterType="dotory">
-  		select NVL(sum(price), 0)"dotoryno" from dotory where memberNo=#{value} and giftstate='2'
+  		select NVL(sum(price), 0)"dotoryno" from dotory where memberno=#{value} and giftstate='2'
   	</select>
 
 	<insert id="insertdotory"  parameterType="dotory">

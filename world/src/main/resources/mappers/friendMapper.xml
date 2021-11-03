@@ -16,7 +16,7 @@
   	</select>
   	
   	<select id="getfriendCount" resultType="friend" parameterType="friend">
-  		select count(*)"friendno" from friend where friendto=#{value}
+  		select count(*)"friendno" from friend where friendto=#{value} and accept ='1'
   	</select>
 
  	<!-- 내가 일촌 신청시, 일촌 신청 페이지에 작성한 정보를 일촌 테이블에 저장하는 sql -->
@@ -71,6 +71,20 @@
 	<update id="deleteFriend">
 		delete friend where friendTo=#{friendTo} and friendFrom=#{friendFrom}
 	</update>
+	
+		<!-- 나에게 일촌 신청한(accept=1) '이름' 리스트 불러오는 쿼리 -->
+	<select id="getRequestNameById" resultType="friend">
+		select a.friendTo, a.friendFrom, a.nicknameTo, a.nicknameFrom, (b.name)"message"  from friend a, member b where a.friendFrom = b.memberno(+) and friendTo =#{friendTo} and a.accept=1
+	</select>
+	
+	<!-- 이미 일촌인(accept=2) '이름' 리스트 불러오는 쿼리 -->
+	<select id="getFriendNameById" resultType="friend">
+		select a.friendTo, a.friendFrom, a.nicknameTo, a.nicknameFrom, (b.name)"message"  from friend a, member b where a.friendFrom = b.memberno(+) and friendTo =#{friendTo} and a.accept=2
+	</select>
+	
+	<select id="getOneFriendNameById" resultType="friend">
+		select (b.name)"message" from friend a, member b where a.friendFrom = b.memberno(+) and friendTo=#{friendTo} and friendFrom=#{friendFrom} and a.accept=1
+	</select>
 
 
 

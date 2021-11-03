@@ -1,6 +1,6 @@
 package com.world.domain.main.vo;
 
-import java.sql.Date;
+import java.util.Date;
 
 import org.springframework.web.multipart.MultipartFile;
 
@@ -18,10 +18,22 @@ public class MemberVO {
 	private int photo;
 	private int board;
 	private int video;
-
+	private String phone;
+	
 	private String searchCondition;
 	private String searchKeyword;
 	private MultipartFile uploadFile;
+	
+	private int guestcount;
+	private int friendcount;
+	private int itemcount;
+	private int dotorycount;
+	private int cartcount;
+	private int totalguestcount;
+	
+	
+
+
 
 	public int getMemberNo() {
 		return memberNo;
@@ -141,6 +153,63 @@ public class MemberVO {
 
 	public void setUploadFile(MultipartFile uploadFile) {
 		this.uploadFile = uploadFile;
+	}
+	
+	public void setPhone(String Phone) {
+		this.phone = Phone;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+	
+	
+	public int getGuestcount() {
+		return guestcount;
+	}
+
+	public void setGuestcount(int guestcount) {
+		this.guestcount = guestcount;
+	}
+
+	public int getFriendcount() {
+		return friendcount;
+	}
+
+	public void setFriendcount(int friendcount) {
+		this.friendcount = friendcount;
+	}
+
+	public int getItemcount() {
+		return itemcount;
+	}
+
+	public void setItemcount(int itemcount) {
+		this.itemcount = itemcount;
+	}
+
+	public int getDotorycount() {
+		return dotorycount;
+	}
+
+	public void setDotorycount(int dotorycount) {
+		this.dotorycount = dotorycount;
+	}
+
+	public int getCartcount() {
+		return cartcount;
+	}
+
+	public void setCartcount(int cartcount) {
+		this.cartcount = cartcount;
+	}
+	
+	public int getTotalguestcount() {
+		return totalguestcount;
+	}
+
+	public void setTotalguestcount(int totalguestcount) {
+		this.totalguestcount = totalguestcount;
 	}
 
 }
