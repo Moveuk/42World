@@ -296,8 +296,7 @@
 		<c:forEach items="${photoFolderList}" var="photoFolderList"
 			varStatus="status">
 			<ul class="photoFolders">
-				<li><img src="/resources/img/close.png"> <a
-					href="#photoFolder${status.index+1}"><span>${photoFolderList.folder}</span></a></li>
+				<li><img src="/resources/img/close.png"> <a href="#photoFolder${status.index+1}"><span>${photoFolderList.folder}</span></a></li>
 			</ul>
 		</c:forEach>
 	</div>
