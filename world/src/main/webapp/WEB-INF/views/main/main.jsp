@@ -116,6 +116,15 @@ function openWin(){
                     		<input type="submit" value = "스토리룸">
                     	</form>	
                     </li>
+                    <li>
+                    	<!-- <form name = "frmm" action="#" onsubmit="return request1();">
+                    		<input name = "category" type= "hidden" value = "dotory">
+                    		
+                    		<input type="submit" value = "도토리결제">
+                    	</form>	 -->
+                    	
+                    <input type="button" onclick="request1()" value="도토리결제">
+                    </li>
                 </ul>
             </div>
         </div>
@@ -374,6 +383,40 @@ function openWin(){
 
     });
 
+    function request1() {
+    	
+    	IMP.init('imp96463033');
+    	IMP.request_pay({
+    	    pg : 'kcp',
+    	    pay_method : 'card',
+    	    merchant_uid :19,
+    	    name : '도토리' , //결제창에서 보여질 이름
+    	    amount : 100, //실제 결제되는 가격
+    	    buyer_email : 'iamport@siot.do',
+    	    buyer_name : '구매자이름',
+    	    buyer_tel : '010-1234-5678',
+    	    buyer_addr : '서울 강남구 도곡동',
+    	    buyer_postcode : '123-456'
+        }, function (rsp) { // callback
+           if (rsp.success) { // 결제 성공 시: 결제 승인 또는 가상계좌 발급에 성공한 경우
+            // jQuery로 HTTP 요청
+            console.log("여기!!");       
+            $.ajax({
+                url: "/insertDotory", // 예: https://www.myservice.com/payments/complete
+                method: "POST",
+                type:"POST",
+                data: 'memberNo=' + '3' +'&giftto='+'3' +'&price='+'100'
+     
+            }).done(function (data) { 
+            	alert("결제에 성공하였습니다.");
+            	
+            
+           }) 
+          } else {
+            alert("결제에 실패하였습니다. 에러 내용: " +  rsp.error_msg);
+          } 
+        }); 
+      }
 </script>
 
 </html>
