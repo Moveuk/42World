@@ -13,7 +13,11 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/video.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/board.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/visitors.css">
+<<<<<<< HEAD
 <title>${member.name}의 minihomepage</title>
+=======
+<title>${member.name}의minihomepage</title>
+>>>>>>> feature_hyojeong
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/jquery-ui.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/jquery.js"></script>
@@ -21,17 +25,39 @@
 <script src="${pageContext.request.contextPath}/resources/js/minihome/photo.js"></script>
 </head>
 <body>
+<<<<<<< HEAD
 	<input type="hidden" id="memberNo" name="memberNo" value="${ownerInfo.memberNo}">
+=======
+	<input type="hidden" name="memberNo" value="${session.member.memberNo}">
+>>>>>>> feature_hyojeong
 	<div class="back">
 		<div class="blueBox">
 			<div class="dot">
 				<div class="whiteBox">
 					<div class="top">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+						<!-- <input type="button" onclick="send2()" value="test">
+						<form name="formm" action="photo" method="post" enctype="multipart/form-data">
+										<a href="photo" id="mainPhoto">PHOTO</a>
+		<input type="button" onclick="send2()">
+						
+		<input type="file" name="uploadfile" placeholder="파일선택"/>
+	</form>
+		<input type="button" onclick="send3()"> -->
+>>>>>>> 27462d240832c41ebc3708a41f8e554d25176f26
+>>>>>>> feature_hyojeong
 						<div class="count">
 							<input type="text" name="count_today" id="count_today" value="today | total" readonly>
 						</div>
 						<div class="mainTitle">
+<<<<<<< HEAD
 							<input type="text" name="mainTitle_content" id="mainTitle_content" value="${ownerInfo.title }" readonly>
+=======
+							<input type="text" name="mainTitle_content" id="mainTitle_content" value="${memberNo.title }" readonly>
+>>>>>>> feature_hyojeong
 						</div>
 					</div>
 					<div class="bottom tab_content">

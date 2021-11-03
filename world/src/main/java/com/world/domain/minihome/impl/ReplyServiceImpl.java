@@ -15,27 +15,8 @@ public class ReplyServiceImpl implements ReplyService {
 	private ReplyDAO replyDAO;
 
 	@Override
-	public List<ReplyVO> getReplyList() {
-		return replyDAO.getReplyList();
+	public List<ReplyVO> replyList(ReplyVO vo) {
+		System.out.println("run ReplyServiceImpl replyList()");
+		return replyDAO.replyList(vo);
 	}
-
-	/*
-	 * @Override public ReplyVO getReply() { return ReplyDAO.getReply(); }
-	 */
-
-	@Override
-	public void insertReply(ReplyVO vo) {
-		replyDAO.insertReply(vo);
-	}
-
-	@Override
-	public void updateReply(ReplyVO vo) {
-		replyDAO.updateReply(vo);
-	}
-
-	@Override
-	public void deleteReply(ReplyVO vo) {
-		replyDAO.deleteReply(vo);
-	}
-
 }

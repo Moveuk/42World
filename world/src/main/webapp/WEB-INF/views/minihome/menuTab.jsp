@@ -26,5 +26,10 @@
 			<li>
 				<a href="${member.memberNo }/setting/myinfo">SETTING</a>
 			</li>
+			<!-- <c:if test="${session.member.memberNo}"></c:if> memberNo와 홈페이지 주인 정보가 같으면 보이도록
+			 -->
+			<li>
+				<a href="setting/myinfo">SETTING</a>
+			</li>
 		</ul>
 	</div>

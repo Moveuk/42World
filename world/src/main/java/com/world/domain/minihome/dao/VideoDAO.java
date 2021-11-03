@@ -14,29 +14,24 @@ public class VideoDAO {
 
 	@Inject
 	SqlSession sqlSession;
-
-	public List<VideoVO> getVideoListByFolder(VideoVO vo) {
-		System.out.println("=== VideoDAO  getVideoListByFolder  ");
-		System.out.println("real sql : select * from video order by videoNo desc ");
-		List<VideoVO> videoList = sqlSession.selectList("VideoDAO.getVideoListByFolder", vo);
-//		videoList.get(0).toString();
-		System.out.println(videoList.size());
-		return videoList;
+	
+	public List<VideoVO> firstVideoList(){
+		System.out.println("run VideoDAO firstVideoList()");
+		return sqlSession.selectList("VideoDAO.firstVideoList");
 	}
-
-	public void insertVideo(VideoVO vo) {
-		System.out.println("===VideoDAO  insertVideo()  ");
-		sqlSession.update("VideoDAO.insertVideo", vo);
+	
+	public List<VideoVO> videoFolder(){
+		System.out.println("run VideoDAO videoFolder()");
+		return sqlSession.selectList("VideoDAO.videoFolder");
 	}
-
-	public void updateVideo(VideoVO vo) {
-		System.out.println("===VideoDAO  updateVideo()  ");
-		sqlSession.update("VideoDAO.updateVideo", vo);
+	
+	public List<VideoVO> videoList(VideoVO vo){
+		System.out.println("run VideoDAO videoList()");
+		  System.out.println(vo.toString());
+		return sqlSession.selectList("VideoDAO.videoList",vo);
 	}
-
-	public void deleteVideo(VideoVO vo) {
-		System.out.println("===VideoDAO  deleteVideo()  ");
-		sqlSession.update("VideoDAO.deleteVideo", vo);
+	public void videoDelete(int videoNo) {
+		System.out.print("run videoDAO videoDelete()");
+		sqlSession.delete("VideoDAO.videoDelete",videoNo);
 	}
-
 }

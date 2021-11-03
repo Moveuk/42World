@@ -16,17 +16,17 @@ public class DotoryDAO {
 	SqlSession sqlSession;
 
 	public List<DotoryVO> getdotoryList() {
-		System.out.println("=== 3번 DotoeyDAO  getdotoryList()  ");
+		System.out.println("=== 3번 DotoryDAO  getdotoryList()  ");
 		return sqlSession.selectList("DotoryDAO.getdotoryList");// mapper:id~
 	}
 
 	public DotoryVO getdotory(String marketID) {
-		System.out.println("===DotoeyDAO  getdotory()  ");
+		System.out.println("===DotoryDAO  getdotory()  ");
 		return sqlSession.selectOne("DotoryDAO.getdotory");
 	}
 
 	public void insertdotory(DotoryVO vo) {
-		System.out.println("===DotoeyDAO  insertdotory()  ");
+		System.out.println("===DotoryDAO  insertdotory()  ");
 		sqlSession.update("DotoryDAO.insertdotory", vo);
 	}
 

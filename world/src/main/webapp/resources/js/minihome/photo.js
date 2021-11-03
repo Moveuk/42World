@@ -28,7 +28,20 @@ function aj(){
 	$.ajax({
 		url:
 	})
+<<<<<<< HEAD
 } 
+=======
+} */
+
+/* 
+$(function () {
+    $(".photo_content").hide();
+    $(".photoFolders li:first").addClass("active").show();
+    $(".photoFolders:first img").attr('src', '../resources/img/open.png');
+    $(".photo_content:first").show();
+
+    $(".photoFolders li").click(function () {
+>>>>>>> 27462d240832c41ebc3708a41f8e554d25176f26
         $(".photoFolders img").attr('src', '../resources/img/close.png');
         $(this).children("img").attr('src', '../resources/img/open.png');
         $(".photo_content").hide();
@@ -53,8 +66,12 @@ $(function () {
         $(".photo_content input[name=kind]").attr('value', folder);
 
     })
+<<<<<<< HEAD
 })*/
 /* 
+=======
+})
+>>>>>>> 27462d240832c41ebc3708a41f8e554d25176f26
 function folder(){
 	var po = JSON.parse(${photoList});
 	alert(po[2].content );

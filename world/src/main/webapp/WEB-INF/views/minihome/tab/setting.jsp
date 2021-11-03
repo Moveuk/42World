@@ -38,7 +38,11 @@
 		</div>
 	</div>
 </div>
+<<<<<<< HEAD
 <div class="right">
+=======
+<div class="right col-span-2 ">
+>>>>>>> feature_hyojeong
 	<div class="rightContent">
 		<%@ include file="./setting/updateInfo.jsp"%>
 	</div>

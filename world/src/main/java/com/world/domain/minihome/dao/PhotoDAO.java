@@ -20,14 +20,37 @@ public class PhotoDAO {
 		sqlSession.update("PhotoDAO.insertPhoto",vo);
 		sqlSession.commit();
 	}
-	public List<PhotoVO> getPhotoList(){
-		System.out.println("run PhotoDAO getPhotoList()");
-		return sqlSession.selectList("PhotoDAO.getPhotoList");
+	public List<PhotoVO> photo(){
+		System.out.println("run PhotoDAO photo()");
+		return sqlSession.selectList("PhotoDAO.photo");
 	}
-	public List<PhotoVO> getPhotoFolderList(){
-		System.out.println("run PhotoDAO getPhotoFolderList()");
-		return sqlSession.selectList("PhotoDAO.getPhotoFolderList");
+
+	
+	  public List<PhotoVO> photoList(PhotoVO vo){
+		  System.out.println("run PhotoDAO photoList()");
+		  
+		  System.out.println(vo.toString());
+		  
+		  return sqlSession.selectList("PhotoDAO.photoList",vo); 
+	  }
+
+	public List<PhotoVO> firstPhotoList(){
+		System.out.println("run PhotoDAO firstPhotoList()");
+		return sqlSession.selectList("PhotoDAO.firstPhotoList");
 	}
+	public List<PhotoVO> photoList2(){
+		System.out.println("run PhotoDAO photoList2()");
+		return sqlSession.selectList("PhotoDAO.photoList2");
+	}
+	public List<PhotoVO> deletePhoto(PhotoVO vo) {
+		System.out.print("run PhotoDAO deletePhoto()");
+		return sqlSession.selectList("PhotoDAO.deletePhoto",vo);
+	}
+	public List<PhotoVO> updatePhotoList(PhotoVO vo) {
+		System.out.print("run PhotoDAO updatePhotoList()");
+		return sqlSession.selectList("PhotoDAO.updatePhotoList",vo);
+	}
+	
 	
 	public void makeFolder(PhotoVO vo) {
 		String folderPath="E:\\lib\\42World\\42World\\world\\src\\main\\webapp\\WEB-INF\\views\\minihome\\tab";
@@ -45,6 +68,13 @@ public class PhotoDAO {
 		}else {
 			System.out.println("이미 폴더 생성");
 		}
+	}
+	
+	public List<PhotoVO> updatePhoto(PhotoVO vo) {
+
+		System.out.print("run PhotoDAO updatePhoto()");
+		sqlSession.delete("PhotoDAO.updatePhoto",vo);
+		return sqlSession.selectList("PhotoDAO.updatePhoto",vo);
 	}
 
 }

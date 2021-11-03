@@ -19,7 +19,6 @@ $(function () {
 
 		/* 탭 href에서 jsp파일 이름 불러옴 */
         var activeFilePath = $(this).find("a").attr("href");
-	
 		// jquery load로 탭별로 불러옴
 		$(".tab_content").load(activeFilePath);
 		
