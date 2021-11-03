@@ -6,13 +6,21 @@ public class CartVO {
 
 	private int cartno;
 	private Date resdate;
-	private String memberNo;
+	private int memberNo;
 	private String category;
 	private String name;
 	private int price;
 	private String filename;
 	private String rgb;
 	private String font;
+
+	public CartVO() {}
+	
+	public CartVO(int price, String name, String category) {
+		this.price=price;
+		this.name=name;
+		this.category=category;
+	}
 
 	public int getCartno() {
 		return cartno;
@@ -30,11 +38,11 @@ public class CartVO {
 		this.resdate = resdate;
 	}
 
-	public String getMemberNo() {
+	public int getMemberNo() {
 		return memberNo;
 	}
 
-	public void setMemberNo(String memberNo) {
+	public void setMemberNo(int memberNo) {
 		this.memberNo = memberNo;
 	}
 

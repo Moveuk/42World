@@ -2,77 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
-<!DOCTYPE html>
-<html lang="UTF-8">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-	<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/purchase.css">    
-    
-  <!--   <script type="text/javascript" src="js/jquery.js"></script> -->
-	<script type="text/javascript">
-    
-    $(document).ready(function(){        
-        
-    });
-        
-    /** 게시판 - 목록 페이지 이동 */
-
-    
-    /** 게시판 - 작성  */
-    function insertCart(){
- 
-        var boardSubject = $("#name").val();
-        var boardContent = $("#price").val();
-            
-
-        var yn = confirm("게시글을 등록하시겠습니까?");        
-        if(yn){
-                
-            $.ajax({    
-                
-               url      : "/insertCart",
-               data     : $("#boardForm").serialize(),
-               dataType : "JSON",
-               cache    : false,
-               async    : true,
-               type     : "POST",    
-               success  : function(obj) {
-                    insertBoardCallback(obj);                
-                },           
-               error    : function(xhr, status, error) {}
-                
-            });
-        }
-    }
-    
-    /** 게시판 - 작성 콜백 함수 */
-    function insertBoardCallback(obj){
-    
-        if(obj != null){        
-            
-            var result = obj.result;
-            
-            if(result == "SUCCESS"){                
-                alert("게시글 등록을 성공하였습니다.");                
-                goBoardList();                 
-            } else {                
-                alert("게시글 등록을 실패하였습니다.");    
-                return;
-            }
-        }
-    }
-    
-</script>
-    
-    
-</head>
-<style>
-
-</style>
-<body>
+<%@ include file = "header.jsp"%>
 
     <div class= "purchase_main">
         <h3 class="purchase_main_h3">일촌들에게 아이템을 선물해보세요!</h3>
@@ -86,7 +16,7 @@
 	            <div class="purchase_main_product_div">
 	                <div class="purchase_main_product_div_div">
 
-	               			 <img class="purchase_main_product_div_img" src="${pageContext.request.contextPath}/resources/img//${ productVO.category}/${ productVO.name}.gif">
+	               			 <img class="purchase_main_product_div_img" src="${pageContext.request.contextPath}/resources/img/${ productVO.category}/${ productVO.filename}">
 
 
 	              	 
