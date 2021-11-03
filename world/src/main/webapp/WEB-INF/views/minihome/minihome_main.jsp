@@ -17,7 +17,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/jquery-ui.min.js"></script>
 <script src="${pageContext.request.contextPath}/resources/js/jquery.js"></script>
- <script src="${pageContext.request.contextPath}/resources/js/main.js"></script>
+<script src="${pageContext.request.contextPath}/resources/js/main.js?ver=1.1"></script>
 <script src="${pageContext.request.contextPath}/resources/js/minihome/photo.js"></script>
 </head>
 <body>
@@ -53,4 +53,5 @@
 	<%-- 메뉴 탭 --%>
 	<%@ include file="./menuTab.jsp"%>
 </body>
+
 </html>
