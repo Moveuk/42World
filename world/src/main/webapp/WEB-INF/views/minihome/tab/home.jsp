@@ -24,12 +24,13 @@
 		<input type="button" name="friendRandom" id="friendRandom" value="랜덤 미니홈피 가기">
 		<select id="friendWave" name="friendWave">
 			<option value="none">일촌 파도타기</option>
-			<option value="친구주소">친구이름</option>
-			<option value="친구주소">친구이름</option>
-			<option value="친구주소">친구이름</option>
-			<option value="친구주소">친구이름</option>
-			<option value="친구주소">친구이름</option>
+			<c:forEach items="${myFriendName }" var="name">
+
+				<option value="${name.friendFrom}">${name.message} (${name.nicknameFrom})</option>
+
+			</c:forEach>
 		</select>
+		</form>
 	</div>
 </div>
 <div class="right">

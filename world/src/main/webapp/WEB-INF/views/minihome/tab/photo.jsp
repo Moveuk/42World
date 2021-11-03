@@ -39,7 +39,7 @@
 			console.log(photoNo);
 			 
 	       $.ajax({
-	         url : 'openMinihome/updatePhotoList',
+	         url : '/updatePhotoList',
 	         method : 'POST',
 	         data : 'photoNo=' + photoNo ,
 	         type : "POST",
@@ -186,8 +186,9 @@
 		$(".photoForm_hide").hide();
 
 		$(".photoFolders li").click(
-				function() {
+				function(e) {
 
+					e.children('a').preventDefault();
 					// $(".photo_content").hide();
 
 					$(".photo_content").css('display', 'none');
@@ -207,7 +208,7 @@
 					
 
 					$.ajax({
-						url : 'openMinihome/photoList',
+						url : '/photoList',
 						method : 'POST',
 						data : 'folder=' + folderName,
 						type : "POST",
@@ -295,7 +296,7 @@
 			<ul class="photoFolders">
 				<li>
 					<img src="/resources/img/close.png">
-					<a href="#photoFolder${status.index+1}">
+					<a href="">
 						<span>${photoFolderList.folder}</span>
 					</a>
 				</li>
@@ -334,7 +335,7 @@
 						<button class="photoUpdateButton" onclick="">수정</button>
 						<button class="photoScrapButton" onclick="">이동</button>
 						<!-- <button class="photoDeleteButton" onclick="photoDeleteButton()">삭제</button> -->
-						<a href="openMinihome/photoDelete?photoNo=${photoVO.photoNo}" role="button" class="photoDeleteButton">삭제</a>
+						<a href="${ownerInfo.userUrl }/photoDelete?photoNo=${photoVO.photoNo}" role="button" class="photoDeleteButton">삭제</a>
 					</div>
 					<div class="comment">
 						<div class="commentForm">

@@ -26,9 +26,15 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public MemberVO getMember(int memberNo) {
-		System.out.println("MemberServiceImpl getMember() memberNo : " + memberNo);
-		return memberDAO.getMember(memberNo);
+	public MemberVO getMember() {
+		System.out.println("MemberServiceImpl getMember() :" + "member");
+		return memberDAO.getMember();
+	}
+
+	@Override
+	public MemberVO getMemberByUserUrl(String userUrl) {
+		System.out.println("MemberServiceImpl getMemberByUserUrl() :" + "userUrl");
+		return memberDAO.getMemberByUserUrl(userUrl);
 	}
 
 	@Override
@@ -52,4 +58,8 @@ public class MemberServiceImpl implements MemberService {
 		return memberDAO.getPassword(vo);
 	}
 
+	@Override
+	public String getNameByUserId(int userId) {
+		return memberDAO.getNameByUserId(userId);
+	}
 }

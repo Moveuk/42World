@@ -7,17 +7,24 @@ import com.world.domain.main.vo.MemberVO;
 public interface MemberService {
 
 	List<MemberVO> getMemberList();
-
+	
 	public MemberVO confirmID(String email, String pasword);
-
-	public MemberVO getMember(int memberNo);
-
+	
+	public MemberVO getMember();
+	
+	public MemberVO getMemberByUserUrl(String userUrl);
+	
 	void insertMember(MemberVO vo);
-
+	
 	void updateMember();
-
+	
 	void deleteMember();
 
-	MemberVO getPassword(MemberVO vo);
 
+
+	 MemberVO getPassword(MemberVO vo);
+	
+	 public String getNameByUserId(int userId);
+
+	
 }

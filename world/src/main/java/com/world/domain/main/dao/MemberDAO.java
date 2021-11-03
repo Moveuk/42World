@@ -11,43 +11,51 @@ import com.world.domain.main.vo.MemberVO;
 
 @Repository
 public class MemberDAO {
-
+	
 	@Inject
 	SqlSession sqlSession;
-
-	public List<MemberVO> getMemberList() {
+	
+	public List<MemberVO> getMemberList(){
 		System.out.println("=== MemberDAO  getMemberList()  ");
 		return sqlSession.selectList("MemberDAO.getMemberList");
 	}
 
-	public MemberVO getMember(int memberNo) {
-		System.out.println("===MemberDAO  getMember()  & memberNo : "+memberNo);
-		return sqlSession.selectOne("MemberDAO.getMember", (int) memberNo);
+	public MemberVO getMember() {
+		System.out.println("===MemberDAO  getMember()  ");
+		return sqlSession.selectOne("MemberDAO.getMember");
 	}
-
+	
+	public MemberVO getMemberByUserUrl(String userUrl) {
+		System.out.println("===MemberDAO  getMemberByUserUrl()  ");
+		return sqlSession.selectOne("MemberDAO.getMemberByUserUrl",userUrl);
+	}
+	
 	public MemberVO getPassword(MemberVO vo) {
 		System.out.println("===MemberDAO  getPassword()  ");
-		return sqlSession.selectOne("MemberDAO.getPassword", vo);
+		return sqlSession.selectOne("MemberDAO.getPassword",vo);
 	}
+	
 
 	public void insertMember(MemberVO vo) {
 		System.out.println("===MemberDAO  insertMember()  ");
-		sqlSession.update("MemberDAO.insertMember", vo);
-	}
-
+		sqlSession.update("MemberDAO.insertMember", vo); 
+			}
 	public void deleteMember() {
 		System.out.println("===MemberDAO  deleteMember()  ");
 		sqlSession.update("MemberDAO.deleteMember");
 	}
-
 	public void updateMember() {
 		System.out.println("===MemberDAO  updateMember()  ");
 		sqlSession.update("MemberDAO.updateMember");
 	}
-
+	
 	public MemberVO confirmID(String email, String password) {
-		System.out.println("===MemberDAO confirmID() email :" + email + "," + password);
+		System.out.println("===MemberDAO confirmID() email :" + email +","+password);
 		return sqlSession.selectOne("MemberDAO.confirmID");
 	}
 
+	public String getNameByUserId(int userId) {
+		return sqlSession.selectOne("MemberDAO.getNameByUserId", userId);
+	 }
+	
 }
