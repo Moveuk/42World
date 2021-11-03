@@ -3,13 +3,12 @@
 <!DOCTYPE html>
 <html lang="UTF-8">
 <head>
-<<<<<<< HEAD
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>42월드</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/index.css ">
-=======
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -61,10 +60,8 @@
     	
       } */
     </script>
->>>>>>> 27462d240832c41ebc3708a41f8e554d25176f26
 </head>
 <body>
-<<<<<<< HEAD
 	<form method="post" action="login" id="formm">
 		<div class="index_main">
 			<div class="index_login">
@@ -118,7 +115,6 @@
 		<div id="box"></div>
 	</form>
 </body>
-=======
     <section>
         <div class="header_main">
             <div class="header_main_logo">
@@ -430,5 +426,4 @@ function request1() {
   }
 </script>
 
->>>>>>> 27462d240832c41ebc3708a41f8e554d25176f26
 </html>
