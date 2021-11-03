@@ -40,29 +40,29 @@
 function openWin(){  
     
 
-	
+   
 
-	    var name = $("#main_loginuser").val();
-	    var phone = $("#main_loginuser").val();
-	    console.log(name);
-/* 	    var phone = $("#phone").val(); */
+       var name = $("#main_loginuser").val();
+       var phone = $("#main_loginuser").val();
+       console.log(name);
+/*        var phone = $("#phone").val(); */
 
-	  
-	    //서버로 보낼 데이터 준비 : 파라미터로 만들기 . json 으로 만들기
-	  	 var sendData = "name="+name+'&phone='+phone;
-	    $.ajax({
-	    	
-	        url:'friend/requestFriendForm'
-	        , method : 'POST'
-	        , data: sendData
-	        , success :function(resp){//결과값
-	        	
-	        	console.log(resp);
- 	             window.name = "friendForm";
-	            window.open(resp, "일촌신청", "width=500, height=600, toolbar=no, menubar=no, scrollbars=no, resizable=yes" ); 
-	            
-	        }
-	    })	
+     
+       //서버로 보낼 데이터 준비 : 파라미터로 만들기 . json 으로 만들기
+         var sendData = "name="+name+'&phone='+phone;
+       $.ajax({
+          
+           url:'friend/requestFriendForm'
+           , method : 'POST'
+           , data: sendData
+           , success :function(resp){//결과값
+              
+              console.log(resp);
+                 window.name = "friendForm";
+               window.open(resp, "일촌신청", "width=500, height=600, toolbar=no, menubar=no, scrollbars=no, resizable=yes" ); 
+               
+           }
+       })   
 
 
 
@@ -82,39 +82,48 @@ function openWin(){
             <div class="header_main_ul">
                 <ul>
                     <li>
-                    	<form name = "frmm" action="product/getProductList">
-                    		<input name = "category" type= "hidden" value = "music">
-                    		
-                    		<input type="submit" value = "배경음악">
-                    	</form>	
+                       <form name = "frmm" action="product/getProductList">
+                          <input name = "category" type= "hidden" value = "music">
+                          
+                          <input type="submit" value = "배경음악">
+                       </form>   
                     </li>
                     <li>
-                    	<form name = "frmm" action="product/getProductList">
-                    		<input name = "category" type= "hidden" value = "skin">
-                    		
-                    		<input type="submit" value = "스킨">
-                    	</form>	
+                       <form name = "frmm" action="product/getProductList">
+                          <input name = "category" type= "hidden" value = "skin">
+                          
+                          <input type="submit" value = "스킨">
+                       </form>   
                     </li>
                     <li>
-                    	<form name = "frmm" action="product/getProductList">
-                    		<input name = "category" type= "hidden" value = "font">
-                    		
-                    		<input type="submit" value = "글꼴">
-                    	</form>	
+                       <form name = "frmm" action="product/getProductList">
+                          <input name = "category" type= "hidden" value = "font">
+                          
+                          <input type="submit" value = "글꼴">
+                       </form>   
                     </li>
                     <li>
-                    	<form name = "frmm" action="product/getProductList">
-                    		<input name = "category" type= "hidden" value = "minimi">
-                    		
-                    		<input type="submit" value = "미니미">
-                    	</form>	
+                       <form name = "frmm" action="product/getProductList">
+                          <input name = "category" type= "hidden" value = "minimi">
+                          
+                          <input type="submit" value = "미니미">
+                       </form>   
                     </li>
                     <li>
-                    	<form name = "frmm" action="product/getProductList">
-                    		<input name = "category" type= "hidden" value = "miniroom">
-                    		
-                    		<input type="submit" value = "스토리룸">
-                    	</form>	
+                       <form name = "frmm" action="product/getProductList">
+                          <input name = "category" type= "hidden" value = "miniroom">
+                          
+                          <input type="submit" value = "스토리룸">
+                       </form>   
+                    </li>
+                    <li>
+                       <!-- <form name = "frmm" action="#" onsubmit="return request1();">
+                          <input name = "category" type= "hidden" value = "dotory">
+                          
+                          <input type="submit" value = "도토리결제">
+                       </form>    -->
+                       
+                    <input type="button" onclick="request1()" value="도토리결제">
                     </li>
                 </ul>
             </div>
@@ -313,7 +322,7 @@ function openWin(){
                     <li>
                         <button type="button">홈페이지 가이드 1<span></span></button>
                         <p>
-                            설명1<br>
+                            설명2<br>
                             설명1
                         </p>
                     </li>
@@ -374,6 +383,40 @@ function openWin(){
 
     });
 
+    function request1() {
+       
+       IMP.init('imp96463033');
+       IMP.request_pay({
+           pg : 'kcp',
+           pay_method : 'card',
+           merchant_uid :19,
+           name : '도토리' , //결제창에서 보여질 이름
+           amount : 100, //실제 결제되는 가격
+           buyer_email : 'iamport@siot.do',
+           buyer_name : '구매자이름',
+           buyer_tel : '010-1234-5678',
+           buyer_addr : '서울 강남구 도곡동',
+           buyer_postcode : '123-456'
+        }, function (rsp) { // callback
+           if (rsp.success) { // 결제 성공 시: 결제 승인 또는 가상계좌 발급에 성공한 경우
+            // jQuery로 HTTP 요청
+            console.log("여기!!");       
+            $.ajax({
+                url: "/insertDotory", // 예: https://www.myservice.com/payments/complete
+                method: "POST",
+                type:"POST",
+                data: 'memberNo=' + '3' +'&giftto='+'3' +'&price='+'100'
+     
+            }).done(function (data) { 
+               alert("결제에 성공하였습니다.");
+               
+            
+           }) 
+          } else {
+            alert("결제에 실패하였습니다. 에러 내용: " +  rsp.error_msg);
+          } 
+        }); 
+      }
 </script>
 
 </html>
