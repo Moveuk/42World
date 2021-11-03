@@ -60,7 +60,7 @@ public class PhotoController {
 		return list;
 	}
 
-	@RequestMapping(value = "/deletePhoto")
+	@RequestMapping(value = "openMinihome/deletePhoto")
 	@ResponseBody
 	public List<PhotoVO> photoDelete(PhotoVO vo, Model model, String folder) throws Exception {
 		System.out.println("run PhotoController photoDelete()");
@@ -82,7 +82,7 @@ public class PhotoController {
 
 	}
 
-	@RequestMapping(value = "/updatePhotoList")
+	@RequestMapping(value = "openMinihome/updatePhotoList")
 	@ResponseBody
 	public List<PhotoVO> updatePhotoList(PhotoVO vo, Model model) throws Exception {
 		System.out.println("run PhotoController updatePhotoList()");
@@ -96,7 +96,7 @@ public class PhotoController {
 		return list;
 	}
 
-	@RequestMapping(value = "/updatePhoto")
+	@RequestMapping(value = "openMinihome/updatePhoto")
 	@ResponseBody
 	public List<PhotoVO> updatePhoto(PhotoVO vo, Model model, String folder) throws Exception {
 		System.out.println("ajax잘들어옴!!");

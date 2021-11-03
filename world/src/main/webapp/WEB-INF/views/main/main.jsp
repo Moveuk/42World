@@ -311,7 +311,7 @@ section {
                </div>
                <div class="main1_main_profile_div_footer">
                   <input type="button"
-                     onclick="window.open('${userUrl}','memberNo minihome','width=1400,height=800,location=no,status=no,scrollbars=yes')"
+                     onclick="window.open('openMinihome','memberNo minihome','width=1400,height=800,location=no,status=no,scrollbars=yes')"
                      value="내 미니홈피가기">
                </div>
 
