@@ -22,5 +22,9 @@
 	<delete id="videoDelete">
 		delete from video where videoNo=#{videoNo}
 	</delete>
+	
+	<update id="updateVideo">
+		update video set title=#{title},filename=#{filename},videoContent=#{videoContent} where videoNo=#{videoNo}
+	</update>
   	
 </mapper>

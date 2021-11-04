@@ -52,7 +52,6 @@ public class PhotoController {
 
 			folder = photoVo.get(i).getFolder();
 			list.add(photoVo.get(i));
-			System.out.println("jeonghwan!!:" + photoVo.get(i).getPhotoContent());
 		}
 		model.addAttribute("photoList", photoVo);
 		System.out.println("========= list size:: " + list.size());

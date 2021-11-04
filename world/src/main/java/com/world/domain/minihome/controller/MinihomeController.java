@@ -82,7 +82,7 @@ public class MinihomeController {
 
 	
 		List <FriendVO> count = (List<FriendVO>) friendService.getFriendNameById(friendTo);
-		System.out.println("list size(): "+count.get(0).getFriendFrom());
+		//System.out.println("list size(): "+count.get(0).getFriendFrom());
 		
 		model.addAttribute("myFriendName", count);
 	

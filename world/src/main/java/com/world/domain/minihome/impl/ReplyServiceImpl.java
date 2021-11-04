@@ -19,4 +19,11 @@ public class ReplyServiceImpl implements ReplyService {
 		System.out.println("run ReplyServiceImpl replyList()");
 		return replyDAO.replyList(vo);
 	}
+
+	@Override
+	public List<ReplyVO> videoReplyList(ReplyVO vo) {
+		System.out.println("run ReplyServiceImpl videoReplyList()");
+		return replyDAO.videoReplyList(vo);
+	}
+	
 }

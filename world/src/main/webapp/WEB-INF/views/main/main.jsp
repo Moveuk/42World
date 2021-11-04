@@ -405,7 +405,7 @@ section {
 	</section>
 </body>
 
-
+<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.8.js"></script>
 <script>
     // section 05
     $('.sec05 button').on('click', function () {
@@ -423,12 +423,12 @@ section {
     });
 
     function request1() {
-       
+       var IMP=window.IMP;
        IMP.init('imp96463033');
        IMP.request_pay({
            pg : 'kcp',
            pay_method : 'card',
-           merchant_uid :19,
+           merchant_uid :20,
            name : '도토리' , //결제창에서 보여질 이름
            amount : 100, //실제 결제되는 가격
            buyer_email : 'iamport@siot.do',

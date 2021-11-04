@@ -21,5 +21,11 @@
 		where a.writerid = b.memberno(+) and photoNo=#{photoNo}
 		
   	</select>
-  	
+  	<select id="videoReplyList" resultType="reply" parameterType="reply">
+  	 
+  		select a.replyno,a.memberno,a.writerid,a.writedate,a.replycontent,a.videono,a.boardno,a.visitorlogno, b.name  
+  		from reply a, member b 
+  		where a.writerid = b.memberno(+) and videoNo=#{videoNo} 
+	
+  	</select> 
 </mapper>

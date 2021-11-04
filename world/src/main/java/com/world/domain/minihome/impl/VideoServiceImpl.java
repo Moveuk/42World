@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.world.domain.minihome.dao.VideoDAO;
+import com.world.domain.minihome.vo.PhotoVO;
 import com.world.domain.minihome.vo.VideoVO;
 
 @Service
@@ -26,16 +27,28 @@ public class VideoServiceImpl implements VideoService {
 	}
 
 	@Override
+	public List<VideoVO> updateVideoList(VideoVO vo) {
+		System.out.println("run VideoServiceImpl updateVideoList()");
+		return videoDAO.updateVideoList(vo);
+	}
+	@Override
 	public List<VideoVO> videoList(VideoVO vo) {
-		System.out.println("VideoServiceImpl videoList() : " + vo.getFolder());
 		System.out.println("run VideoServiceImpl videoList()");
 		return videoDAO.videoList(vo);
 	}
 
 	@Override
-	public void videoDelete(int videoNo) {
-		System.out.println("run PhotoServiceImpl videoDelete()");
-		System.out.println(videoNo);
-		videoDAO.videoDelete(videoNo);
+	public List<VideoVO> deleteVideo(VideoVO vo) {
+		System.out.println("run VideoServiceImpl deleteVideo()");
+		System.out.println("VideoServiceImpl deleteVideo:"+vo);
+		return videoDAO.deleteVideo(vo);
+	}
+
+	@Override
+	public List<VideoVO> updateVideo(VideoVO vo) {
+		System.out.println("run VideoServiceImpl updateVideo()");
+		
+		videoDAO.updateVideo(vo);
+		return videoDAO.updateVideo(vo);
 	}
 }

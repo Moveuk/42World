@@ -7,6 +7,8 @@ import com.world.domain.minihome.vo.VideoVO;
 public interface VideoService {
 	List<VideoVO> firstVideoList();
 	List<VideoVO> videoFolder();
+	List<VideoVO> updateVideoList(VideoVO vo);
+	List<VideoVO> updateVideo(VideoVO vo);
 	List<VideoVO> videoList(VideoVO vo);
-	void videoDelete(int videoNo);
+	List<VideoVO> deleteVideo(VideoVO vo);
 }

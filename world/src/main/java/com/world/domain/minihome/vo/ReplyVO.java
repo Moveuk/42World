@@ -14,9 +14,9 @@ public class ReplyVO {
 	private String writerId;
 	private Date writeDate;
 	private String replyContent;
-	private int photoNo;
-	private int videoNo;
-	private int boardNo;
+	private String photoNo;
+	private String videoNo;
+	private String boardNo;
 	private String name;
 	@Override
 	public String toString() {
@@ -26,8 +26,8 @@ public class ReplyVO {
 	}
 	private int visitorLogNo;
 	public ReplyVO() {}
-	public ReplyVO(String replyNo, String memberNo, String writerId, Date writeDate, String replyContent, int photoNo,
-			int videoNo, int boardNo, int visitorLogNo,String name) {
+	public ReplyVO(String replyNo, String memberNo, String writerId, Date writeDate, String replyContent, String photoNo,
+			String videoNo, String boardNo, int visitorLogNo,String name) {
 		super();
 		this.replyNo = replyNo;
 		this.memberNo = memberNo;

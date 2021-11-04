@@ -25,13 +25,37 @@ public class ReplyController {
 	@Inject
 	SqlSession sqlSession;
 
-	@RequestMapping(value = "/replyList")
+	@RequestMapping(value = "openMinihome/replyList")
 	@ResponseBody
 	public List<ReplyVO> replyList(ReplyVO vo, Model model,int photoNo) throws Exception {
 		System.out.println(photoNo);
 		System.out.println("run ReplyController replyList()");
 		
 		  List<ReplyVO> replyVO = replyService.replyList(vo);
+
+		  
+		  System.out.println("!!!!!!!!!!!!plz!!!"+replyVO.size());
+		  
+		  if(replyVO.size()==0) {
+			  
+		  }
+		  
+		  List<ReplyVO> list=new ArrayList<ReplyVO>();
+		  for(int i=0;i<replyVO.size();i++) {
+			  list.add(replyVO.get(i));
+		  }
+		  System.out.println("댓글개수:"+list.size());
+		  model.addAttribute("replyList",replyVO);
+		return replyVO;
+	}
+	
+	@RequestMapping(value = "openMinihome/videoReplyList")
+	@ResponseBody
+	public List<ReplyVO> videoReplyList(ReplyVO vo, Model model,int photoNo) throws Exception {
+		System.out.println(photoNo);
+		System.out.println("run ReplyController videoReplyList()");
+		
+		  List<ReplyVO> replyVO = replyService.videoReplyList(vo);
 
 		  
 		  System.out.println("!!!!!!!!!!!!plz!!!"+replyVO.size());

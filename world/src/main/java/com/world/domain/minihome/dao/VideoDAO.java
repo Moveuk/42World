@@ -25,13 +25,24 @@ public class VideoDAO {
 		return sqlSession.selectList("VideoDAO.videoFolder");
 	}
 	
+	public List<VideoVO> updateVideoList(VideoVO vo){
+		System.out.println("run VideoDAO updateVideoList()");
+		return sqlSession.selectList("VideoDAO.updateVideoList",vo);
+	}
 	public List<VideoVO> videoList(VideoVO vo){
 		System.out.println("run VideoDAO videoList()");
-		  System.out.println(vo.toString());
 		return sqlSession.selectList("VideoDAO.videoList",vo);
 	}
-	public void videoDelete(int videoNo) {
-		System.out.print("run videoDAO videoDelete()");
-		sqlSession.delete("VideoDAO.videoDelete",videoNo);
+	public List<VideoVO> deleteVideo(VideoVO vo) {
+		System.out.print("run videoDAO deleteVideo()");
+		return sqlSession.selectList("VideoDAO.deleteVideo",vo);
+		
+	}
+
+	public List<VideoVO> updateVideo(VideoVO vo) {
+		System.out.print("run VideoDAO updateVideo()");
+		sqlSession.delete("VideoDAO.updateVideo",vo);
+		return sqlSession.selectList("VideoDAO.updateVideo",vo);
+		
 	}
 }

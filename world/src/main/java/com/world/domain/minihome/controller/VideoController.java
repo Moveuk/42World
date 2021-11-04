@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.world.domain.minihome.impl.VideoService;
+import com.world.domain.minihome.vo.PhotoVO;
+import com.world.domain.minihome.vo.VideoVO;
 import com.world.domain.minihome.vo.VideoVO;
 
 @Controller
@@ -33,31 +35,78 @@ public class VideoController {
 		return "/minihome/tab/video";
 	}
 
-	@RequestMapping(value = "/videoList")
+	@RequestMapping(value = "openMinihome/videoList")
 	@ResponseBody
 	public List<VideoVO> videoList(VideoVO vo, Model model) throws Exception {
+		
+		
 		System.out.println("run VideoController videoList()");
 		System.out.println("vo.getFolder:" + vo.getFolder());
-		List<VideoVO> videoVO = videoService.videoList(vo);
-		System.out.println("videoVO.getFolder:" + videoVO.get(0).getFolder());
-		System.out.println("VideoController videoVO : " + videoVO);
+
+		List<VideoVO> videoVo = videoService.videoList(vo);
+		System.out.println("videoVo.getFolder:" + videoVo.get(0).getFolder());
+		System.out.println("VideoController videoVo : " + videoVo);
 
 		String folder = null;
 		List<VideoVO> list = new ArrayList<VideoVO>();
-		System.out.println("========= videoVO size:: " + videoVO.size());
-		for (int i = 0; i < videoVO.size(); i++) {
-			folder = videoVO.get(i).getFolder();
-			list.add(videoVO.get(i));
+
+		System.out.println("========= videoVo size:: " + videoVo.size());
+		for (int i = 0; i < videoVo.size(); i++) {
+
+			folder = videoVo.get(i).getFolder();
+			list.add(videoVo.get(i));
 		}
-
+		model.addAttribute("videoList", videoVo);
 		System.out.println("========= list size:: " + list.size());
-
 		return list;
 	}
 
-	@RequestMapping(value = "/videoDelete")
-	public String videoDelete(int videoNo) throws Exception {
-		videoService.videoDelete(videoNo);
-		return "redirect:openMinihome";
+	@RequestMapping(value = "openMinihome/deleteVideo")
+	@ResponseBody
+	public List<VideoVO> deleteVideo(VideoVO vo,Model model, String folder) throws Exception {
+		System.out.println("run VideoController deleteVideo()");
+		System.out.println("VideoController videoDelete videoNo:" + vo);
+		videoService.deleteVideo(vo);
+		folder = vo.getFolder();
+
+		List<VideoVO> videoVo = videoService.videoList(vo);
+
+		List<VideoVO> list = new ArrayList<VideoVO>();
+		System.out.println("========= videoVo size:: " + videoVo.size());
+		for (int i = 0; i < videoVo.size(); i++) {
+
+			list.add(videoVo.get(i));
+			folder = videoVo.get(i).getFolder();
+		}
+		model.addAttribute("videoList", videoVo);
+		return list;
+	}
+	
+	@RequestMapping(value = "openMinihome/updateVideo")
+	@ResponseBody
+	public List<VideoVO> updateVideo(VideoVO vo, Model model,String folder) throws Exception {
+		System.out.println("ajax잘들어옴!!");
+		videoService.updateVideo(vo);
+		System.out.println(folder);
+
+		System.out.println("run VideoController videoList()");
+		System.out.println("vo.getFolder:" + vo.getFolder());
+
+		List<VideoVO> videoVo = videoService.videoList(vo);
+
+		System.out.println("VideoController videoVo : " + videoVo);
+
+		List<VideoVO> list = new ArrayList<VideoVO>();
+
+		System.out.println("========= videoVo size:: " + videoVo.size());
+		for (int i = 0; i < videoVo.size(); i++) {
+
+			folder = videoVo.get(i).getFolder();
+			list.add(videoVo.get(i));
+			System.out.println("jeonghwan!!:" + videoVo.get(i).getVideoContent());
+		}
+		model.addAttribute("videoList", videoVo);
+		System.out.println("========= list size:: " + list.size());
+		return list;
 	}
 }

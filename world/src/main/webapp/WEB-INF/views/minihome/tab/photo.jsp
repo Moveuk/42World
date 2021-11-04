@@ -72,9 +72,6 @@
 	         }
 	      })  
 	}
-	function folder(){
-		
-	}
 	
 	function deletePhoto(e){
 		var string =  $(e).attr('id');
@@ -278,15 +275,7 @@
 					return false;
 				});
 	})
-	function send() {
-		$(".photo_content").eq(no).css('display', 'block');
-	}
-	function form_submit() {
-		open.window('../minihome/addPhoto.html', 'ap', 'width=600,height=800');
-	}
-	function rem() {
-		$(".photoForm").remove();
-	}	
+	
 	
 </script>
 <div class="left">
@@ -326,7 +315,7 @@
 						<img src="../resources/photo/${photoVO.filename}">
 					</div>
 					<div class="content">
-						<p>내용</p>
+						<p>${photoVO.photoContent }</p>
 					</div>
 					<div class="photoFooter">
 						<button class="photoUpdateButton" onclick="">수정</button>

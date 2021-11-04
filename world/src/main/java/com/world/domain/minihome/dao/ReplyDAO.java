@@ -18,4 +18,9 @@ public class ReplyDAO {
 		System.out.println("run ReplyDAO reply()");
 		return sqlSession.selectList("ReplyDAO.replyList",vo);
 	}
+	
+	public List<ReplyVO> videoReplyList(ReplyVO vo){
+		System.out.println("run ReplyDAO videoReplyList()");
+		return sqlSession.selectList("ReplyDAO.videoReplyList",vo);
+	}
 }
