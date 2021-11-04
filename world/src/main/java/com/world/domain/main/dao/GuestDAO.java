@@ -27,7 +27,7 @@ public class GuestDAO {
 
 	public void insertguest(GuestVO vo) {
 		System.out.println("===GuestDAO  insertguest()  ");
-		sqlSession.update("GuestDAO.insertguest", vo);
+		sqlSession.update("GuestDAO.insertGuest", vo);
 	}
 
 	public List<GuestVO> getGuestList(GuestVO vo) {

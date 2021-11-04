@@ -16,6 +16,7 @@ import com.world.domain.main.impl.FriendService;
 import com.world.domain.main.impl.GuestService;
 import com.world.domain.main.impl.MemberService;
 import com.world.domain.main.vo.FriendVO;
+import com.world.domain.main.vo.GuestVO;
 import com.world.domain.main.vo.MemberVO;
 
 @Controller
@@ -82,7 +83,7 @@ public class MinihomeController {
 
 	
 		List <FriendVO> count = (List<FriendVO>) friendService.getFriendNameById(friendTo);
-		System.out.println("list size(): "+count.get(0).getFriendFrom());
+
 		
 		model.addAttribute("myFriendName", count);
 	
@@ -91,6 +92,13 @@ public class MinihomeController {
 		
 		model.addAttribute("Guestcount",GuestCount.getGuestcount());
 		model.addAttribute("TotalGuestcount",GuestCount.getTotalguestcount());
+		
+		
+		//방문자수 증가
+
+
+		
+		
 
 		
 		
@@ -98,7 +106,7 @@ public class MinihomeController {
 	}
 	
 	@RequestMapping("/openfriendMinihome")
-	public String openfriendMinihome(HttpServletRequest request, MemberVO vo, Model model) {
+	public String openfriendMinihome(HttpServletRequest request, MemberVO vo, GuestVO gvo, Model model) {
 		
 		
 		
@@ -133,22 +141,30 @@ public class MinihomeController {
 		System.out.println(member.getBoard());
 		System.out.println(member.getVideo());
 		
+		int loginMember = (int)session.getAttribute("loginUser");
+		int homeMember = gvo.getVisitto();
 		
-
+		System.out.println(loginMember + "," + homeMember);
+		
+		if(loginMember != homeMember) {
+			guestService.insertGuest(gvo);
+			System.out.println(homeMember + "의 방문자 등록완료");
+		}
+		
 	
 		List <FriendVO> count = (List<FriendVO>) friendService.getFriendNameById(memberno);
-		System.out.println("list size(): "+count.get(0).getFriendFrom());
 		
 		model.addAttribute("myFriendName", count);
 	
 		MemberVO GuestCount = sqlSession.selectOne("MemberDAO.totalgetGuestcount", memberno);
 		System.out.println("방문자수: "+GuestCount.getGuestcount()+"/"+GuestCount.getTotalguestcount());
 		
+		
 		model.addAttribute("Guestcount",GuestCount.getGuestcount());
 		model.addAttribute("TotalGuestcount",GuestCount.getTotalguestcount());
 
 		
-		
+
 		
 		
 		return "/minihome/minihome_main";

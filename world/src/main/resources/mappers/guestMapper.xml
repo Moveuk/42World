@@ -18,6 +18,10 @@
   	<select id="getGuestList" resultType="guest">
   		select * from guest where visitTo=#{visitTo}
   	</select>
+  	
+  	<insert id="insertGuest"> 
+        insert into guest values(SEQ_GUEST.nextval,#{visitto},0,CURRENT_TIMESTAMP)
+    </insert>
 
 
   

@@ -25,18 +25,23 @@
 		<input type="button" name="friendRandom" id="friendRandom" value="랜덤 미니홈피 가기">
 		<script>
 			function movehome() {
+				 $('#visitto').val($("#friendWave option:selected").val());
 				document.formm.action = "/openfriendMinihome";
 				document.formm.submit(); 
 				
 			}
 		</script>
 		<form name = "formm">
+		<input id="visitto" name = "visitto" type= "hidden" value = "${name.friendFrom}">
 		<select id="friendWave" name="memberno"  onchange="movehome()">
+			
 			<option value="none">일촌 파도타기</option>
 			<c:forEach items="${myFriendName }" var="name">
 			
-					<option   value="${name.friendFrom}">
+					<option value="${name.friendFrom}">
 					${name.message} (${name.nicknameFrom})
+					
+
 					</option> 							
 			
 			</c:forEach>

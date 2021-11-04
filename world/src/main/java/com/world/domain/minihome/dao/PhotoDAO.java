@@ -76,5 +76,7 @@ public class PhotoDAO {
 		sqlSession.delete("PhotoDAO.updatePhoto",vo);
 		return sqlSession.selectList("PhotoDAO.updatePhoto",vo);
 	}
+	
+
 
 }

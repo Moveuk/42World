@@ -2,7 +2,9 @@ package com.world.domain.main.controller;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -10,9 +12,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.world.domain.main.impl.MemberService;
 import com.world.domain.main.vo.MemberVO;
+import com.world.domain.minihome.vo.PhotoVO;
 
 @Controller
 public class MemberController {
@@ -27,11 +31,34 @@ public class MemberController {
 		return "/admin/memberList";
 	}
 	
-	@RequestMapping("/member/getMember")
-	public String getMember(MemberVO vo, Model model) {
+//	@RequestMapping("/member/getMember")
+//	public String getMember(MemberVO vo, Model model) {
+//		
+//		model.addAttribute("member", memberService.getMember());
+//		return "/admin/memberList";
+//	}
+	
+	
+	@RequestMapping(value ="/member/getMember")
+	@ResponseBody
+	public List<MemberVO> getMember(MemberVO vo, Model model) throws Exception {
+		System.out.println("run MemberController getmemberList()");
+		System.out.println("vo.getFolder:" + vo.getName());
+
+		List<MemberVO> memberVo =  memberService.getMember(vo);
 		
-		model.addAttribute("member", memberService.getMember());
-		return "/admin/memberList";
+		List<MemberVO> list = new ArrayList<MemberVO>();
+
+		System.out.println("========= memberVo size:: " + memberVo.size());
+		for (int i = 0; i < memberVo.size(); i++) {
+			
+			list.add(memberVo.get(i));
+			
+		}
+		model.addAttribute("memberList", memberVo);
+		System.out.println("========= list size:: " + list.size());
+		return list;
+		
 	}
 	
 	@RequestMapping("/member/insertMember")

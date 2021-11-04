@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.world.domain.main.dao.MemberDAO;
 import com.world.domain.main.vo.MemberVO;
+import com.world.domain.minihome.vo.PhotoVO;
 
 @Service
 public class MemberServiceImpl implements MemberService {
@@ -26,10 +27,12 @@ public class MemberServiceImpl implements MemberService {
 		}
 	
 	@Override
-	public MemberVO getMember() {
+	public List<MemberVO> getMember(MemberVO vo) {
 		System.out.println("MemberServiceImpl getMember() :" + "member");
-		return memberDAO.getMember();
-		}
+		return memberDAO.getMember(vo);
+	}
+	
+
 
 	@Override
 	public void insertMember(MemberVO vo) {memberDAO.insertMember(vo);}

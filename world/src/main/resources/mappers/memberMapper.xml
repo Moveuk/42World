@@ -12,7 +12,7 @@
   	</select>
   
   	<select id="getMember" resultType="member" parameterType="member">
-  		select * from member where seq=#{seq}
+		select name,gender,propic,TO_CHAR(birth,'YYYY.MM.DD')"birth1" from member where name =#{name}
   	</select>
   	
   	<select id="getPassword" resultType="member" parameterType="member">
@@ -51,7 +51,7 @@
 	 <select id="loginCount" resultType="member" parameterType="member">
         SELECT a.guestcount, b.friendcount, c.itemcount, d.dotorycount, e.cartcount
      FROM
-           (select count(*) guestcount from guest where visitto =#{value} and TO_CHAR(visitdate,'YYYYMMDD') = TO_CHAR(SYSDATE,'YYYYMMDD'))a
+           (select count(*) guestcount from guest where visitto =#{value} and TO_CHAR(visitdate,'YYYYMMDD') = TO_CHAR(CURRENT_TIMESTAMP,'YYYYMMDD'))a
         ,  (select count(*) friendcount from friend where friendto=#{value} and accept ='1')b
         ,  (select count(*) itemcount  from item where memberNo =#{value} and giftstate='1' ) c
         ,  (select NVL(sum(price), 0) dotorycount from dotory where memberNo=#{value} and giftstate='2' ) d
@@ -62,7 +62,7 @@
   		  	
   	SELECT a.guestcount, b.totalguestcount
      FROM
-           (select count(*) guestcount from guest where visitto =#{value} and TO_CHAR(visitdate,'YYYYMMDD') = TO_CHAR(SYSDATE,'YYYYMMDD'))a
+           (select count(*) guestcount from guest where visitto =#{value} and TO_CHAR(visitdate,'YYYYMMDD') = TO_CHAR(CURRENT_TIMESTAMP,'YYYYMMDD'))a
         ,  (select count(*) totalguestcount from guest where visitto =#{value})b
 
 

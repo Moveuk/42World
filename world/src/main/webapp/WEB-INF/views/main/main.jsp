@@ -13,8 +13,7 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/header.css?ver=1.0 ">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/main1.css?ver=1.0 ">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/main1_section05.css ">
-
-
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/friendsearch.css?ver=1.1 "  >
 <style>
 * {
 	box-sizing: border-box;
@@ -31,6 +30,9 @@ section {
 	border-bottom: 1px solid white;
 	height: 100vh;
 	scroll-snap-align: start;
+}
+.main1_main_profile_div_right_dotori{
+	color:red;
 }
 </style>
 <script>
@@ -55,6 +57,46 @@ section {
 			}
 		
 		}); 		
+	}
+	
+	function enter(){
+		if(event.keyCode==13){
+			
+			var name = $("#friendinput").val();
+			console.log(name);
+	
+			 
+			$.ajax({
+		         url : 'member/getMember',
+		         method : 'POST',
+		         data : 'name=' + name,
+		         type : "POST",
+
+		         success : function(data) {
+					 $(".friend_tbody").remove(); 
+					 $(".friendsearch_table").append("<tbody class='friend_tbody'></tbody>");
+					 
+					 
+		        	 $(data).each(
+			                  function(index) {
+			                     console.log(index)
+			                      $(".friend_tbody").append("<tr id='friend_tr"+index+"' class='friend_tr'></tr>");
+			                      $("#friend_tr"+index).append("<td id='friendsearch_table_profile_td"+index+"' class='friendsearch_table_profile_td'><img  src='${pageContext.request.contextPath}/resources/img/minimi/minimi10.gif'></td>");
+			                      $("#friend_tr"+index).append(" <td id='friendsearch_table_name_td"+index+"' class='friendsearch_table_name_td'><a href='#'>"+this.name+"</a></td>");
+			                      $("#friend_tr"+index).append(" <td id='friendsearch_table_gender_td"+index+"' class='friendsearch_table_gender_td'>"+this.gender+"</td>");
+			                      $("#friend_tr"+index).append(" <td id='friendsearch_table_birth_td"+index+"' class='friendsearch_table_birth_td'>"+this.birth1+"</td>");
+			                    
+			                     
+			                     
+			                     
+			                  }); 
+				 
+				},
+		         error : function() {
+		            alert("request error!");
+		         }
+		      })  
+		}
 	}
 </script>
 <body>
@@ -320,14 +362,49 @@ section {
 		</div>
 	</section>
 	<section>
-		<h1>Section Two</h1>
+	
+		 <div class="friendsearch_div">
+        <div class="friendsearch_title_div">
+          <p class="friendsearch_title" >친구 검색페이지</p>
+          <span class="friendsearch_subtitle" >친구의 이름을 검색해 보세요.</span><br>
+          <span class="friendsearch_subtitle" >(친구의 이름을 클릭하면 미니홈피로 이동합니다.)</span>
+        </div>
+        
+        <div class="friendsearch_name">
+            <input id="friendinput" type = "text" placeholder="이름을 입력하고 ENTER를 누르세요." onkeypress="enter()">
+           
+        </div>
+        <div class="friendsearch_table">
+            <table class="table table-hover">
+                <thead>
+                  <tr>
+                    <th >프로필</th>
+                    <th >이름</th>
+                    <th >성별</th>
+                    <th >생년월일</th>                    
+                  </tr> 
+                </thead>
+                <tbody class="friend_tbody">
+                  <tr class="friend_tr">
+                    <td class="friendsearch_table_profile_td"><img  src="${pageContext.request.contextPath}/resources/img/minimi/minimi10.gif"></td>
+                    <td class="friendsearch_table_name_td"><a href="#">최정환</a></td>
+                    <td class="friendsearch_table_gender_td">남자</td>
+                    <td class="friendsearch_table_birth_td">1994.08.01</td>
+                  </tr>
+                  <tr class="friend_tr">
+                    <td class="friendsearch_table_profile_td"><img  src="${pageContext.request.contextPath}/resources/img/minimi/minimi13.gif"></td>
+                    <td class="friendsearch_table_name_td"><a href="#">피효정</a></td>
+                    <td class="friendsearch_table_gender_td">남자</td>
+                    <td class="friendsearch_table_birth_td">1996.01.14</td>
+                  </tr>
+                  
+
+                </tbody>
+              </table>
+        </div>
+    </div>
 	</section>
-	<section>
-		<h1>Section Three</h1>
-	</section>
-	<section>
-		<h1>Section Four</h1>
-	</section>
+
 	<section>
 		<div id="section05" class="section sec05">
 			<div class="section05_wrap">

@@ -3,6 +3,7 @@ package com.world.domain.main.impl;
 import java.util.List;
 
 import com.world.domain.main.vo.MemberVO;
+import com.world.domain.minihome.vo.PhotoVO;
 
 public interface MemberService {
 
@@ -10,7 +11,7 @@ public interface MemberService {
 	
 	public MemberVO confirmID(String email, String pasword);
 	
-	public MemberVO getMember();
+	List<MemberVO> getMember(MemberVO vo);
 	
 
 	

@@ -1,0 +1,99 @@
+.friendsearch_div{
+    margin-top:100px ;
+    width: 100%;
+
+}    
+.friendsearch_title_div{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.friendsearch_title{
+    font-size: 25px;
+    color: rgb(165, 165, 165);
+    font-weight: 700;
+}    
+.friendsearch_subtitle{
+    text-decoration: none;
+    color: rgb(235, 157, 88);
+}    
+.friendsearch_name{
+    width: 80%;
+    height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    background: rgb(255, 255, 255);
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 2px 2px rgb(224, 224, 224);
+
+}
+.friendsearch_name input{
+    width: 95%;
+    height: 70%;
+    font-size: 18px;
+    margin-top: 8px;
+    border: none;
+    outline:none;
+
+}
+
+.friendsearch_table{
+    width: 80%;
+    height: 560px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(224, 224, 224);
+    border-radius: 5px;
+    overflow-y:scroll;
+    text-align: center;
+    
+}
+.friendsearch_table tbody{
+   width: 100%;
+    
+}
+.friendsearch_table tbody td{
+    height: 70px;
+    vertical-align: middle;
+    font-size: 17px;
+}
+.friendsearch_table_profile_td{
+    width: 100px;
+   
+}
+.friendsearch_table_profile_td img{
+    width: 50px;
+    height: 50px;
+    box-shadow: 0px 0px 2px 2px rgb(224, 224, 224);
+    border-radius: 120px;
+    
+}
+.friendsearch_table_name_td{
+    width: 200px;
+  
+    
+
+}
+.friendsearch_table_name_td a{
+    text-decoration: none;
+    color:orange;
+    font-weight: 600;
+}
+
+.friendsearch_table_gender_td{
+    color: rgb(107, 107, 107);
+    width:300px;
+   
+}
+.friendsearch_table_birth_td{
+    color: rgb(107, 107, 107);
+    width:700px;
+
+   
+}
+
+

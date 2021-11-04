@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+
+
+*{
+    padding:0;
+    margin:0;
+}
+.request_friend1{
+    width: 500px;
+    height: 600px;
+    background-color: white
+}
+.request_friend1_title{
+    padding: 20px;
+    font-weight: 700;
+    font-size: 20px;
+    color: rgb(121, 121, 121);
+}
+.request_friend1_subtitle{
+    padding-left: 20px;
+    font-size: 14px;
+    color: rgb(167, 167, 167);
+
+}
+.request_friend1 table{
+    border-collapse: collapse;
+    border: 1px solid rgb(161, 161, 161);
+    margin-top: 10px;
+    margin-left: auto;  
+    margin-right: auto;
+    text-align: center;
+    width: 90%;
+    border-radius: 10px;
+}
+.request_friend1 table th{
+    padding :10px;
+    font-size: 14px;
+    color: rgb(121, 121, 121);
+    border-bottom: 1px rgb(190, 190, 190) solid;
+}
+.request_friend1 table td{
+    padding-top: 6px ;
+    padding-bottom: 6px;
+    border-bottom: 1px rgb(221, 221, 221) solid;
+
+}
+
+.request_friend1_table_td_guest{
+    font-size: 13px;
+
+}
+.request_friend1 table td a{
+    color: rgb(121, 121, 121);
+    text-decoration: none;
+}
+.request_friend1 table td a:hover{
+    color:red;
+}

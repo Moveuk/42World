@@ -16,8 +16,7 @@ public class GuestServiceImpl implements GuestService {
 
 	@Override
 	public void insertGuest(GuestVO vo) {
-		// TODO Auto-generated method stub
-
+		guestDAO.insertguest(vo);
 	}
 
 	@Override
@@ -31,9 +30,6 @@ public class GuestServiceImpl implements GuestService {
 		return guestDAO.getGuestList(vo);
 	}
 
-//	@Override
-//	public void insertProduct(ProductVO vo) {
-//		productDAO.insertProduct(vo);
-//	}
+
 
 }

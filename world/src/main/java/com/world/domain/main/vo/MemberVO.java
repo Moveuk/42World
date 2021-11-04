@@ -19,6 +19,7 @@ public class MemberVO {
 	private int board;
 	private int video;
 	private String phone;
+	private String birth1;
 	
 	private String searchCondition;
 	private String searchKeyword;
@@ -32,8 +33,38 @@ public class MemberVO {
 	private int totalguestcount;
 	
 	
+	public MemberVO() {}
 
 
+	public MemberVO(int memberNo, String email, String password, String name, Date birth, int gender, String title,
+			String subtitle, String propic, int photo, int board, int video, String phone, String searchCondition,
+			String searchKeyword, MultipartFile uploadFile, int guestcount, int friendcount, int itemcount,
+			int dotorycount, int cartcount, int totalguestcount , String birth1) {
+		super();
+		this.memberNo = memberNo;
+		this.email = email;
+		this.password = password;
+		this.name = name;
+		this.birth = birth;
+		this.gender = gender;
+		this.title = title;
+		this.subtitle = subtitle;
+		this.propic = propic;
+		this.photo = photo;
+		this.board = board;
+		this.video = video;
+		this.phone = phone;
+		this.searchCondition = searchCondition;
+		this.searchKeyword = searchKeyword;
+		this.uploadFile = uploadFile;
+		this.guestcount = guestcount;
+		this.friendcount = friendcount;
+		this.itemcount = itemcount;
+		this.dotorycount = dotorycount;
+		this.cartcount = cartcount;
+		this.totalguestcount = totalguestcount;
+		this.birth1 = birth1;
+	}
 
 	public int getMemberNo() {
 		return memberNo;
@@ -210,6 +241,14 @@ public class MemberVO {
 
 	public void setTotalguestcount(int totalguestcount) {
 		this.totalguestcount = totalguestcount;
+	}
+	
+	public String getBirth1() {
+		return birth1;
+	}
+
+	public void setBirth1(String birth1) {
+		this.birth1 = birth1;
 	}
 
 }
