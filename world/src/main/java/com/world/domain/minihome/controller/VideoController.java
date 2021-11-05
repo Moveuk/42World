@@ -13,8 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.world.domain.minihome.impl.VideoService;
-import com.world.domain.minihome.vo.PhotoVO;
-import com.world.domain.minihome.vo.VideoVO;
 import com.world.domain.minihome.vo.VideoVO;
 
 @Controller
@@ -87,14 +85,9 @@ public class VideoController {
 	public List<VideoVO> updateVideo(VideoVO vo, Model model,String folder) throws Exception {
 		System.out.println("ajax잘들어옴!!");
 		videoService.updateVideo(vo);
-		System.out.println(folder);
-
-		System.out.println("run VideoController videoList()");
-		System.out.println("vo.getFolder:" + vo.getFolder());
 
 		List<VideoVO> videoVo = videoService.videoList(vo);
 
-		System.out.println("VideoController videoVo : " + videoVo);
 
 		List<VideoVO> list = new ArrayList<VideoVO>();
 
@@ -103,10 +96,24 @@ public class VideoController {
 
 			folder = videoVo.get(i).getFolder();
 			list.add(videoVo.get(i));
-			System.out.println("jeonghwan!!:" + videoVo.get(i).getVideoContent());
 		}
 		model.addAttribute("videoList", videoVo);
 		System.out.println("========= list size:: " + list.size());
+		System.out.println("plz chk videoVo:"+videoVo);
+		System.out.println("plz chk list:"+list);
+		return list;
+	}
+	
+	@RequestMapping(value = "openMinihome/updateVideoList")
+	@ResponseBody
+	public List<VideoVO> updateVideoList(VideoVO vo, Model model) throws Exception {
+		model.addAttribute("updateVideoList", videoService.firstVideoList());
+		List<VideoVO> VideoVO = videoService.updateVideoList(vo);
+
+		List<VideoVO> list = new ArrayList<VideoVO>();
+
+		list.add(VideoVO.get(0));
+		System.out.println(list.size());
 		return list;
 	}
 }

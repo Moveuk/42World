@@ -19,6 +19,9 @@
 	<select id="videoList" resultType="video" parameterType="video">
 		select * from video where folder=#{folder}
 	</select> 
+	<select id="updateVideoList" resultType="video" parameterType="video">
+		select videoNo,title,fileName,videoContent,folder from video where videoNo=#{videoNo}
+	</select> 
 	<delete id="videoDelete">
 		delete from video where videoNo=#{videoNo}
 	</delete>

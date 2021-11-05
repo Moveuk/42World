@@ -51,8 +51,8 @@ public class ReplyController {
 	
 	@RequestMapping(value = "openMinihome/videoReplyList")
 	@ResponseBody
-	public List<ReplyVO> videoReplyList(ReplyVO vo, Model model,int photoNo) throws Exception {
-		System.out.println(photoNo);
+	public List<ReplyVO> videoReplyList(ReplyVO vo, Model model,int videoNo) throws Exception {
+		System.out.println(videoNo);
 		System.out.println("run ReplyController videoReplyList()");
 		
 		  List<ReplyVO> replyVO = replyService.videoReplyList(vo);

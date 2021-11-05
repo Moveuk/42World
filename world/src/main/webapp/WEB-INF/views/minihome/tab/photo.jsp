@@ -231,7 +231,7 @@
 						                    $("#photoContent"+index).append("<p>content"+this.photoContent+"</p>");
 						                $("#photoForm"+index).append("<div id='photoFooter"+index+"' class='photoFooter'></div>");
 						                    $("#photoFooter"+index).append("<button id='photoButton"+index+"' class='photoUpdateButton' onclick='updatePhotoList(this)'>수정</button>");
-						                    $("#photoFooter"+index).append("<button id='photoButton"+index+"' class='photoMoveButton'>이동</button>");
+						                    $("#photoFooter"+index).append("<button id='photoButton"+index+"' class='photoScrapButton'>이동</button>");
 						                    $("#photoFooter"+index).append("<button id='photoButton"+index+"' class='photoDeleteButton' onclick='deletePhoto(this)'>삭제</button>");
 						                    /* $("#photoFooter"+index).append("<a href='openMinihome/photoDelete?photoNo="+this.photoNo+"' role='button' class='photoDeleteButton'>삭제</button>"); */
 						                $("#photoForm"+index).append("<div id='photoComment"+index+"' class='comment'></div>");

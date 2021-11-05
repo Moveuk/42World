@@ -14,12 +14,12 @@ public class VideoVO {
 	private Date uploadDate;
 	private String folder;
 	private String title;
-	private String fileName;
+	private String filename;
 	private String videoContent;
 	private int cnt;
 	
 	public VideoVO() {}
-	public VideoVO(int videoNo, int memberNo, Date uploadDate, String folder, String title, String fileName,
+	public VideoVO(int videoNo, int memberNo, Date uploadDate, String folder, String title, String filename,
 			String videoContent, int cnt) {
 		super();
 		this.videoNo = videoNo;
@@ -27,7 +27,7 @@ public class VideoVO {
 		this.uploadDate = uploadDate;
 		this.folder = folder;
 		this.title = title;
-		this.fileName = fileName;
+		this.filename = filename;
 		this.videoContent = videoContent;
 		this.cnt = cnt;
 	}
@@ -61,11 +61,11 @@ public class VideoVO {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getFileName() {
-		return fileName;
+	public String getFilename() {
+		return filename;
 	}
-	public void setFileName(String fileName) {
-		this.fileName = fileName;
+	public void setFilename(String filename) {
+		this.filename = filename;
 	}
 	public String getVideoContent() {
 		return videoContent;

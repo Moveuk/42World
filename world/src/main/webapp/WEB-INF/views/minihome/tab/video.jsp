@@ -51,11 +51,14 @@ function updateVideoList(e){
                          $("#videoTitle"+index).append("<input type='hidden' id='folderName"+index+"' value='"+this.folder+"' name='videoName'>");
                              $("#videoTitle"+index).append("<input id='videoTitle' type='text' value='"+this.title+"'>");
                              $("#videoForm"+index).append("<div id='video"+index+"' class='video'></div>");
-			            		$("#video"+index).append("<video id='videoSource"+index+"' controls width='250'>");
-			            			$("videoSource"+index).append("<source src='/resources/video/"+this.filename+"' type='video/webm'");
-			            			$("videoSource"+index).append("<source src='/resources/video/"+this.filename+"' type='video/mp4'");
+                             $("#video"+index).append("<video id='videoSource"+index+"' controls width='250'>");
+			            		$("#videoSource"+index).append("<div class='dd'>"+this.filename+"</div>");
+			            			$("#videoSource"+index).append("<source src='/resources/video/"+this.filename+"' type='video/webm'>");
+
+								   									 
+			            			$("#videoSource"+index).append("<source src='/resources/video/"+this.filename+"' type='video/mp4'>");
                          $("#videoForm"+index).append("<div id='videoContent"+index+"' class='content'></div>");
-                             $("#videoContent"+index).append("<p>content"+this.videoContent+"</p>");
+                             $("#videoContent"+index).append("<p>"+this.videoContent+"</p>");
                          $("#videoForm"+index).append("<div id='videoFooter"+index+"' class='videoFooter'></div>");
                              $("#videoFooter"+index).append("<button id='videoButton"+index+"' class='videoButton' onclick='updateVideo()'>수정</button>");
                             
@@ -105,7 +108,7 @@ function updateVideo(){
    $.ajax({
      url : 'openMinihome/updateVideo',
      method : 'POST',
-     data : 'videoNo=' + videoNo + '&folder=' + folder + '&title=' + videoTitle+'&videoContent='+videoContent+'&filename=3.jpg',
+     data : 'videoNo=' + videoNo + '&folder=' + folder + '&title=' + videoTitle+'&videoContent='+videoContent+'&filename=flower.webm',
      type : "POST",
 
      success : function(data) {
@@ -122,11 +125,14 @@ function updateVideo(){
 	                    $("#videoTitle"+index).append("<p>title"+this.title+"</p>");
 	                  
 	                    $("#videoForm"+index).append("<div id='video"+index+"' class='video'></div>");
-	            		$("#video"+index).append("<video id='videoSource"+index+"' controls width='250'>");
-	            			$("videoSource"+index).append("<source src='/resources/video/"+this.filename+"' type='video/webm'");
-	            			$("videoSource"+index).append("<source src='/resources/video/"+this.filename+"' type='video/mp4'");
+	                    $("#video"+index).append("<video id='videoSource"+index+"' controls width='250'>");
+	            		$("#videoSource"+index).append("<div class='dd'>"+this.filename+"</div>");
+	            			$("#videoSource"+index).append("<source src='/resources/video/"+this.filename+"' type='video/webm'>");
+
+						   									 
+	            			$("#videoSource"+index).append("<source src='/resources/video/"+this.filename+"' type='video/mp4'>");
 	                $("#videoForm"+index).append("<div id='videoContent"+index+"' class='content'></div>");
-	                    $("#videoContent"+index).append("<p>content"+this.videoContent+"</p>");
+	                    $("#videoContent"+index).append("<p>"+this.videoContent+"</p>");
 	                $("#videoForm"+index).append("<div id='videoFooter"+index+"' class='videoFooter'></div>");
 	                    $("#videoFooter"+index).append("<button id='videoButton"+index+"' class='videoUpdateButton' onclick='updateVideoList(this)'>수정</button>");
 	                    $("#videoFooter"+index).append("<button id='videoButton"+index+"' class='videoMoveButton'>이동</button>");
@@ -141,7 +147,7 @@ function updateVideo(){
 	                        
 	                        
 	                        $.ajax({
-	    						url : 'openMinihome/replyList',
+	    						url : 'openMinihome/videoReplyList',
 	    						method : 'POST',
 	    						data : 'videoNo=' + this.videoNo ,
 	    						type : "POST",
@@ -210,18 +216,25 @@ $(function() {
 								function(index) {
 								$(".reload").append("<div id='videoForm"+index+"' class='videoForm'></div>");
 									$("#videoForm"+index ).append("<div id='videoTitle"+index+"' class='videoTitle'></div>");
-										$("#videoTitle"+index).append("<input type='hidden' value='"+this.videoNo+"' name='videoNo'");
+
+									 $("#videoTitle"+index).append("<input type='hidden' id='videoNo"+index+"' value='"+this.videoNo+"' name='videoNo'>");
+			                         $("#videoTitle"+index).append("<input type='hidden' id='folderName"+index+"' value='"+this.folder+"' name='videoName'>");
+					                   
 					            		$("#videoTitle"+index).append("<p>title"+this.title+"</p>");
 					            	$("#videoForm"+index).append("<div id='video"+index+"' class='video'></div>");
 					            		$("#video"+index).append("<video id='videoSource"+index+"' controls width='250'>");
-					            			$("videoSource"+index).append("<source src='/resources/video/"+this.filename+"' type='video/webm'");
-					            			$("videoSource"+index).append("<source src='/resources/video/"+this.filename+"' type='video/mp4'");
+					            		$("#videoSource"+index).append("<div class='dd'>"+this.filename+"</div>");
+					            			$("#videoSource"+index).append("<source src='/resources/video/"+this.filename+"' type='video/webm'>");
+
+										   									 
+					            			$("#videoSource"+index).append("<source src='/resources/video/"+this.filename+"' type='video/mp4'>");
 					            	$("#videoForm"+index).append("<div id='videoContent"+index+"' class='content'></div>");
-					            		$("#videoContent"+index).append("<p>content"+this.videoContent+"</p>");
+					            		$("#videoContent"+index).append("<p>"+this.videoContent+"</p>");
 					            	$("#videoForm"+index).append("<div id='videoFooter"+index+"' class='videoFooter'></div>");
-					            		$("#videoFooter"+index).append("<button id='videoButton"+index+"' class='videoButton'>수정</button>");
-					            		$("#videoFooter"+index).append("<button id='videoButton"+index+"' class='videoButton'>이동</button>");
-					            		$("#videoFooter"+index).append("<a href='openMinihome/videoDelete?videoNo="+this.videoNo+"' role='button' class='videoDeleteButton'>삭제</button>");
+					            		$("#videoFooter"+index).append("<button id='videoButton"+index+"' class='videoUpdateButton' onclick='updateVideoList(this)'>수정</button>");
+					            		$("#videoFooter"+index).append("<button id='videoButton"+index+"' class='videoScrapButton'>이동</button>");
+					            		$("#photoFooter"+index).append("<button id='videoButton"+index+"' class='videoDeleteButton' onclick='deleteVideo(this)'>삭제</button>");
+					            		
 					            	$("#videoForm"+index).append("<div id='videoComment"+index+"' class='comment'></div>");
 					            		$("#videoComment"+index).append("<div id='videoCommentForm"+index+"' class='commentForm'></div>");
 					            			$("#videoCommentForm"+index).append("<span>댓글</span>");
