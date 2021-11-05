@@ -9,7 +9,7 @@
 		<textarea name="self" id="self" rows="5" cols="23" readonly>${member.subtitle }</textarea>
 		<input type="button" name="leftEdit" id="leftEdit" value="EDIT" onclick="edit()">
 		<hr style="width: 90%">
-		<input type="text" name="name" id="name" value="피효정" size="2" readonly>
+		<input type="text" name="name" id="name" value="${member.name }" size="2" readonly>
 		<!-- <input type="text" name="gender" id="gender" value="여" size="1" readonly> -->
 		<c:choose>
 			<c:when test="${member.gender==1 }">

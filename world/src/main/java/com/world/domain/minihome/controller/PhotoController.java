@@ -1,5 +1,9 @@
 package com.world.domain.minihome.controller;
 
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,10 +11,14 @@ import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.world.domain.minihome.impl.PhotoService;
 import com.world.domain.minihome.vo.PhotoVO;
@@ -53,9 +61,49 @@ public class PhotoController {
 			folder = photoVo.get(i).getFolder();
 			list.add(photoVo.get(i));
 		}
-		model.addAttribute("photoList", photoVo);
 		System.out.println("========= list size:: " + list.size());
 		return list;
+	}
+	
+	@RequestMapping("openMinihome/uploadPhoto")
+	@ResponseBody
+	public List<PhotoVO> uploadPhoto(PhotoVO vo,@RequestParam("uploadfile") MultipartFile uploadfile, Model model) {
+		
+		System.out.println("uploadPhoto 호출됨.");
+		// 추가된 사진 정리
+		String filename = null;
+		
+		try {
+		    // Get the filename and build the local file path (be sure that the 
+		    // application have write permissions on such directory)
+		    filename = uploadfile.getOriginalFilename();
+		    // 이미지 정리할 패스
+		    String directory = "C:\\lib\\42World\\user\\photo";
+		    String filepath = Paths.get(directory, filename).toString();
+		    System.out.println("실제 주소 : "+directory+"\n파일 주소 : "+ filepath);
+		    
+		    // Save the file locally
+		    BufferedOutputStream stream =
+		        new BufferedOutputStream(new FileOutputStream(new File(filepath)));
+		    stream.write(uploadfile.getBytes());
+		    stream.close();
+		  }
+		  catch (Exception e) {
+		    System.out.println(e.getMessage());
+		  }
+		// 파일 저장할 vo 구성
+		System.out.println(vo.getFolder());
+		vo.setFilename(filename);
+		
+		// db 접속 및 튜플 추가
+		photoService.insertPhoto(vo);
+		
+		// 보여줄 폴더 리스트 받아오기		
+		List<PhotoVO> photoList = photoService.photoList(vo);
+	
+		photoList.get(0).toString();
+		// 리스트 객체 리턴
+		return photoList;
 	}
 
 	@RequestMapping(value = "openMinihome/deletePhoto")

@@ -16,22 +16,101 @@
 		 
 		location.href='addPhoto.jsp';
 	}*/
+	
+	// 사진 올리기 유효성 체크
+	function validatePhoto() {
+		// 멤버넘버 널체크
+		
+		// 폴더 값 널체크
+		if($("input#folder").val()==""){
+			alert("잘못된 접근");
+			return false;
+		}
+		// 사진 제목 널체크
+		if($("input#title").val()==""){
+			alert("사진 제목을 넣어주세요");
+			return false;
+		}
+		// 사진 파일 널체크
+		if($("input#uploadfile").val()==""){
+			alert("사진 파일을 넣어주세요");
+			return false;
+		}
+		// 사진 내용 널체크
+		if($("textarea#content").val()==""){
+			alert("사진 내용을 넣어주세요");
+			return false;
+		}
+		
+		console.log("유효성 문제 없음");
+		// 유효성 문제 없을시 포토 업로드
+		uploadPhoto();
+	}
+	
+	
+	// 사진 올리기
+	function uploadPhoto(){
+	    var form = $('#uploadPhotoForm')[0];
+	    var formData = new FormData(form);
+	 
+	    $.ajax({
+	         url : 'openMinihome/uploadPhoto',
+	         type : 'POST',
+	         data : formData,
+	         contentType : false,
+	         processData : false,   
+	         success: function(data, textStatus, xhr, form) {
+	        	    if (data.errorCode) {
+	        	        return xhr.abort();
+	        	    }
+	        	}
+	    }).done(function(data){
+	        callback(data);
+	    });
+	}
+
+	// 사진 추가하기 폼 변경
 	function addPhotoForm(){
-		 $(".photoForm").remove();
-		 
-		 $(".reload").append("<div id='photoForm' class='photoForm'></div>");
-		 $("#photoForm").append("<div id='photoTitle' class='photoTitle'></div>");
-            $("#photoTitle" ).append("<input type='text' value='title' name='title'>");
-          
+		$(".photoForm").remove();
+
+		$(".reload").append("<form id='uploadPhotoForm' action='' enctype='multipart/form-data' method='post'><div id='photoForm' class='photoForm'></div></form>");
+		// 홈페이지 주인 memberNo 값 전송용 hidden 태그
+		var memberNo = '<%=(int)session.getAttribute("loginUser")%>';
+		// 유저 넘버 체크
+		console.log("유저 memberNo : "+memberNo);
+		$("#photoForm").append("<input type='hidden' value='"+memberNo+"' name='memberNo'>");
+		
+		// 폴더 값 전송용 hidden 태그
+		var folder = $('span.selectedFolder').text();
+		console.log("유저 folder : "+folder);
+		$("#photoForm").append("<input type='hidden'id='folder' value='"+folder+"' name='folder'>");
+		
+		// 이하 사진 추가 폼 태그 구성
+		$("#photoForm").append("<div id='photoTitle' class='photoTitle'></div>");
+        	$("#photoTitle" ).append("<input type='text' id='title' value='title' name='title'>");
         $("#photoForm" ).append("<div id='photoImg' class='img'></div>");
-            $("#photoImg" ).append("<input type='file' name='uploadfile' placeholder='파일선택' onchange='setImage(event)'/>");
+            $("#photoImg" ).append("<input type='file' id='uploadfile' name='uploadfile' placeholder='파일선택' onchange='setImage(event)'/>");
         $("#photoForm" ).append("<div id='photoContent' class='content'></div>");
-            $("#photoContent" ).append("<textarea rows='17' cols='65' name='content'></textarea>");
+            $("#photoContent" ).append("<textarea rows='17' cols='65' id='content' name='photoContent'></textarea>");
         $("#photoForm" ).append("<div id='photoFooter' class='photoFooter'></div>");
-            $("#photoFooter" ).append("<button id='photoButton' class='photoUpdateButton' onclick='addPhoto()'>등록</button>");
+            $("#photoFooter" ).append("<button id='photoButton' class='photoUpdateButton' onclick='validatePhoto()'>등록</button>");
             /* $("#photoFooter" ).append("<a href='openMinihome/photoDelete?photoNo="+this.photoNo+"' role='button' class='photoDeleteButton'>삭제</button>"); */
 
 	}
+	
+	// 이미지 올릴시 견본 이미지 보여줌
+	function setImage(event){
+		var reader = new FileReader();
+		reader.onload=function(event){
+			var img = document.createElement("img"); 
+			console.log(event.target.result());
+			console.log(event.target.result);
+			img.setAttribute("src", event.target.result());
+			document.querySelector("div#image_container").appendChild(img); 
+			}; 
+		reader.readAsDataURL(event.target.files[0]); 
+	}
+	
 	function updatePhotoList(e){
 		
 			var string =  $(e).attr('id');
@@ -178,6 +257,7 @@
 	
 	
 	$(function() {
+		$(".photoFolders li:eq(0)").children("a").children("span").addClass('selectedFolder');
 		$(".photo_content").hide();
 		$(".photoFolders li:first").addClass("active").show();
 		$(".photoFolders:first img").attr('src', ${pageContext.request.contextPath}'/resources/img/open.png');
@@ -191,6 +271,12 @@
 
 					$(".photo_content").css('display', 'none');
 					var href = $(this).find("a").attr("href");
+					
+					// 클릭하면 모든 a 태그 selected 제거
+					$(".photoFolders li").children("a").children("span").removeClass('selectedFolder');
+					// 클릭한 a태그만 selected 하여 사진 추가시 사용
+					$(this).children("a").children("span").addClass('selectedFolder');
+
 					$(href).css('display', 'block');
 					
 					$(".photoFolders img").attr('src', '../resources/img/close.png');
@@ -201,7 +287,7 @@
 					$(".photo_content").eq(no - 1).css('display', 'block');
 
 					var folderName = $(this).children("a").text();
-					console.log("==" + folderName);
+					console.log("클릭한 폴더 ==" + folderName);
 					//$(".photo_content input[name=kind]").attr('value', this.folder);
 					
 
@@ -214,8 +300,8 @@
 						success : function(data) {
 							
 							
-							 $(".photoForm").remove();
-							
+							$(".photoForm").remove();
+
 							$(data).each(
 									function(index) {
 										console.log(index)

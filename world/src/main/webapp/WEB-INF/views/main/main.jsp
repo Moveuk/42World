@@ -254,7 +254,7 @@ section {
 						<input class="main1_main_profile_div_top_button" type="button" value="로그아웃">
 					</div>
 					<div class="main1_main_profile_div_left">
-						<img src="${pageContext.request.contextPath}/resources/img/minimi/${sessionScope.loginPropic}">
+						<img src="${pageContext.request.contextPath}/resources/img/${sessionScope.loginPropic}">
 					</div>
 					<div class="main1_main_profile_div_right">
 						<table>

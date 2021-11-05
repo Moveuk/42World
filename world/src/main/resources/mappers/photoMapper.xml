@@ -28,10 +28,11 @@
 		select * from photo where folder=#{value}
 	</select>
 
-	<insert id="insertVisitorLog" parameterType="visitorLog">
-		insert into VisitorLog (visitorLogNo,ownerId,writerId,type,content)
-		values(SEQ_VISITORLOG.NEXTVAL,#{ownerId},#{writerId},#{type},#{content})
+	<insert id="insertPhoto" parameterType="photo">
+		insert into photo (memberNo,folder,title,filename,photoContent)
+		values(#{memberNo},#{folder},#{title},#{filename},#{photoContent})
 	</insert>
+	
 	<delete id="deletePhoto">
 		delete from photo where photoNo=#{photoNo}
 	</delete>
