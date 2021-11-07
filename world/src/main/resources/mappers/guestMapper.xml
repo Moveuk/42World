@@ -12,7 +12,7 @@
   	</select>
   
   	<select id="getguest" resultType="guest" parameterType="guest">
-  		select count(*) "guestno" from guest where visitto =#{value} and TO_CHAR(visitdate,'YYYYMMDD') = TO_CHAR(SYSDATE,'YYYYMMDD')
+  		select count(*) "guestNo" from guest where visitTo =#{value} and TO_CHAR(visitDate,'YYYYMMDD') = TO_CHAR(SYSDATE,'YYYYMMDD')
   	</select>
   	
   	<select id="getGuestList" resultType="guest">

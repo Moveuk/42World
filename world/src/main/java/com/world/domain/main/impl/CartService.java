@@ -12,4 +12,5 @@ public interface CartService {
 
 	int getCartListCount(CartVO vo);
 
+	void deleteCart(CartVO vo);
 }

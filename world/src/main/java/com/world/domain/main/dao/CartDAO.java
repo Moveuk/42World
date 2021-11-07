@@ -31,4 +31,8 @@ public class CartDAO {
 		return sqlSession.selectOne("CartDAO.getCartListCount", vo);
 	}
 
+	public void deleteCart(CartVO vo) {
+		sqlSession.delete("CartDAO.deleteCart", vo);
+	}
+
 }

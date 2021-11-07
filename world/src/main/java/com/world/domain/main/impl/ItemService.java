@@ -8,4 +8,7 @@ public interface ItemService {
 
 	List<ItemVO> getItemList();
 
+	void insertMyItem(ItemVO vo);
+
+	void insertFriendItem(ItemVO vo);
 }

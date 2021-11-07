@@ -11,31 +11,28 @@ import lombok.ToString;
 @ToString
 public class DotoryVO {
 
-	private int dotoryno;
-	private Date buydate;
+	private int dotoryNo;
+	private Date buyDate;
 	private String division;
-	private String memberNo;
-	private String giftto;
-	private int giftstate;
+	private int memberNo;
+	private int giftTo;
+	private int giftState;
 	private String category;
 	private String name;
 	private int price;
-
-	public DotoryVO(int dotoryno, Date buydate, String division, String memberNo, String giftto, int giftstate,
+	
+	public DotoryVO(int dotoryNo, Date buyDate, String division, int memberNo, int giftTo, int giftState,
 			String category, String name, int price) {
 		super();
-		this.dotoryno = dotoryno;
-		this.buydate = buydate;
+		this.dotoryNo = dotoryNo;
+		this.buyDate = buyDate;
 		this.division = division;
 		this.memberNo = memberNo;
-		this.giftto = giftto;
-		this.giftstate = giftstate;
+		this.giftTo = giftTo;
+		this.giftState = giftState;
 		this.category = category;
 		this.name = name;
 		this.price = price;
 	}
 
-	
-	
-	
 }

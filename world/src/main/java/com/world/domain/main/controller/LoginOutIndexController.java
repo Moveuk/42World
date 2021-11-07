@@ -111,17 +111,17 @@ public class LoginOutIndexController {
 //				System.out.println("장바구니: " + CartCount.getCartno());// Item Count
 
 				MemberVO loginCount = sqlSession.selectOne("MemberDAO.loginCount", member.getMemberNo());
-				System.out.println("오늘의 방문자: " + loginCount.getGuestcount());// Guest Count
-				System.out.println("일촌신청: " + loginCount.getFriendcount());// Friend Count
-				System.out.println("선물함: " + loginCount.getItemcount());// Item Count
-				System.out.println("내 도토리: " + loginCount.getDotorycount());// Dotory Sum
-				System.out.println("장바구니: " + loginCount.getCartcount());// Item Count
+				System.out.println("오늘의 방문자: " + loginCount.getGuestCount());// Guest Count
+				System.out.println("일촌신청: " + loginCount.getFriendCount());// Friend Count
+				System.out.println("선물함: " + loginCount.getItemCount());// Item Count
+				System.out.println("내 도토리: " + loginCount.getDotoryCount());// Dotory Sum
+				System.out.println("장바구니: " + loginCount.getCartCount());// Item Count
 
-				session.setAttribute("GuestCount", loginCount.getGuestcount());
-				session.setAttribute("FriendCount", loginCount.getFriendcount());
-				session.setAttribute("ItemCount", loginCount.getItemcount());
-				session.setAttribute("DotorySum", loginCount.getDotorycount());
-				session.setAttribute("CartCount", loginCount.getCartcount());
+				session.setAttribute("GuestCount", loginCount.getGuestCount());
+				session.setAttribute("FriendCount", loginCount.getFriendCount());
+				session.setAttribute("ItemCount", loginCount.getItemCount());
+				session.setAttribute("DotorySum", loginCount.getDotoryCount());
+				session.setAttribute("CartCount", loginCount.getCartCount());
 //				 
 				// session.removeAttribute("id");
 				// session.setAttribute("loginUser",member);

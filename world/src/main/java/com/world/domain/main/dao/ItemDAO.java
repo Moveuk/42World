@@ -20,4 +20,16 @@ public class ItemDAO {
 		return sqlSession.selectList("ItemDAO.selectItem");// mapper:id~
 	}
 
+	// 내 아이템 구매로 결제시 아이템 테이블에 데이터 추가
+	public void insertMyItem(ItemVO vo) {
+		System.out.println("===ItemDAO  insertMyItem()  ");
+		sqlSession.update("ItemDAO.insertMyItem", vo);
+	}
+
+	// 일촌 선물로 결제시 아이템 테이블에 데이터 추가
+	public void insertFriendItem(ItemVO vo) {
+		System.out.println("===ItemDAO  insertFriendItem()  ");
+		sqlSession.update("ItemDAO.insertFriendItem", vo);
+	}
+
 }

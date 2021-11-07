@@ -23,7 +23,7 @@ public class GuestController {
 		
 		System.out.println("visitTo : " + visitTo);
 		
-		vo.setVisitto(visitTo);
+		vo.setVisitTo(visitTo);
 		
 		System.out.println("üũ����Ʈ1");
 		

@@ -9,12 +9,12 @@ import lombok.ToString;
 @ToString
 public class ProductVO {
 
-	private int marketid;
+	private int marketId;
 	private String memberNo;
 	private String category;
 	private String name;
 	private int price;
-	private String filename;
+	private String fileName;
 	private String rgb;
 	private String font;
 

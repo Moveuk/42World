@@ -45,16 +45,16 @@
   	</insert>
 
 	  <select id="getNameByUserId" resultType="String" parameterType="int">
-        select name from member where memberno=#{userId}
+        select name from member where memberNo=#{userId}
      </select>
      
 	 <select id="loginCount" resultType="member" parameterType="member">
         SELECT a.guestcount, b.friendcount, c.itemcount, d.dotorycount, e.cartcount
      FROM
-           (select count(*) guestcount from guest where visitto =#{value} and TO_CHAR(visitdate,'YYYYMMDD') = TO_CHAR(SYSDATE,'YYYYMMDD'))a
-        ,  (select count(*) friendcount from friend where friendto=#{value} and accept ='1')b
-        ,  (select count(*) itemcount  from item where memberNo =#{value} and giftstate='1' ) c
-        ,  (select NVL(sum(price), 0) dotorycount from dotory where memberNo=#{value} and giftstate='2' ) d
+           (select count(*) guestcount from guest where visitTo =#{value} and TO_CHAR(visitDate,'YYYYMMDD') = TO_CHAR(SYSDATE,'YYYYMMDD'))a
+        ,  (select count(*) friendcount from friend where friendTo=#{value} and accept ='1')b
+        ,  (select count(*) itemcount  from item where memberNo =#{value} and giftState='1' ) c
+        ,  (select NVL(sum(price), 0) dotorycount from dotory where memberNo=#{value} and giftState='2' ) d
         ,  (select count(*) cartcount from cart where memberNo =#{value} ) e
      </select>
      

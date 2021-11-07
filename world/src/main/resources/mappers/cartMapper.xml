@@ -9,11 +9,11 @@
  
 
 	<insert id="insertCart"> 
-        INSERT INTO cart (cartno,category, name,price,filename,resdate,memberNo ) VALUES (seq_cart.nextval, #{category},#{name},#{price},#{filename},sysdate,#{memberNo}) 
+        INSERT INTO cart (cartno,category, name,price,filename,resdate,memberNo ) VALUES (seq_cart.nextval, #{category},#{name},#{price},#{filename},sysDate,#{memberNo}) 
     </insert>
     
     <select id="getcartCount" resultType="cart" parameterType="cart">
-  		select count(*)"cartno" from cart where memberNo =#{value}
+  		select count(*)"cartNo" from cart where memberNo =#{value}
   	</select>
   	
   	<select id="getCartList" resultType="cart">
@@ -23,6 +23,10 @@
     <select id="getCartListCount" resultType="int">
     	select count(*) from cart where memberNo=#{memberNo}
     </select>
+    
+    <delete id="deleteCart" parameterType="cart">
+    	delete from cart where memberNo=#{memberNo} and category=#{category} and name=#{name} and price=#{price} and fileName=#{fileName}
+    </delete>
   
  	
 </mapper>

@@ -33,7 +33,6 @@
 		<servlet-name>appServlet</servlet-name>
 		<!-- /로 시작하면 서블릿 작동 -> 들어오는 모든 url 호출에 반응하겠다는 의미. -->
 		<url-pattern>/</url-pattern>
-		<url-pattern>/cart/*</url-pattern>
 		<url-pattern>/product/*</url-pattern>
 	</servlet-mapping>
 

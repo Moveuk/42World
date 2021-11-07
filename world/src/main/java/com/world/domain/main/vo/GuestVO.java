@@ -11,10 +11,10 @@ import lombok.ToString;
 @ToString
 public class GuestVO {
 
-	private int guestno;
-	private int visitto;
-	private int visitfrom;
-	private Date visitdate;
+	private int guestNo;
+	private int visitTo;
+	private int visitFrom;
+	private Date visitDate;
 
 	
 

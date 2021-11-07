@@ -11,16 +11,16 @@ import lombok.ToString;
 @ToString
 public class ItemVO {
 
-	private int itemno;
-	private Date buydate;
+	private int itemNo;
+	private Date buyDate;
 	private int memberNo;
 	private String division;
-	private int giftto;
-	private int giftstate;
+	private int giftTo;
+	private int giftState;
 	private String category;
 	private String name;
 	private int price;
-	private String filename;
+	private String fileName;
 	private String rgb;
 	private String font;
 	private int use;

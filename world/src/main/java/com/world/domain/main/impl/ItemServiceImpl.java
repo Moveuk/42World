@@ -19,5 +19,16 @@ public class ItemServiceImpl implements ItemService {
 		System.out.println("2번 ItemServiceImpl getItemlist() :" + "Item");
 		return itemDAO.getItemList();
 	}
+	
+	@Override
+	public void insertMyItem(ItemVO vo) {
+		itemDAO.insertMyItem(vo);
+	}
+
+	@Override
+	public void insertFriendItem(ItemVO vo) {
+		itemDAO.insertFriendItem(vo);
+	}
+
 
 }

@@ -21,7 +21,7 @@ public class ItemController {
 		System.out.println("1번 controller getItemList~");
 		model.addAttribute("itemList", itemService.getItemList());
 
-		Date dt = vo.getBuydate();
+		Date dt = vo.getBuyDate();
 		int di = vo.getMemberNo();
 
 		System.out.println("저장되어있는 db : " + dt + "/" + di);

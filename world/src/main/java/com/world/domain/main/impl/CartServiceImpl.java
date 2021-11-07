@@ -29,5 +29,10 @@ public class CartServiceImpl implements CartService {
 	public int getCartListCount(CartVO vo) {
 		return cartDAO.getCartListCount(vo);
 	}
+	
+	@Override
+	public void deleteCart(CartVO vo) {
+		cartDAO.deleteCart(vo);
+	}
 
 }

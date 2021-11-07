@@ -12,15 +12,27 @@
   	</select>
   
   	<select id="getdotory" resultType="dotory" parameterType="dotory">
-  		select * from dotory where marketid=1
+  		select * from dotory where marketId=1
   	</select>
   	
   	<select id="getdotorySum" resultType="dotory" parameterType="dotory">
-  		select NVL(sum(price), 0)"dotoryno" from dotory where memberno=#{value} and giftstate='2'
+  		select NVL(sum(price), 0)"dotoryNo" from dotory where memberNo=#{value} and giftState='2'
   	</select>
 
 	<insert id="insertdotory"  parameterType="dotory">
-		insert into dotory values(seq_dotory.nextval,to_char(current_timestamp,'YY/MM/DD'),1,#{memberNo},#{giftto},1,null,null,#{price})
+		insert into dotory values(seq_dotory.nextval,to_char(current_timestamp,'YY/MM/DD'),1,#{memberNo},#{giftTo},1,null,null,#{price})
+	</insert>
+	
+	<select id="getMyDotory" resultType="int" >
+		select sum(price) from dotory where memberNo=#{memberNo} and (division=1 or division=2 or division=4 or division=5) 
+	</select>
+	
+	<insert id="useForMe" parameterType="dotory">
+		insert into dotory(dotoryNo,buyDate,division,memberNo,giftTo,giftState,category,name,price) values(seq_dotory.nextval,sysDate,2,#{memberNo},#{memberNo},2,#{category},#{name},-#{price})
+	</insert>
+	
+	<insert id="useForFriend" parameterType="dotory">
+		insert into dotory(dotoryNo,buyDate,division,memberNo,giftTo,giftState,category,name,price) values(seq_dotory.nextval,sysDate,5,#{memberNo},#{giftTo},1,#{category},#{name},-#{price})
 	</insert>
  	
 </mapper>

@@ -31,11 +31,11 @@ public class MemberVO {
 	private String searchKeyword;
 	private MultipartFile uploadFile;
 
-	private int guestcount;
-	private int friendcount;
-	private int itemcount;
-	private int dotorycount;
-	private int cartcount;
-	private int totalguestcount;
+	private int guestCount;
+	private int friendCount;
+	private int itemCount;
+	private int dotoryCount;
+	private int cartCount;
+	private int totalGuestCount;
 
 }

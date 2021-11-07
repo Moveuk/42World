@@ -30,4 +30,19 @@ public class DotoryDAO {
 		sqlSession.update("DotoryDAO.insertdotory", vo);
 	}
 
+	// 내 보유 도토리 개수 불러오기
+	public int getMyDotory(int memberNo) {
+		return sqlSession.selectOne("DotoryDAO.getMyDotory", memberNo);
+	}
+
+	// 도토리로 아이템 구매시
+	public void useForMe(DotoryVO vo) {
+		sqlSession.insert("DotoryDAO.useForMe", vo);
+	}
+
+	// 도토리로 아이템 선물시
+	public void useForFriend(DotoryVO vo) {
+		sqlSession.insert("DotoryDAO.useForFriend", vo);
+	}
+
 }
