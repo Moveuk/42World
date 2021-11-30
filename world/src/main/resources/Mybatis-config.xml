@@ -37,10 +37,9 @@
   		<!-- miniHome alias -->
 		<typeAlias alias="visitorLog" type="com.world.domain.minihome.vo.VisitorLogVO" />
 		<typeAlias alias="photo" type="com.world.domain.minihome.vo.PhotoVO" />
-		<typeAlias alias="video" type="com.world.domain.minihome.vo.VideoVO" />
 		<typeAlias alias="reply" type="com.world.domain.minihome.vo.ReplyVO" />
-		<typeAlias alias="folder" type="com.world.domain.minihome.vo.FolderVO" />
-		
+		<typeAlias alias="video" type="com.world.domain.minihome.vo.VideoVO" />
+		<typeAlias alias="dotory" type="com.world.domain.main.vo.DotoryVO" />
 	</typeAliases>
 
 </configuration>

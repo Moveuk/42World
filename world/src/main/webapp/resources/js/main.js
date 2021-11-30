@@ -1,6 +1,5 @@
 /* 메인 페이지 오른쪽 탭 기능 */
 $(function () {
-	$(".tab_content").load("home");
     $(".tabs li:first").addClass("active").show();
     $(".tabs li:first a").css({ "color": "black" });
     $(".tab_content:first").show();

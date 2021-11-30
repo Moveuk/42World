@@ -16,10 +16,11 @@
   	</select>
   	
   	<select id="getdotorySum" resultType="dotory" parameterType="dotory">
-  		select NVL(sum(price), 0)"dotoryno" from dotory where memberNo=#{value} and giftstate='2'
+  		select NVL(sum(price), 0)"dotoryno" from dotory where memberno=#{value} and giftstate='2'
   	</select>
 
-
-  
+	<insert id="insertdotory"  parameterType="dotory">
+		insert into dotory values(seq_dotory.nextval,to_char(current_timestamp,'YY/MM/DD'),1,#{memberNo},#{giftto},1,null,null,#{price})
+	</insert>
  	
 </mapper>

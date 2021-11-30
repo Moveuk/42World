@@ -7,7 +7,15 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>42월드</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/index.css ">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/index.css?ver=1.1 ">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>42World</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.8.js"></script>
+
 </head>
 <body>
 	<form method="post" action="login" id="formm">
@@ -63,4 +71,6 @@
 		<div id="box"></div>
 	</form>
 </body>
+
+
 </html>

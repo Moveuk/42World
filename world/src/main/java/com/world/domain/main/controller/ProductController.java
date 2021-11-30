@@ -16,7 +16,7 @@ public class ProductController {
 	@Autowired
 	ProductService productService;
 
-	@RequestMapping("/product/getProductList")
+	@RequestMapping("/getProductList")
 	public String getMemberList(HttpServletRequest req, ProductVO vo, Model model) throws IllegalStateException {
 		System.out.println("1번 controller list~");
 		String category = req.getParameter("category");

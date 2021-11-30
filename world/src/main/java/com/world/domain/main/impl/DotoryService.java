@@ -4,6 +4,6 @@ import com.world.domain.main.vo.DotoryVO;
 
 public interface DotoryService {
 
-	void insertCart(DotoryVO vo);
+	void insertDotory(DotoryVO vo);
 
 }
