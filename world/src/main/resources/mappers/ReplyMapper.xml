@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="ReplyDAO">
+
+  	
+  	<select id="replyList" resultType="reply" parameterType="reply">
+  	 
+  		select a.replyno,a.memberno,a.writerid,a.writedate,a.replycontent,a.photono,a.videono,a.boardno,a.visitorlogno, b.name  
+  		from reply a, member b 
+  		where a.writerid = b.memberno(+) and photoNo=#{photoNo} 
+	
+  	</select> 
+  	<select id="firstPhotoReplyList" resultType="reply" parameterType="reply">
+  	
+		select a.replyno,a.memberno,a.writerid,a.writedate,a.replycontent,a.photono,a.videono,a.boardno,a.visitorlogno, b.name  
+		from reply a, member b 
+		where a.writerid = b.memberno(+) and photoNo=#{photoNo}
+		
+  	</select>
+  	
+</mapper>

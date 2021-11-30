@@ -1,12 +1,5 @@
 
-#tab4 .rightHome{
-    border:rgb(179, 179, 179) solid 1px;
-    border-radius:3%;
-    width:100%;
-    overflow: auto;
-    height: 520px;
-}
-#tab4 .left .videoTitle{
+.left .videoTitle{
     border-bottom:rgb(179, 179, 179) 2px solid;
     width:90%;
     margin-left: 5%;
@@ -15,14 +8,14 @@
     font-weight: bolder;
 }
 
-#tab4 .left .videoFolders img{
+.left .videoFolders img{
     width:10%;
 }
-#tab4 .left .videoFolders li{
+.left .videoFolders li{
     list-style: none;
     margin-left: -15%;
 }
-#tab4 .left .videoFolders a{
+.left .videoFolders a{
     text-decoration: none;
     color:slategray;
     margin-left: 5px;
@@ -30,7 +23,7 @@
 
 }
 
-#tab4 .right .videoForm{
+.right .reload .videoForm{
     width: 660px;
     height: 100%;
     border:1px solid dimgrey;
@@ -38,7 +31,7 @@
     border-radius: 5%;
 }
 
-#tab4 .right .videoForm #videoTitleInput{
+.right .reload .videoForm #videoTitleInput{
     width:630px;
     height: 30px;
     font-size: 15px;
@@ -50,19 +43,31 @@
     margin-left: 11px;
     margin-top: 5px;
 }
-#tab4 .right .videoForm input:focus{
+.right .reload .videoForm .videoTitle{
+    width:630px;
+    height: 30px;
+    font-size: 15px;
+    text-align: center;
+    border-top:none;
+    border-left:none;
+    border-right:none;
+    border-bottom:dimgray 1px solid;
+    margin-left: 11px;
+    margin-top: 5px;
+}
+.right .reload .videoForm input:focus{
     outline: none;
 }
-#tab4 .right .videoForm .video{
+.right .reload .videoForm .video{
      margin:10px 0 10px 10px;
     text-align: center;
 }
-#tab4 .right .videoForm .videoFooter{
+.right .reload .videoForm .videoFooter{
     text-align: right;
     margin-right: 10px;
     margin-bottom: 10px;
 }
-#tab4 .right .videoForm .videoFooter button{
+.right .reload .videoForm .videoFooter button{
     background-color: white;
     border-radius: 4px;
     border:1px solid rgb(189, 186, 186);
@@ -70,7 +75,7 @@
     font-size: 15px;
     
 }
-#tab4 .right .videoForm .commentForm{
+.right .reload .videoForm .commentForm{
     border-style:solid;
     border-width: 1px 1px 1px 5px; 
     padding: 12px; 
@@ -78,36 +83,4 @@
     margin-left: 10px;
     color:rgb(51, 51, 51);
     width: 90%;
-}
-#tab4 .rightHome .comment .commentForm #commentInput{
-    border: none;
-    width:60%;
-    height: 100%;
-    font-size:15px;
-    padding-left: 5px;
-    outline:none;
-    box-sizing: border-box;
-    color:black;
-}
-#tab4 .rightHome .comment .commentForm #commentSubmit{
-      border:none;
-      background-color: white;
-      font-size:1em;
-      color:dimgrey;
-      outline:none;
-      box-sizing: border-box;
-    width:10%;
-    height: 100%;
-}
-#tab4 .rightHome .comment .commentList li{
-    width:90%;
-    height: 40px;
-    margin-top: 3%;
-}
-#tab4 .rightHome .comment .commentList li::marker{
-    color:dimgrey;
-}
-#tab4 .rightHome .comment .commentList a{
-    color:dimgrey;
-    text-decoration-line:none;
 }

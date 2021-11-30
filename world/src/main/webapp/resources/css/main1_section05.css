@@ -1,78 +1,93 @@
 .sec05 {
-    background:#fbfbfb;
-     position: relative;}
-.sec05 .section05_wrap > strong {
-    font-family: Recipekorea;
-    font-size: 45px; font-weight: 500;
-    line-height: normal;
-    text-align: center; 
-    color: #2c2c2c;
-    display:block;
-    }
-.sec05 .section05_wrap ul {border-bottom:1px solid #c9c9c9;
-     margin-top:45px;
-    }
+	background: #fbfbfb;
+	position: relative;
+}
+
+.sec05 .section05_wrap>strong {
+	font-family: Recipekorea;
+	font-size: 45px;
+	font-weight: 500;
+	line-height: normal;
+	text-align: center;
+	color: #2c2c2c;
+	display: block;
+}
+
+.sec05 .section05_wrap ul {
+	border-bottom: 1px solid #c9c9c9;
+	margin-top: 45px;
+}
+
 .sec05 .section05_wrap ul li {
-    border-top:1px solid #c9c9c9;
-    position: relative;
-    padding:25px 15px;
-    font-family:'NanumSquare';
-    }
+	border-top: 1px solid #c9c9c9;
+	position: relative;
+	padding: 25px 15px;
+	font-family: 'NanumSquare';
+}
 
 .sec05 .section05_wrap ul li span {
-    width:19px; height:19px;
-    position: absolute; right:0;
-    top:50%;margin-top:-9.5px;
-    transition: all 0.5s;
-    }
+	width: 19px;
+	height: 19px;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	margin-top: -9.5px;
+	transition: all 0.5s;
+}
+
 .sec05 .section05_wrap ul li button {
-    position:relative;
-    padding:0 0 0 40px;
-    font-size: 24px; font-weight: 800;
-    line-height: normal;
-    letter-spacing: normal;
-    color: #afafaf;
-    width:100%;
-    text-align: left;
-    background-color: #fbfbfb;
-    border: none;
-        } 
-.sec05 .section05_wrap ul li button:before {display:inline-block;
-    position:absolute;
-    left:0;
-    top:0;
-    content:'Q. ';
-} 
-.sec05 .section05_wrap ul li button span {width:15px;
-    height:15px;
-    background:url(../../images/ico_plus_w.png) no-repeat 50% 50% / cover;
-    transform-origin:50%;
+	position: relative;
+	padding: 0 0 0 40px;
+	font-size: 24px;
+	font-weight: 800;
+	line-height: normal;
+	letter-spacing: normal;
+	color: #afafaf;
+	width: 100%;
+	text-align: left;
+	background-color: #fbfbfb;
+	border: none;
 }
-.sec05 .section05_wrap ul li p { 
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 1.56; 
-    color: #000000; 
-    margin-top:16px; 
-    padding:0 0 0 38px;
-    display:none;
-    }
+
+.sec05 .section05_wrap ul li button:before {
+	display: inline-block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	content: 'Q. ';
+}
+
+.sec05 .section05_wrap ul li button span {
+	width: 15px;
+	height: 15px;
+}
+
+.sec05 .section05_wrap ul li p {
+	font-size: 18px;
+	font-weight: 500;
+	line-height: 1.56;
+	color: #000000;
+	margin-top: 16px;
+	padding: 0 0 0 38px;
+	display: none;
+}
+
 .sec05 .section05_wrap ul li.on {
-    border-top:1px solid #000;
+	border-top: 1px solid #000;
 }
-.sec05 .section05_wrap ul li.on button {color:rgb(250, 156, 79);
-    transition: all 0.3s;
-    background-color: #fbfbfb;
-    border: none;
-    }
+
+.sec05 .section05_wrap ul li.on button {
+	color: rgb(250, 156, 79);
+	transition: all 0.3s;
+	background-color: #fbfbfb;
+	border: none;
+}
+
 .sec05 .section05_wrap ul li.on button:before {
-    color:rgb(250, 156, 79);
+	color: rgb(250, 156, 79);
 }
-.sec05 .section05_wrap ul li.on button span {
-    background:url(../../images/ico_x_w.png) no-repeat 50% 50% / cover;
-    transform:rotate(180deg)
-}
+
 .sec05 .section05_wrap ul li.on span {
-    transform: rotate(225deg); 
-    opacity: 1;
+	transform: rotate(225deg);
+	opacity: 1;
 }

@@ -15,8 +15,12 @@
   		select * from member where seq=#{seq}
   	</select>
   	
-  	<select id="confirmID" resultType="member" parameterType="member">
+  	<select id="getPassword" resultType="member" parameterType="member">
   		select * from member where email=#{email}
+  	</select>
+  	
+  	<select id="confirmID" resultType="member" parameterType="member">
+  		select * from member where email=#{email} and password=#{password}
   	</select>
   	
   	<insert id="insertMember"  parameterType="member">
@@ -34,6 +38,45 @@
   		delete member where 'seq'=#{seq}
   	</delete>
   	
+  	 <insert id="insertFriend"  parameterType="member">
+  		insert into member (seq, id,pwd,name,email,zipNum,address,phone)
+  		values((select nvl(max(seq),0)+1 from member),
+  	 	#{id},#{pwd},#{name},#{email},#{zipNum},#{address, jdbcType=VARCHAR},#{phone})
+  	</insert>
+
+	  <select id="getNameByUserId" resultType="String" parameterType="int">
+        select name from member where memberNo=#{userId}
+     </select>
+     
+	 <select id="loginCount" resultType="member" parameterType="member">
+        SELECT a.guestcount, b.friendcount, c.itemcount, d.dotorycount, e.cartcount
+     FROM
+           (select count(*) guestcount from guest where visitTo =#{value} and TO_CHAR(visitDate,'YYYYMMDD') = TO_CHAR(SYSDATE,'YYYYMMDD'))a
+        ,  (select count(*) friendcount from friend where friendTo=#{value} and accept ='1')b
+        ,  (select count(*) itemcount  from item where memberNo =#{value} and giftState='1' ) c
+        ,  (select NVL(sum(price), 0) dotorycount from dotory where memberNo=#{value} and giftState='2' ) d
+        ,  (select count(*) cartcount from cart where memberNo =#{value} ) e
+     </select>
+     
+    <select id="totalgetGuestcount" resultType="member" parameterType="member">
+  		  	
+  	SELECT a.guestcount, b.totalguestcount
+     FROM
+           (select count(*) guestcount from guest where visitto =#{value} and TO_CHAR(visitdate,'YYYYMMDD') = TO_CHAR(SYSDATE,'YYYYMMDD'))a
+        ,  (select count(*) totalguestcount from guest where visitto =#{value})b
+
+
+  	</select>
+  	
+  	 <select id="getfriend" resultType="member" parameterType="member">
+  		  	
+    		select * from member where memberno=#{value}
+
+
+  	</select>
+     
+     
+     
   
  	
 </mapper>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="VideoDAO">
+
+  	
+	<select id="videoFolder" resultType="video">
+		select distinct (folder)"folder" from video order by folder asc 
+	</select>
+	
+	<select id="firstVideoList" resultType="video">
+		select * from video where folder=(select folder from (select distinct folder, rownum from video) where rownum=1)
+	</select>
+	
+	
+	<select id="videoList" resultType="video" parameterType="video">
+		select * from video where folder=#{folder}
+	</select> 
+	<delete id="videoDelete">
+		delete from video where videoNo=#{videoNo}
+	</delete>
+  	
+</mapper>

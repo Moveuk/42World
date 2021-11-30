@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+  
+<mapper namespace="VisitorLogDAO">
+ 
+  	<select id="getVisitorLogList" resultType="visitorLog">
+  		select * from visitorlog order by visitorLogNo desc 
+  	</select>
+  	
+  	<insert id="insertVisitorLog"  parameterType="visitorLog">
+  		insert into VisitorLog (ownerId,writerId,type,content)
+  		values(#{ownerId},#{writerId},#{type},#{content})
+  	</insert>
+  	
+  	<update id="updateVisitorLog" parameterType="visitorLog">
+  		update * visitorlog set ownerId=#{ownerId},writerId=#{writerId},type=#{type},content=#{content} 
+  		where 'visitorLogNo'=#{visitorLogNo}
+  	</update>
+  	
+  	<delete id="deleteVisitorLog" parameterType="visitorLog">
+  		delete visitorlog where 'visitorLogNo'=#{visitorLogNo}
+  	</delete>
+  	
+</mapper>

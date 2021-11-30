@@ -1,5 +1,9 @@
 package com.world.domain.main.controller;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,25 +35,29 @@ public class MemberController {
 	}
 	
 	@RequestMapping("/member/insertMember")
-	public String insertMember(HttpServletRequest req, MemberVO vo, Model model) throws IllegalStateException{
+	public String insertMember(HttpServletRequest req, MemberVO vo, Model model) throws IllegalStateException, ParseException{
 		
-		System.out.println("MemberController insertMember start : " );
+		String from = req.getParameter("birth");
+
+		SimpleDateFormat transFormat = new SimpleDateFormat("yyyy/MM/dd");
+
+		Date birth = transFormat.parse(from);
+
+
+
 		
-		String pwd = req.getParameter("pwd");
-		System.out.println("pwd : "+pwd );
+		System.out.println("체크포인트1");
+		vo.setEmail(req.getParameter("mem_email"));
+		vo.setBirth(birth);
+		vo.setGender(Integer.parseInt(req.getParameter("mem_gender")));
+		vo.setName(req.getParameter("mem_name"));
+		vo.setPhone(req.getParameter("mem_phone"));
+		vo.setPassword(req.getParameter("mem_pw"));
 		
-		System.out.println("MemberController insertMember : "+vo.toString() );
-		
-		/*
-		MultipartFile uploadFile = vo.getUploadFile();
-		System.out.println("uploadFile : " + uploadFile);
-		if(!uploadFile.isEmpty()) {
-		//	uploadFile.transferTo(new File("E:/" + fileName));
-		}
-		*/
 		memberService.insertMember(vo);
-		model.addAttribute("memberList", memberService.getMemberList());
-		return "/admin/memberList";
+		System.out.println("체크포인트4");
+		
+		return "../../index";
 	}
 
 	@RequestMapping("/member/updateMember")
@@ -64,5 +72,11 @@ public class MemberController {
 		return "getMemberList.do";
 	}
 	
+	@RequestMapping("/member/confirmID")
+	public String confirmID(String email, String password) {
+		memberService.confirmID(email,password);
+		System.out.println("MemberController : " + email+"/"+password);
+		return "product/getProductList";
+	}
 
 }

@@ -53,20 +53,22 @@ body{
 .header_main_ul ul li{
     
     
-    display:inline;
+    display:inline-block;
     margin-left: 130px;
      
-    width:15%;
+    width:5%;
 
 }
 
-.header_main_ul ul li a:hover{
+.header_main_ul ul li input:hover{
     color:#6AA3AC;
 }
 
-.header_main_ul ul li a{
-    text-decoration: none;
+.header_main_ul ul li input{
+
     font-size:17px;
     color:#505050;
     font-weight: 600;
+    border: none;
+    background-color : white;
 }

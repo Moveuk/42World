@@ -1,25 +1,25 @@
+/* 메인 페이지 오른쪽 탭 기능 */
 $(function () {
-    $(".tab_content").hide();
     $(".tabs li:first").addClass("active").show();
     $(".tabs li:first a").css({ "color": "black" });
     $(".tab_content:first").show();
 
-
-
-    $(".tabs li").click(function () {
-
+    $(".tabs li").click(function (e) {
+		
+		/* 오른쪽 탭 클릭시 active class 제거 및 탭 색 반전 하이라이트 */
+		e.preventDefault( );
         $(".tabs li").removeClass("active");
         $(".tabs li").find("a").css({ "color": "white" });
         $(this).addClass("active");
         $(this).find("a").css({ "color": "black" });
-        $(".tab_content").hide();
+        /*$(".tab_content").hide();*/
 
+		/* 탭 href에서 jsp파일 이름 불러옴 */
+        var activeFilePath = $(this).find("a").attr("href");
 
-        var activeTab = $(this).find("a").attr("href");
-
-
-        $(activeTab).fadeIn();
-
+		// jquery load로 탭별로 불러옴
+		$(".tab_content").load(activeFilePath);
+		
         return false;
     });
 })
@@ -33,29 +33,6 @@ $(function () {
         $(".profileFolders li").removeClass("active");
         $(this).addClass("active");
         $(".profile_content").hide();
-
-
-        var activeTab = $(this).find("a").attr("href");
-
-
-        $(activeTab).fadeIn();
-
-        return false;
-    });
-})
-$(function () {
-    $(".photo_content").hide();
-    $(".photoFolders li:first").addClass("active").show();
-    $(".photoFolders:first img").attr('src', '../img/open.png');
-    $(".photo_content:first").show();
-
-    $(".photoFolders li").click(function () {
-
-        $(".photoFolders li").removeClass("active");
-        $(".photoFolders img").attr('src', '../img/close.png');
-        $(this).addClass("active");
-        $(this).children("img").attr('src', '../img/open.png');
-        $(".photo_content").hide();
 
 
         var activeTab = $(this).find("a").attr("href");

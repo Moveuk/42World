@@ -1,264 +1,207 @@
-
-#tab6 .rightHome{
-    border:rgb(179, 179, 179) solid 1px;
-    border-radius:3%;
-    width:100%;
-    overflow: auto;
-    height: 520px;
+/* 내가 방명록 작성할 때 - 시작*/
+.visitor_wrap {
+	width: 100%;
+	height: 800px;
 }
 
+.visitor_content textarea {
+	font-size: 20px;
+}
 
-            /* 내가 방명록 작성할 때 - 시작*/
-            .visitor_wrap{
-                width:100%;
-                height:800px;
-            }
+.visitor_top {
+	height: 50px;
+	margin-top: 10px;
+}
 
-            .visitor_content textarea{
-                font-size:20px;
-            }
+.visitor_top_table_left {
+	border: none;
+}
 
-            .visitor_top{
-                height:5%;
-                margin-top: 10px;
-            }
+.visitor_top_table_right {
+	border: none;
+}
 
-            .visitor_top table{
-                width:100%;
-            }
+.visitor_top table {
+	width: 600px;
+}
 
-            .visitor_top table td{
-                padding-top:5px;
-            }
+.visitor_top table td {
+	padding-top: 5px;
+}
 
+.visitor_top_table_left {
+	text-align: left;
+	font-size: 15px;
+	color: rgb(117, 116, 116);
+}
 
-            .visitor_top_table_left{
-                text-align: left;
-                font-size: 15px;
-                
-                color:rgb(117, 116, 116);
-            }
+.visitor_top_table_right {
+	text-align: right;
+}
 
-            .visitor_top_table_right{
-                text-align:right;
-            }
+.visitor_top_table_right .button {
+	background-color: white;
+	border-radius: 4px;
+	border: 1px solid rgb(189, 186, 186);
+	color: rgb(117, 116, 116);
+	font-size: 15px;
+}
 
-            .visitor_top_table_right button{
-                background-color: white;
-                border-radius: 4px;
-                border:1px solid rgb(189, 186, 186);
-                color:rgb(117, 116, 116);
-                font-size: 15px;
-                
-            }
+.visitor_content {
+	height: 200px;
+	background-color: rgb(236, 234, 234);
+	border-top: 1px solid rgb(216, 213, 213);
+	border-bottom: 1px solid rgb(216, 213, 213);;
+	padding-top: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
 
-            .visitor_content{
-                height:30%;
-                background-color: rgb(236, 234, 234);
-                border-top: 1px solid rgb(216, 213, 213);
-                border-bottom: 1px solid rgb(216, 213, 213);;
-                padding-top:20px;
-                padding-left: 20px;
-                padding-right:20px;
+.visitor_content_minimi {
+	width: 80px;
+	height: 100px;
+	float: left;
+}
 
+.visitor_content_minimi img {
+	width: 80px;
+	height: 100px;
+}
 
-            }
+.visitor_content_text {
+	width: 500px;
+	height: 150px;
+	float: left;
+}
 
-            .visitor_content_minimi{
-                width:20%;
-                height:80%;
-                float:left;
+.visitor_content_text textarea {
+	width: 500px;
+	height: 150px;
+	border: 1px solid rgb(189, 186, 186);
+}
 
-            }
+.visitor_content_bottom {
+	clear: both;
+	height: 30px;
+	padding-top: 5px;
+}
 
-            .visitor_content_minimi img{
-                width:100%;
-                height:100%;
+.visitor_content_bottom table {
+	width: 100%;
+}
 
-     
-            }
+.visitor_content_bottom table a {
+	text-decoration: none;
+	color: orange;
+}
 
-            .visitor_content_text{
-                width:79.5%;
-                height:80%;
-                
-                float:left; 
+.visitor_content_bottom table a:hover {
+	color: blue;
+}
 
-            }
+.visitor_content_bottom_td_left {
+	padding-left: 7%;
+	text-align: left;
+	color: rgb(117, 116, 116);
+}
 
-            .visitor_content_text textarea{
-                width:100%;
-                height:100%;
-                border:1px solid rgb(189, 186, 186);
-            }
+.visitor_content_bottom_td_right {
+	text-align: right;
+	color: rgb(117, 116, 116);
+}
 
-            .visitor_content_bottom{
-                clear:both;
-                height:10%;
-                padding-top: 5px;
+.visitor_content_bottom_td_right button {
+	background-color: white;
+	border-radius: 4px;
+	border: 1px solid rgb(134, 134, 134);
+	color: rgb(117, 116, 116);
+	padding: 1px;
+}
+/* 내가 방명록 작성할 때 - 끝 */
 
-            }
+/* 다른 사람이 쓴 방명록 - 시작*/
+.visitor_content2 textarea {
+	font-size: 20px;
+}
 
-            .visitor_content_bottom table{
-                width:100%;
-                
-            }
+.visitor_top2 {
+	height: 50px;
+	padding-bottom: 5px;
+	background-color: rgb(243, 241, 241);
+	display: grid;
+	grid-template-columns: 3fr 2fr 3fr;
+	place-content: center center;
+}
 
-            .visitor_content_bottom table a{
-                text-decoration: none;
-                color:orange;
-            }
+.visitor_top2 div.visitor_left_info {
+	display: grid;
+	grid-template-columns: fit-content(50px) fit-content(100px) fit-content(100px);
+	place-content: center stretch;
+}
 
-            .visitor_content_bottom table a:hover{
-          
-                color:blue;
-            }
+.visitor_top2 div.visitor_right_info {
+	display: grid;
+	grid-template-columns: minmax(20px, 2fr) minmax(20px, 1fr) minmax(20px, 1fr);
+	place-content: center center;
+}
 
-            .visitor_content_bottom_td_left{
-                padding-left:7%;
-                text-align: left;
-                color:rgb(117, 116, 116);
-            }
+.visitor_top2 a:hover {
+	color: orange;
+}
 
-            .visitor_content_bottom_td_right{
-                text-align: right;
-                color:rgb(117, 116, 116);
-            }
+.visitor_content2 {
+	height: 30%;
+	border-top: aqua;
+	border-bottom: aqua;
+	padding: 15px 15px 0px 15px;
+}
 
-            .visitor_content_bottom_td_right button{
-                background-color: white;
-                border-radius: 4px;
-                border: 1px solid rgb(134, 134, 134);
-                color:rgb(117, 116, 116);
-                padding:1px;
-            }
-            /* 내가 방명록 작성할 때 - 끝 */
+.visitor_content2_minimi {
+	width: 20%;
+	height: 70%;
+	float: left;
+}
 
-            /* 다른 사람이 쓴 방명록 - 시작*/
-           
-            .visitor_content2 textarea{
-                font-size:20px;
-            }
+.visitor_content2_minimi img {
+	width: 100%;
+	height: 100%;
+}
 
-            .visitor_top2{
-                height:4%;
-                padding-bottom:5px;
-                background-color:rgb(243, 241, 241);
+.visitor_content2_text {
+	width: 79.5%;
+	height: 70%;
+	float: left;
+}
 
-            }
+.visitor_content2_text textarea {
+	width: 100%;
+	height: 100%;
+	border: none;
+}
 
-            .visitor_top2_table{
-                width:100%;
-               
-            }
+.visitor_content2_bottom {
+	clear: both;
+	padding: 20px;
+	height: 15%;
+	background-color: rgb(243, 241, 241);
+}
 
-            .visitor_top2_table a{
-                text-decoration: none;
-                
-            }
+.visitor_content2_bottom textarea {
+	width: 80%;
+	height: 100%;
+	margin-left: 5%;
+	float: left;
+	border: 1px solid rgb(189, 186, 186);
+}
 
-          
-            .visitor_top2_table_left{
-                text-align: left;
-                padding-left:10px;   
-            }
-
-            .visitor_top2_table_left a{
-                font-size:20px;  
-            }
-
-            .visitor_top2_table_left span{
-                font-size: 10px;
-            }
-
-            .visitor_top2_table_left p{
-                color:rgb(110, 110, 110);
-                display:inline;
-            }
-
-            .visitor_top2_table_left img{
-                height:20px;
-    
-            }
-
-            .visitor_top2_table_right{
-                text-align: right;
-                
-            }
-
-            .visitor_top2_table_right a{
-                color:rgb(117, 116, 116);
-            }
-
-            .visitor_top2 a:hover{
-                color:orange;
-            }
-
-            
-
-            .visitor_top2_ul li{
-                list-style-type: none;
-                display:inline;
-    
-            }
-
-            .visitor_content2{
-                height:30%;
-                
-                border-top: aqua;
-                border-bottom: aqua;
-                padding:15px 15px 0px 15px;
-
-            }
-
-            .visitor_content2_minimi{
-                width:20%;
-                height:70%;
-                float:left;
-            }
-
-            .visitor_content2_minimi img{
-                width:100%;
-                height:100%;
-            }
-
-            .visitor_content2_text{
-                width:79.5%;
-                height:70%;
-               
-                float:left;
-            }
-
-            .visitor_content2_text textarea{
-                width:100%;
-                height:100%;
-                border:none;
-                
-            }
-
-            .visitor_content2_bottom{
-                clear:both;
-                padding:20px;
-                height:15%;
-                background-color: rgb(243, 241, 241);
-            }
-
-            .visitor_content2_bottom textarea{
-                width:80%;
-                height:100%;
-                margin-left: 5%;
-                float:left;
-                border:1px solid rgb(189, 186, 186);
-            }
-
-            .visitor_content2_bottom button{
-                border:1px solid red;
-                margin-left:20px;
-                float:left;
-                width:5%;
-                height:100%;
-                background-color: white;
-                border-radius: 4px;
-                border: 1px solid rgb(134, 134, 134);
-                color:rgb(77, 76, 76);
-            }
+.visitor_content2_bottom button {
+	border: 1px solid red;
+	margin-left: 20px;
+	float: left;
+	width: 30px;
+	height: 47px;
+	background-color: white;
+	border-radius: 4px;
+	border: 1px solid rgb(134, 134, 134);
+	color: rgb(77, 76, 76);
+}

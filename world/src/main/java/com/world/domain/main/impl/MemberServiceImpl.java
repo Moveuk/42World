@@ -20,9 +20,9 @@ public class MemberServiceImpl implements MemberService {
 	}
 	
 	@Override
-	public MemberVO confirmID(String email) {
-		System.out.println("MemberServiceImpl confirmID() :" + email);
-		return memberDAO.confirmID(email);
+	public MemberVO confirmID(String email, String password) {
+		System.out.println("MemberServiceImpl confirmID() :" + email + "/" +password);
+		return memberDAO.confirmID(email,password);
 		}
 	
 	@Override
@@ -38,5 +38,17 @@ public class MemberServiceImpl implements MemberService {
 	public void updateMember() {memberDAO.updateMember();}
 	@Override
 	public void deleteMember() {memberDAO.deleteMember();}
+
+
+	@Override
+	public MemberVO getPassword(MemberVO vo) {
+		System.out.println("MemberServiceImpl getPassword() :" + "member");
+		return memberDAO.getPassword(vo);
+	}
+
+	@Override
+   public String getNameByUserId(int userId) {
+      return memberDAO.getNameByUserId(userId);
+   }
 
 }

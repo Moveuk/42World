@@ -24,6 +24,12 @@ public class MemberDAO {
 		System.out.println("===MemberDAO  getMember()  ");
 		return sqlSession.selectOne("MemberDAO.getMember");
 	}
+	
+	public MemberVO getPassword(MemberVO vo) {
+		System.out.println("===MemberDAO  getPassword()  ");
+		return sqlSession.selectOne("MemberDAO.getPassword",vo);
+	}
+	
 
 	public void insertMember(MemberVO vo) {
 		System.out.println("===MemberDAO  insertMember()  ");
@@ -38,9 +44,13 @@ public class MemberDAO {
 		sqlSession.update("MemberDAO.updateMember");
 	}
 	
-	public MemberVO confirmID(String email) {
-		System.out.println("===MemberDAO confirmID() email :" + email);
-		return sqlSession.selectOne("MemberDAO.confirmID", email);
+	public MemberVO confirmID(String email, String password) {
+		System.out.println("===MemberDAO confirmID() email :" + email +","+password);
+		return sqlSession.selectOne("MemberDAO.confirmID");
 	}
+
+	public String getNameByUserId(int userId) {
+		return sqlSession.selectOne("MemberDAO.getNameByUserId", userId);
+	 }
 	
 }
